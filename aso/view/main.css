@@ -1,0 +1,136 @@
+@charset "utf-8";
+#top	{
+	text-align:center;
+	}
+#tag	{
+	text-align:right;
+	}
+li  {
+	display:block;
+	}
+p3  {
+	text-indent:2px;
+	}
+h1   {
+    width:400px;                        /* 全体の幅 */
+    border-bottom:solid 2px #ff6600;    /* 下側の罫線 */
+    }
+span   {
+    display:block;                      /* ブロック要素に変換 */
+    margin-right:40%;                   /* 右側の白い部分の範囲 */
+    padding-top:5px;                    /* 上部から文字までの距離 */
+    padding-left:auto;                   /* 左部から文字までの距離 */
+    color:#ffffff;                      /* 文字色 */
+    background-color:#ff6600;           /* 背景色 */
+    background-image:url(画像);       /* 画像の指定 */
+    background-position:right top;      /* 右、上に設置 */
+    background-repeat:no-repeat;        /* 繰り返しなし */
+   }
+li {
+	float:left;
+	display:block;
+	}
+.box1	{
+	height:26px;
+	}
+p1   {
+	float:left;
+	margin:0px;
+	display:block;
+     width:60px;
+     margin-top:5px;
+	}
+li  {
+	float:left;
+	display:block;
+	}
+div1 {
+	height:26px;
+	}
+.on  {
+	background-color:#ff3333;
+	 width:100px;
+      height:26px;
+      margin-right:5px;
+      text-align:center;
+	}
+.off {
+	background-color:#ffcccc;
+	width:100px;
+      height:26px;
+      margin-right:5px;
+      text-align:center;
+	}
+.on a         {
+	text-decoration:none;
+	display:block;
+    margin-top:5px;
+	}
+.on a:link    {
+	color:#ffffff;
+	}
+.on a:visited {
+	color:#ffffff;
+	}
+.on a:hover   {
+	color:#ffffff;
+	}
+.off a         {
+	text-decoration:underline;
+	display:block;
+    margin-top:5px;
+	}
+.off a:link    {
+	color:#000000;
+	}
+.off a:visited {
+	color:#000000;
+	}
+.off a:hover   {
+	color:#ff0000;
+	}
+.box2    {
+	 float:both; 
+     clear:both; 
+     border-top:solid 10px #FF6600;
+     border-bottom:solid 1px #FF6600;
+     border-left:solid 1px #FF6600;
+     border-right:solid 1px #FF6600;
+	 width: auto;
+    }
+ul  {
+	margin:0px;
+	}
+#photo	{
+	float:left;
+	padding-right:50px;
+	}
+#ww	{
+	float:left;
+	clear:right;
+	}
+#set{
+	float:left;
+	}
+#tag2 {
+	text-align: right;
+	margin: auto;
+	float:left;
+	
+	display:block;
+	width:auto;
+	padding-top:auto;
+	padding-bottom:auto;
+	text-align:center;
+	border:2px solid;
+	border-color:#aaaaaa #444444 #444444 #aaaaaa;
+	background:#cccccc;
+	}
+#tag2:hover{
+	background:#777777;
+}
+#space {
+	float:left;
+	margin:auto;
+	width:315px;
+	}

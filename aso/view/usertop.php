@@ -50,25 +50,23 @@
 			
 			
 			while($row = mysqli_fetch_array($result)) {
-			echo '<ul class= "menu4">';
+			echo '<div class= "menu4">';
 				
 				echo '<name="janru">';	
 					$janru_id = $row['j_id'];
 					$j_name = $row['j_name'];
 			echo '<value='.$janru_id.'>';
 			
-			echo '<button><span id="buttonImage"><li><a href= "data.php">'.$j_name.'</a></li></span></button>
-			</ul>';
-			
-			
+			echo '<div id="janru"><a href= "data.php"><img src="btn041/btn041_02.png" width="280px" height="40px" /></a>';
+			echo '<div class="img_comment">';
+			echo '<a href= "data.php">'.$j_name.'</a></div>';
+			echo '</div></div></div>';
 
 			}
 			echo '</form>';
 		
 	?>
-    
-    
-    
+        
 </body>
 </html>
 

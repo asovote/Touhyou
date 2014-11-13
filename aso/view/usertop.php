@@ -5,9 +5,7 @@
 <title>無題ドキュメント</title>
 <link type="text/css" rel="stylesheet" href="./user.css">
 
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>HTML5とCSS3でスマホサイト - WEB DESIGN LAB</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,16 +20,15 @@
 
 <body style="background-image:url(背景2.png);background-attachment:fixed; class="img">
 
-</body>
 
-<body>
 
 	<?php
 		//データベースに接続
-		ini_set('include_path', '/xampp/htdocs/aso/classes/');
-		require_once('include_path.php');
-		require_once('db.php');
-		require_once('session_start.php');
+	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
+		$classDir = __DIR__ . "/../class/";
+		//require_once('include_path.php');
+		require_once($classDir . 'db.php');
+		require_once($classDir . 'session_start.php');
 		
 		echo '<div id="kara">&nbsp</div>';
 		echo '<p1 id="heading07">投票ページ</p1>';

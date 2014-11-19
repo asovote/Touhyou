@@ -9,8 +9,9 @@
 <body>
 <h2>プロフィール参照</h2>
 <?php
-		$janru=$_POST['janru'];
 		
+		$janru = $_GET['janru'];
+	
 		//データベースにつなぐ
 		require_once('include_path.php');
 		require_once('db.php');
@@ -32,7 +33,6 @@
 			$mschool = $row['school'];
 			$mjanru = $row['janru'];
 			$mfree = $row['free'];
-			$mpic = $row['m_img'];
 			
 	echo '<div id="main">';
 	echo '<div id="pic">';

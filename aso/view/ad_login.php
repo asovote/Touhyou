@@ -1,6 +1,8 @@
 ﻿<?php
   session_start();
 
+require_once('include_path.php');
+require_once('db.php');
 
 if (isset($_POST["login"])) {
 
@@ -8,22 +10,10 @@ if (isset($_POST["login"])) {
 
   $ad_id = $_POST['ad_id'];
   $pw = $_POST['pw'];
-  $con = mysql_connect('localhost','test','');
-  if (!$con) {
-    exit('データベースに接続できませんでした。');
-  }
+  $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
-  $result = mysql_select_db('test', $con);
-  if (!$result) {
-    exit('データベースを選択できませんでした。');
-  }
 
-  $result = mysql_query('SET NAMES utf8', $con);
-  if (!$result) {
-    exit('文字コードを指定できませんでした。');
-  }
-
-  $result = mysql_query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'" , $con);
+  $result = mysql_query($dbc , "SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
 
  
   	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
@@ -53,8 +43,8 @@ if (isset($_POST["login"])) {
 	}**/
 
 
-  $con = mysql_close($con);
-  if (!$con) {
+  $dbc->close();
+  if (!$dbc) {
     exit('データベースとの接続を閉じられませんでした。');
   }
 }

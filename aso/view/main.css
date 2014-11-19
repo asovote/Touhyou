@@ -48,7 +48,7 @@ div1 {
 	height:26px;
 	}
 .on  {
-	background-color:#ff3333;
+	background-color:#ffcccc;
 	 width:100px;
       height:26px;
       margin-right:5px;
@@ -62,18 +62,18 @@ div1 {
       text-align:center;
 	}
 .on a         {
-	text-decoration:none;
+	text-decoration:underline;
 	display:block;
     margin-top:5px;
 	}
 .on a:link    {
-	color:#ffffff;
+	color:#000000;
 	}
 .on a:visited {
-	color:#ffffff;
+	color:#000000;
 	}
 .on a:hover   {
-	color:#ffffff;
+	color:#ff0000;
 	}
 .off a         {
 	text-decoration:underline;

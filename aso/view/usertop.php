@@ -31,7 +31,7 @@
 		require_once($classDir . 'session_start.php');
 		
 		echo '<div id="kara">&nbsp</div>';
-		echo '<p1 id="heading07">投票ページ</p1>';
+		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		echo '<div id="kara">&nbsp</div>';
 
 	
@@ -43,24 +43,28 @@
 		$result = mysqli_query($dbc, $query);
 		
 		
-			echo '<form action="data.php" method="POST">';
 			
 			
-			while($row = mysqli_fetch_array($result)) {
-			echo '<div class= "menu4">';
-				
-				echo '<name="janru">';	
-					$janru_id = $row['j_id'];
-					$j_name = $row['j_name'];
-			echo '<value='.$janru_id.'>';
 			
-			echo '<div id="janru"><a href= "data.php"><img src="btn041/btn041_02.png" width="280px" height="40px" /></a>';
-			echo '<div class="img_comment">';
-			echo '<a href= "data.php">'.$j_name.'</a></div>';
-			echo '</div></div></div>';
+		while($row = mysqli_fetch_array($result)) {
+		echo '<div class= "menu4">';
+			
+			echo '<name="janru">';	
+				$janru_id = $row['j_id'];
+				$j_name = $row['j_name'];
+		echo '<value='.$janru_id.'>';
 
-			}
-			echo '</form>';
+		echo '<form action="data.php" method="POST">';
+		echo '<div id="janru"><a href= "data.php?janru=' .$janru_id.'" ><img src="btn041/btn041_02.png" width="280px" height="40px" /></a>';
+		echo '<div class="img_comment">';
+	
+		echo '<a href= "data.php">'.$j_name.'</a></div>';
+		echo '<input type="hidden" name="janru" value="'.$janru_id.'">';
+		echo '</div></div></div>';
+		
+		echo '</form>';
+		}
+			
 		
 	?>
         

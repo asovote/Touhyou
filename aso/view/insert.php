@@ -7,7 +7,7 @@
 		$mid = $_POST['m_id'];
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "insert into hyou(m_id) values(".$mid.")";
+		$query = "update vote set m_votes = m_votes + 1 where m_id = " .$mid.")";
 		$result = mysqli_query($dbc, $query);
 		
 

@@ -10,10 +10,10 @@ if (isset($_POST["login"])) {
 
   $ad_id = $_POST['ad_id'];
   $pw = $_POST['pw'];
-  $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+  $mysqli = new mysqli(db_host, db_user, db_pass, db_name);
 
 
-  $result = mysql_query($dbc , "SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
+  $result = mysql->query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
 
  
   	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
@@ -21,19 +21,21 @@ if (isset($_POST["login"])) {
 		echo "ID、パスワードを入力してください。";
 		
 
-		}else if (mysql_num_rows($result) == 1){
-	    		$row = mysql_fetch_assoc($result);
+		}else if ($result){
+	    		$row = $result->fetch_assoc();
 	    		$_SESSION['ad_id'] = $row['ad_id'];
 	    		$_SESSION['pw'] = $row['pw'];
 	 	 	header('Location: http://localhost/aso/view/kanri_top.html');
 		
-		} else if (mysql_num_rows($result) == 0) {
+		} else {
 
 		      echo "ID、またはパスワードが間違っています。";
 		      
 	    
 
 		}
+	}
+	$result->free();
 
 
 /**	if (is_numeric($_POST['ad_id']) == false ) {
@@ -43,7 +45,7 @@ if (isset($_POST["login"])) {
 	}**/
 
 
-  $dbc->close();
+  $mysqli->close();
   if (!$dbc) {
     exit('データベースとの接続を閉じられませんでした。');
   }

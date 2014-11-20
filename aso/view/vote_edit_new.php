@@ -35,16 +35,9 @@ history.forward();
 	printf('<input type="submit" value="戻る" onClick="form.action=\'vote_manage.php\';return true"/>');
 	printf('</form>');
 	
-	$mysqli = new mysqli('localhost', 'root', '');
-	if ($mysqli -> connect_errno) {
-		print('<p>データベースへの接続に失敗しました。</p>' . $mysqli -> connect_error);
-		exit();
-	}
-	
-	
-	$mysqli -> select_db('test');
-		
-	$mysqli -> set_charset("utf-8");
+	require_once('include_path.php');
+	require_once('db.php');
+
 	
 //	$userid = $mysqli -> real_escape_string($_post["xxx"]);  使わない。
 	
@@ -59,7 +52,7 @@ history.forward();
 	
 	$query = "select * from member where m_id = " . $m_id;
 	
-	$result = $mysqli -> query($query);
+	$result = $dbc -> query($query);
 	while($row = $result -> fetch_assoc()) {
 	
 		$bun1 = "参加者ID:%d "; // ""内はHTML
@@ -76,23 +69,24 @@ history.forward();
 		printf($img);
 		printf($k);
 		
-		(int)$votes = $row['votes_manage'];
-		
-		if ($votes_result = $mysqli -> query("select * from m_votes where m_id =". $m_id)) {
-			$row_cnt = $votes_result -> num_rows;
-			$total = $row_cnt + $votes;
+		$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+		$vresult = $dbc -> query($vquery);
+		//var_dump($vresult);
+		while($vote_row = $vresult -> fetch_assoc()) {
+			
+			$total = $vote_row['m_votes'];
 			printf("<br />"."得票数: %d \n", $total);
-			$votes_result->close();
+					
 		}
+                $vresult->close();
 		printf($k);
 	}
 ?>
 
 <form method="POST" name="changeV" action = "vote_change.php">
 
-<input type="text" style="ime-mode: disabled;" istyle="4" format="6N" MODE="numeric" name="Vtext" size="10" maxlength="5" value="" onKeyup="this.value=this.value.replace(/[^0-9]+/,'')" onchange="chktext()"><br><br>
-<input type="submit" value="追加" name="VVV" disabled>
-<input type="submit" value="削除" name="VVV" disabled>
+<input type="text" style="ime-mode: disabled;" istyle="4" format="6N" MODE="numeric" name="Vtext" size="10" maxlength="7" value="" onKeyup="this.value=this.value.replace(/[^0-9]+/,'')" onchange="chktext()"><br><br>
+<input type="submit" value="変更" name="VVV" disabled>
 
 </form>
 

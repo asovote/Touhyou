@@ -1,27 +1,29 @@
 <!doctype html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>プロフィール</title>
-<link href="style2.css" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+<title>投票システム</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
-<h2>プロフィール</h2>
+
+
+
+
+<div id="title"><h2>投票画面</h2></div>
+
 <?php
 		
-		$janru = $_GET['janru'];
-	
 		//データベースにつなぐ
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
 		
-		
-		
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member where janru='$janru'";
+		$query = "select * from member where janru=5";
 		$result = mysqli_query($dbc, $query);
 		
 		
@@ -33,6 +35,7 @@
 			$mschool = $row['school'];
 			$mjanru = $row['janru'];
 			$mfree = $row['free'];
+			$mpic = $row['m_img'];
 			
 	echo '<div id="main">';
 	echo '<div id="pic">';
@@ -44,18 +47,15 @@
 	echo '<input type="hidden" name="m_id" value="'.$mid.'"></form>';
 	echo '</div>';
 	
-	echo '</br>';
-	
 	echo'<div id="main">';
 	echo'</div>';
-	echo '<a href="profile_select.php?mid=' .$mid.'" ><p>'.$mname.'</p></a>';
+	echo '<a href="profile_select.php?mid=' .$mid.'" ><p>'.$mname.'</p><p>'.$mschool.'</p><p>'.$mid.'</p><p>'.$janru.'</p><p>'.$mfree.'</p><p>'.$mpic.'</p></a>';
+
 		}
 		
-	echo'</div>';
 
 
-?>
-
+ ?>
 
 </body>
 </html>

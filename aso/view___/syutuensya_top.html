@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+
+<script type="text/javascript"><!--
+function ChangeTab(tabname) {
+   // 全部消す
+   document.getElementById('tab1').style.display = 'none';
+   document.getElementById('tab2').style.display = 'none';
+   document.getElementById('tab3').style.display = 'none';
+   // 指定箇所のみ表示
+   document.getElementById(tabname).style.display = 'block';
+}
+// --></script>
+
+</head>
+
+
+
+
+<body>
+
+<style type="text/css"><!--
+/* ▼(A)表示領域全体 */
+div.tabbox { margin: 0px; padding: 0px; width: 400px; }
+
+/* ▼(B)タブ部分 */
+p.tabs { margin: 0px; padding: 0px; }
+p.tabs a {
+   /* ▼(B-2)リンクをタブのように見せる */
+   display: block; width: 5em; float: left;
+   margin: 0px 1px 0px 0px; padding: 3px;
+   text-align: center;
+}
+/* ▼(B-3)各タブの配色 */
+/* タブ部の背景色*/
+p.tabs a.tab1 { background-color: red;  color: white; }
+p.tabs a.tab2 { background-color: red; color:white;}
+p.tabs a.tab3 { background-color: red;   color: white; }
+/* マウスオーバー時の文字色 */
+p.tabs a:hover { color: yellow; }
+
+/* ▼(C)タブ中身のボックス */
+div.tab {
+   /* ▼(C-2)ボックス共通の装飾 */
+   height: auto; overflow: auto; clear: left;
+}
+/* ▼(C-3)各ボックスの配色 */
+div#tab1 { border: 2px solid ;  }
+div#tab2 { border: 2px solid ;  }
+div#tab3 { border: 2px solid ; }
+div.tab p { margin: 0.5em; }
+
+
+--></style>
+
+
+		
+		<p><a href="kanri_top.html">トップへ戻る</a>
+		<a href="profile_insert.php?id=1" >/プロフィールの追加</a>
+		<a href="profile_insert.php?id=2" >/ジャンルの追加</a>
+
+
+		<p>参加者一覧画面</p>
+
+
+<div class="tabbox">
+
+
+
+   <div id="tab1" class="tab">
+      
+	<?php
+		//データベースに接続
+		require_once('include_path.php');
+		require_once('db.php');
+	
+			
+		//SQL文の格納
+		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+		$query = "select * from janru";
+		$result = mysqli_query($dbc, $query);
+		
+	
+		// 取得したデータを一覧表示
+		while($row = mysqli_fetch_array($result)){
+			
+			//表示処理
+			$jid = $row['j_id'];
+			$jname = $row['j_name'];
+			
+			echo '<a href="profile_select.php?jid=' .$jid.'" ><p>'.$jname.'</p></a>';
+           
+           echo '<p class="tabs">';
+           echo '<a href="profile_select.php?jid=' .$jid.'" ><p>'
+           echo '<a href="#tab1" class="tab1" onclick="ChangeTab('tab1'); return false;">'.$jname.'</a>'
+           echo '</p></a>';
+        
+           //<a href="#tab2" class="tab2" onclick="ChangeTab('tab2'); return false;">ミスコン</a>
+        
+           //<a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">タブ3</a>
+           </p> 
+
+            
+		}
+
+	?>
+
+   </div>
+   
+   
+   <div id="tab2" class="tab">
+      <p>(タブ2の中身。HTMLタグも記述可能です。)</p>
+   </div>
+   
+   
+   
+   <div id="tab3" class="tab">
+      <p>(タブ3の中身。いくつでも増やせます。)</p>
+   </div>
+</div>
+<script type="text/javascript"><!--
+   // デフォルトのタブを選択
+   ChangeTab('tab1');
+// --></script>
+
+</body>
+</html>

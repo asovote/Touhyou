@@ -13,7 +13,7 @@ if (isset($_POST["login"])) {
   $mysqli = new mysqli(db_host, db_user, db_pass, db_name);
 
 
-  $result = mysql->query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
+  $result = mysqli->query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
 
  
   	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {

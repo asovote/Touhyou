@@ -89,10 +89,7 @@
 //			→直接表示すると文字化けする。
 
 
-//			$_SESSION['img_id'] = $m_id;
-			$img = "<img src=\"img/img_get.php?m_id=" . $img_m_id . "\">";
-			printf($img);
-			printf($k);
+			require('imgget.php');		
 		
 		
 			$bun3 = "参加者紹介文:%s";

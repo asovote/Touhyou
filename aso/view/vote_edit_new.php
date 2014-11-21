@@ -65,9 +65,7 @@ history.forward();
 		printf($bun2,$m_name);
 		printf($k);
 		
-		$img = "<img src=\"img/img_get.php?m_id=" . $m_id . "\">";
-		printf($img);
-		printf($k);
+			require('imgget.php');		
 		
 		$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 		$vresult = $dbc -> query($vquery);

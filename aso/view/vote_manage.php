@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=SHIFT-JIS">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>全件表示</title>
 </head>
 <body>
@@ -8,6 +8,7 @@
 <form method ="POST" action = "select_janru_manage.php">
 <input type ="submit" value="戻る">
 </form>
+
 
 <?php
 	
@@ -90,11 +91,7 @@ require_once('db.php');
 //			→直接表示すると文字化けする。
 
 
-//			$_SESSION['img_id'] = $m_id;
-			$img = "<img src=\"img/img_get.php?m_id=" . $img_m_id . "\">";
-			printf($img);
-			printf($k);
-		
+			require('imgget.php');		
 		
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
@@ -131,7 +128,7 @@ require_once('db.php');
 	printf($k);printf($k);printf($k);
 	
 	
-	
+
 
 	
 		
@@ -140,7 +137,6 @@ require_once('db.php');
 //	unset($_SESSION['img_id']);
 
 ?>
-
 <html>
 </body>
 </html>

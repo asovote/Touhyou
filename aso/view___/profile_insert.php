@@ -76,22 +76,9 @@
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
 			$query = "INSERT INTO member(m_id,name, school,janru, free) 
 					VALUE ('', '$name', '$school','$j_id', '$free')";
-				
 			//SQL文実行
-			$result = mysqli_query($dbc, $query);
-
-			$query = "select * from member where name="'$name'and j_id=".$j_id." ;";
 			$result = mysqli_query($dbc, $query);
 			
-			$row = mysqli_fetch_array($result);
-			$m_id = $row['m_id'];
-
-			$query = "INSERT INTO mj_list(m_id,j_id)
-					VALUE ('$m_id','$j_id')";
-
-			//SQL文実行
-			$result = mysqli_query($dbc, $query);
-
 			//自分自身を検索
 			$query = "select * from member where janru = '$j_id'";
 			$result = mysqli_query($dbc, $query);

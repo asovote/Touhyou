@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#FFF;
+	color:#09F;
+}
+
+#outer{
+	background-color:#FFF;
+	color:#09F
+	margin:0 auto;
+	padding:0;
+	border:solid 1px #000;
+	width:800px;
+}
+
+#title{
+	margin: 0;
+	padding: 15px;
+	border-bottom: solid 1px #000;
+	text-align: center;
+}
+
+#member{
+	float:left;
+	margin:0;
+	padding:auto;
+	width:auto;
+	border-right:solid 1px #000;
+}
+
+#main{
+	margin:auto;
+	padding:5px;
+	width:auto;
+}
+
+#footer{
+	text-align:center;
+	clear:both;
+	margin:0;
+	padding:0;
+	border-top:solid 1px #000;
+}
+#main {
+}
+
+#pic {
+	float: left;
+	
+}

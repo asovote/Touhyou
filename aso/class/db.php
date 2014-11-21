@@ -1,20 +1,22 @@
 <?php
 //データベースへの接続情報
 //ローカル側
-
-define('db_host', 'localhost');
-define('db_user', 'root');
-define('db_pass', '');
-define('db_name', 'test');
-
-
-//サーバ側
 /*
-define('db_host', '172.20.17.205');
-define('db_user', 'user1');
-define('db_pass', '');
-define('db_name', 'test');
-*/
+同じディレクトリにdb.iniを作ってください。
+例:
+host = "localhost"
+user = "root"
+pass = "password"
+name = "database"
 
-$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+これで接続先の設定ができます。
+*/
+$ini = parse_ini_file("db.ini");
+
+define('db_host', $ini['host']);
+define('db_user', $ini['user']);
+define('db_pass', $ini['pass']);
+define('db_name', $ini['name']);
+
+//$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 ?>

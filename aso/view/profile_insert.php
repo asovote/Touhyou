@@ -11,7 +11,7 @@
 
 	<?php
 		//データベースに接続
-		ini_set('include_path', '/xampp/htdocs/aso/classes/');
+	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');

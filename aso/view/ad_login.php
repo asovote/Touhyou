@@ -25,7 +25,7 @@ if (isset($_POST["login"])) {
 	    		$row = $result->fetch_assoc();
 	    		$_SESSION['ad_id'] = $row['ad_id'];
 	    		$_SESSION['pw'] = $row['pw'];
-	 	 	header('Location: http://localhost/aso/view/kanri_top.html');
+	 	 	header('Location: ./kanri_top.html');
 		
 		} else {
 

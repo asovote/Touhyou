@@ -20,6 +20,7 @@ history.forward();
 session_start();
 $m_id = $_SESSION['m_id'];
 
+<<<<<<< HEAD
 $mysqli = new mysqli('localhost', 'root', '');
 if ($mysqli -> connect_errno) {
 	print('<p>データベースへの接続に失敗しました。</p>' . $mysqli -> connect_error);
@@ -32,12 +33,22 @@ $mysqli -> set_charset("utf-8");
 
 $changeVplus = "update member set votes_manage = votes_manage + " . $votes . " where m_id = " . $m_id ;
 $changeVminus = "update member set votes_manage = votes_manage - " . $votes . " where m_id = " . $m_id ;
+=======
+require_once('include_path.php');
+require_once('db.php');
+
+
+(int)$votes = $_POST['Vtext'];
+
+$changeV = "update mj_list set m_votes = " . $votes . " where m_id = " . $m_id ;
+>>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 
 
 printf($_POST['Vtext']);
 if (isset($_POST["Vtext"])) {
 
     $zougen = htmlspecialchars($_POST["VVV"], ENT_QUOTES, "UTF-8");
+<<<<<<< HEAD
     switch ($zougen) {
         case "追加":
         
@@ -57,12 +68,22 @@ if (isset($_POST["Vtext"])) {
         break;
         default: echo "error"; exit;
     }
+=======
+        
+        $result = $dbc -> query($changeV);
+        printf('票に変更しました。');
+        printf('3秒後に自動で移動します。');
+        
+>>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 }else{
 printf('数値を入力してください。');
 }
 
+<<<<<<< HEAD
 $votes = 0;
 
+=======
+>>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 ?>
 
 </form>

@@ -8,8 +8,11 @@
 
 <?php
 	session_start();
+<<<<<<< HEAD
 	ini_set( "display_errors", "Off");
 	//require("http://enzerus.com/aso/ix/atack.php");
+=======
+>>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 	
 	$mysqli = new mysqli('localhost', 'root', '');
 	if ($mysqli -> connect_errno) {

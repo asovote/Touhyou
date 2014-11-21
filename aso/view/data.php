@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h2>プロフィール参照</h2>
+<h2>プロフィール</h2>
 <?php
 		
 		$janru = $_GET['janru'];
@@ -44,12 +44,14 @@
 	echo '<input type="hidden" name="m_id" value="'.$mid.'"></form>';
 	echo '</div>';
 	
+	echo '</br>';
+	
 	echo'<div id="main">';
 	echo'</div>';
 	echo '<a href="profile_select.php?mid=' .$mid.'" ><p>'.$mname.'</p></a>';
 		}
 		
-
+	echo'</div>';
 
 
 ?>

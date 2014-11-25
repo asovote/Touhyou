@@ -13,7 +13,7 @@ if (isset($_POST["login"])) {
   $mysqli = new mysqli(db_host, db_user, db_pass, db_name);
 
 
-  $result = mysqli->query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
+  $result = $mysqli->query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
 
  
   	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
@@ -38,18 +38,11 @@ if (isset($_POST["login"])) {
 	$result->free();
 
 
-/**	if (is_numeric($_POST['ad_id']) == false ) {
-
-		header('Location: http://www.msn.com/ja-jp');
-
-	}**/
-
-
   $mysqli->close();
-  if (!$dbc) {
+  if (!$mysqli) {
     exit('データベースとの接続を閉じられませんでした。');
   }
-}
+
 
 ?>
 <html>

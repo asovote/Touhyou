@@ -3,11 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>プロフィール編集画面</title>
+<title>プロフィール編集</title>
 </head>
 	
 <body>
-
+<Div Align="center">
 
 	<?php
 		//データベースに接続
@@ -165,5 +165,6 @@
 	
 
 	?>
+	</div>
 </body>
 </html>

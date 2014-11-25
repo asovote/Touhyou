@@ -7,42 +7,52 @@ require_once('db.php');
 if (isset($_POST["login"])) {
 
 
+$con = mysql_connect(db_host,db_user,db_pass);
+  if (!$con) {
+    exit('データベースに接続できませんでした。');
+  }
 
-  $ad_id = $_POST['ad_id'];
-  $pw = $_POST['pw'];
-  $mysqli = new mysqli(db_host, db_user, db_pass, db_name);
+  $result = mysql_select_db(db_name, $con);
+  if (!$result) {
+    exit('データベースを選択できませんでした。');
+  }
 
+  $result = mysql_query('SET NAMES utf8', $con);
+  if (!$result) {
+    exit('文字コードを指定できませんでした。');
+  }
 
-  $result = $mysqli->query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'");
+  $result = mysql_query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'" , $con);
 
  
-  	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
+	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
 		
 		echo "ID、パスワードを入力してください。";
-		
 
-		}else if ($result){
-	    		$row = $result->fetch_assoc();
+	
+
+		}else if (mysql_num_rows($result) == 1){
+	    		$row = mysql_fetch_assoc($result);
 	    		$_SESSION['ad_id'] = $row['ad_id'];
 	    		$_SESSION['pw'] = $row['pw'];
-	 	 	header('Location: ./kanri_top.html');
+	 	 	header('Location: ./kanri_top.php');
 		
-		} else {
+		
+		} else if (mysql_num_rows($result) == 0) {
 
 		      echo "ID、またはパスワードが間違っています。";
 		      
 	    
 
 		}
-	}
-	$result->free();
 
 
-  $mysqli->close();
-  if (!$mysqli) {
+
+  $con = mysql_close($con);
+  if (!$con) {
     exit('データベースとの接続を閉じられませんでした。');
   }
-
+}
 
 ?>
 <html>

@@ -57,6 +57,16 @@
 			
 			echo '<p>写真：<input type="file" name="upfile" /></p>';
 			
+			print<<<EOF
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+			ファイル：<br />
+			<input type="file" name="upfile" size="30" /><br />
+			<br />
+			<input type="submit" value="アップロード" />
+			</form>
+			EOF;
+			
+			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';
 			

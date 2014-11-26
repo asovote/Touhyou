@@ -82,9 +82,7 @@ history.forward();
 		printf($bun2,$m_name);
 		printf($k);
 		
-		$img = "<img src=\"img/img_get.php?m_id=" . $m_id . "\">";
-		printf($img);
-		printf($k);
+			require('imgget.php');		
 		
 <<<<<<< HEAD
 		(int)$votes = $row['votes_manage'];

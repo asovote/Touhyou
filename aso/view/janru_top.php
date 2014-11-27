@@ -20,7 +20,7 @@
 		require_once('include_path.php');
 		require_once('db.php');
 	echo '<div id="tag">';
-		echo '<p><a href="kanri_top.html">トップへ戻る</a>';
+		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
 		echo '<a href="profile_insert.php?id=1" >/プロフィールの追加</a>';
 		echo '<a href="profile_insert.php?id=2" >/ジャンルの追加</a>';

@@ -38,7 +38,7 @@
 		$result = mysqli_query($dbc, $query);
 		
 		
-			echo '<form action="profile_insert.php" method="POST">';
+			echo '<form action="profile_insert.php" method="POST" enctype="multipart/form-data">';
 			
 			echo '<p>氏名：<input type="text" name="name" /></p>';
 			echo '<p>学校：<input type="text" name="school" /></p>';
@@ -55,17 +55,9 @@
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5"></textarea>';
 			
 			
-			echo '<p>写真：<input type="file" name="upfile" /></p>';
+			echo '<p>写真：<input type="file" name="upfile"  size="30" /></p>';
 			
-			print<<<EOF
-			<form action="upload.php" method="post" enctype="multipart/form-data">
-			ファイル：<br />
-			<input type="file" name="upfile" size="30" /><br />
-			<br />
-			<input type="submit" value="アップロード" />
-			</form>
-			EOF;
-			
+
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';
@@ -84,46 +76,34 @@
 					
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-			$query = "INSERT INTO member(m_id,name, school,janru, free) 
-					VALUE ('', '$name', '$school','$j_id', '$free')";
+			$query = "INSERT INTO member(m_id,name, school,janru, free,m_img) 
+					VALUE ('', '$name', '$school','$j_id', '$free',NULL)";
 				
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select * from member where name=".$name."and j_id=".$j_id." ;";
+			$query = "select * from member where name='".$name."' and janru=".$j_id." ;";
+	
+
+
 			$result = mysqli_query($dbc, $query);
-			
 			$row = mysqli_fetch_array($result);
-			$m_id = $row['m_id'];
-
-			$query = "INSERT INTO mj_list(m_id,j_id)
-					VALUE ('$m_id','$j_id')";
-
-			//SQL文実行
-			$result = mysqli_query($dbc, $query);
-
-			//自分自身を検索
-			$query = "select * from member where janru = '$j_id'";
-			$result = mysqli_query($dbc, $query);
-			
-			
 			// 取得したデータを一覧表示
-			while($row = mysqli_fetch_array($result)){
-				//セッションに格納
-				$_SESSION['member'][$row['m_id']] = array(
-					'mid' => $row['m_id'],
-					'mname' => $row['name'],
-					'mschool' => $row['school'],
-					'mfree' => $row['free']
-				);
-				//表示処理
-				$mid = $row['m_id'];
-				$mname = $row['name'];
-				$mschool = $row['school'];
-				$mfree = $row['free'];
-				echo '<a href="profile_select.php?mid='.$mid.'"><p>'.$mname.'</p></a>';
-				
-			}
+		
+			 	$mid = $row['m_id'];
+			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/" . $_FILES["upfile"]["name"])) {
+    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
+    			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
+    			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
+    			$result = $dbc -> query($query);
+  } else {
+    echo "ファイルをアップロードできません。";
+  }
+} else {
+  echo "ファイルが選択されていません。";
+}
+
 			//データベースとの接続を切断
 			mysqli_close($dbc);
 			

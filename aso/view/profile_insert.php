@@ -151,7 +151,7 @@
 	
 
 		//トップ画面へのリンク
-		echo '<a href="kanri_top.html">トップへ戻る</a>';
+		echo '<a href="kanri_top.php>戻る</a>';
 	
 
 	?>

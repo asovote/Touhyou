@@ -90,7 +90,7 @@
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select * from member where name="'$name'and j_id=".$j_id." ;";
+			$query = "select * from member where name=".$name."and j_id=".$j_id." ;";
 			$result = mysqli_query($dbc, $query);
 			
 			$row = mysqli_fetch_array($result);

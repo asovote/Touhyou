@@ -30,28 +30,9 @@
 
 
 	
-<<<<<<< HEAD
-	$mysqli = new mysqli('localhost', 'root', '');
-	if ($mysqli -> connect_errno) {
-		print('<p>データベースへの接続に失敗しました。</p>' . $mysqli -> connect_error);
-		exit();
-	}
-	
-	
-	$mysqli -> select_db('test');
-		
-	$mysqli -> set_charset("utf-8");
-	
-//	$userid = $mysqli -> real_escape_string($_post["xxx"]);  使わない。
-	
-	
-//	$select_j_id = $_POST['select_j'];  //POSTで送られたjanruID取得
-//	$is_j_id = (int)$select_j_id;
-=======
 	require_once('include_path.php');
 	require_once('db.php');
 
->>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 	
 	printf($k);printf($k);printf($k);
 	
@@ -61,11 +42,7 @@
 	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by m_id"; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
-<<<<<<< HEAD
-	$mj_list_result = $mysqli -> query($mj_list_query);
-=======
 	$mj_list_result = $dbc -> query($mj_list_query);
->>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 	while($mj_list_row = $mj_list_result -> fetch_assoc()) {
 	
 //	ジャンルの参加人数分だけ繰り返す
@@ -76,29 +53,17 @@
 		
 		
 		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
-<<<<<<< HEAD
-		$result = $mysqli -> query($query);
-		
-		if(!$result){
-			printf('query failed.' . $mysqli -> error);
-			$mysqli -> close();
-=======
 		$result = $dbc -> query($query);
 		
 		if(!$result){
 			printf('query failed.' . $dbc -> error);
 			$dbc -> close();
->>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 			exit();
 		}
 		$k = "<br/>";
 		
 		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
-<<<<<<< HEAD
-		$result = $mysqli -> query($query);
-=======
 		$result = $dbc -> query($query);
->>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 					
 		while($row = $result -> fetch_assoc()) {
 			
@@ -133,22 +98,6 @@
 			printf($k);
 			
 			
-<<<<<<< HEAD
-			(int)$votes = $row['votes_manage'];
-			
-			
-			if ($votes_result = $mysqli -> query("select * from m_votes where m_id =". $m_id)) {
-				$row_cnt = $votes_result -> num_rows;
-				$total = $row_cnt + $votes;
-				printf("<br />"."得票数: %d \n", $total);
-				$votes_result->close();
-			}
-			
-			
-			
-			
-			
-=======
 			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
@@ -159,7 +108,6 @@
 			}
 			
 			
->>>>>>> e682b5ecb4d8d6305405fe2cd4285117b152b578
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 			printf("----------------------------------------------------------------------------------------------");
 			printf($k);printf($k);printf($k);printf($k);printf($k);

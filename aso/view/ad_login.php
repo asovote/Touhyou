@@ -6,7 +6,8 @@ require_once('db.php');
 
 if (isset($_POST["login"])) {
 
-
+$ad_id = $_POST['ad_id'];
+$pw = $_POST['pw'];
 $con = mysql_connect(db_host,db_user,db_pass);
   if (!$con) {
     exit('データベースに接続できませんでした。');

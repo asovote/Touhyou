@@ -11,7 +11,7 @@
 
 <?php
 
-		echo '<div id="link"><p><a href="kanri_top.html">トップへ戻る</a></p></div>';
+		echo '<div id="link"><p><a href="kanri_top.php">トップへ戻る</a></p></div>';
 		echo '<div id="top"><p1>投票結果画面</p1></div>';
 
 	session_start();

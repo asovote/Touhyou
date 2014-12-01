@@ -121,12 +121,12 @@
 		}else if($id == 4){
 			//登録ボタンが押されたとき
 			
-			$jid = $_POST["janru"];
+			$jname = $_POST["janru"];
 			echo $jid;
 					
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-			$query = "INSERT INTO janru(j_id, j_name) VALUE ('','$jid')";
+			$query = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
 			//SQL文実行
 			$result = mysqli_query($query);
 			echo $result;

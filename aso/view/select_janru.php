@@ -17,15 +17,9 @@
 	session_start();
 	//ini_set( "display_errors", "Off");
 	//require("http://enzerus.com/aso/atack.php");
-	
-	$mysqli = new mysqli('localhost', 'root', '');
-	if ($mysqli -> connect_errno) {
-		print('<p>データベースへの接続に失敗しました。</p>' . $mysqli -> connect_error);
-		exit();
-	}
-	//
-	$mysqli -> select_db('test');
-	$mysqli -> set_charset("utf-8");
+
+	require_once('include_path.php');
+	require_once('db.php');
 	
 	$select_janru_query = "select * from janru";
 	$janru_list = $mysqli -> query($select_janru_query);

@@ -32,6 +32,7 @@
 	
 	require_once('include_path.php');
 	require_once('db.php');
+	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 	
 	printf($k);printf($k);printf($k);

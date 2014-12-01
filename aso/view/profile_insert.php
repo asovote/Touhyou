@@ -131,14 +131,13 @@
 			$query = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
-			echo $result;
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);
 			
 			// 取得したデータを一覧表示
 			while($row = mysqli_fetch_array($dbc, $result)){
-				$jid = $row['j_name'];
+				$jid = $row['j_id'];
 				
 				echo '<p>'.$jid.'<p>';
 			}

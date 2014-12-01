@@ -16,6 +16,8 @@
 		require_once('db.php');
 		require_once('session_start.php');
 		
+		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+
 		echo '<p>参加者情報登録画面</p>';
 		
 		if(isset($_GET['id'])){
@@ -122,21 +124,20 @@
 			//登録ボタンが押されたとき
 			
 			$jname = $_POST["janru"];
-			echo $jid;
+			echo $jname;
 					
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
 			$query = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
 			//SQL文実行
-			$result = mysqli_query($query);
-			echo $result;
+			$result = mysqli_query($dbc, $query);
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
-			$result = mysqli_query($query);
+			$result = mysqli_query($dbc, $query);
 			
 			// 取得したデータを一覧表示
-			while($row = mysqli_fetch_array($result)){
-				$jid = $row['j_name'];
+			while($row = mysqli_fetch_array($dbc, $result)){
+				$jid = $row['j_id'];
 				
 				echo '<p>'.$jid.'<p>';
 			}

@@ -135,14 +135,6 @@
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);
 			
-			// 取得したデータを一覧表示
-			while($row = mysqli_fetch_array($dbc, $result)){
-				$jid = $row['j_id'];
-				
-				echo '<p>'.$jid.'<p>';
-			}
-			
-			
 		
 		}else{
 				echo "値が見つかりません";

@@ -32,10 +32,8 @@
 		//fase2の登録ボタンが押されてないとき
 		
 		
-		
-		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru ;";
-		$result = mysqli_query($dbc, $query);
+		$result = mysqli_query($query);
 		
 		
 			echo '<form action="profile_insert.php" method="POST" enctype="multipart/form-data">';

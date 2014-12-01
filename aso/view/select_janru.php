@@ -20,6 +20,7 @@
 
 	require_once('include_path.php');
 	require_once('db.php');
+	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
 	$select_janru_query = "select * from janru";
 	$janru_list = $dbc -> query($select_janru_query);

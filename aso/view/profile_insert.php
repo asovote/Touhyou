@@ -131,7 +131,7 @@
 			$query = "INSERT INTO janru(j_id, j_name) VALUE ('','$jid')";
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
-			
+			echo $result;
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);

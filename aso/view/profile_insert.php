@@ -35,7 +35,7 @@
 		
 		
 		$query = "select * from janru ;";
-		$result = mysqli_query($query);
+		$result = mysqli_query($dbc,  $query);
 		
 		
 			echo '<form action="profile_insert.php" method="POST" enctype="multipart/form-data">';

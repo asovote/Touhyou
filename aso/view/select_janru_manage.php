@@ -9,21 +9,16 @@
 <?php
 	session_start();
 	
-	$mysqli = new mysqli('localhost', 'root', '');
-	if ($mysqli -> connect_errno) {
-		print('<p>データベースへの接続に失敗しました。</p>' . $mysqli -> connect_error);
-		exit();
-	}
-	
-	$mysqli -> select_db('test');
-	$mysqli -> set_charset("utf-8");
+	require_once('include_path.php');
+	require_once('db.php');
+	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
 	$select_janru_query = "select * from janru";
-	$janru_list = $mysqli -> query($select_janru_query);
+	$janru_list = $dbc -> query($select_janru_query);
 	
 	if(!$janru_list){
-		printf('query failed.' . $mysqli -> error);
-		$mysqli -> close();
+		printf('query failed.' . $dbc -> error);
+		$dbc -> close();
 		exit();
 	}
 	

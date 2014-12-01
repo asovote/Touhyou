@@ -30,6 +30,7 @@
 	require_once('include_path.php');
 	require_once('db.php');
 	
+	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
 //	$userid = $mysqli -> real_escape_string($_post["xxx"]);  使わない。
 	

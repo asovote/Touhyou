@@ -128,11 +128,11 @@
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
 			$query = "INSERT INTO janru(j_id, j_name) VALUE ('','$jid')";
 			//SQL文実行
-			$result = mysqli_query($dbc, $query);
+			$result = mysqli_query($query);
 			echo $result;
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
-			$result = mysqli_query($dbc, $query);
+			$result = mysqli_query($query);
 			
 			// 取得したデータを一覧表示
 			while($row = mysqli_fetch_array($result)){

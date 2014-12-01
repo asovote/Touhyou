@@ -103,7 +103,6 @@
 }
 
 			//データベースとの接続を切断
-			mysqli_close($dbc);
 			
 			require_once('session_out.php');
 		

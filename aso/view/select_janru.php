@@ -22,10 +22,10 @@
 	require_once('db.php');
 	
 	$select_janru_query = "select * from janru";
-	$janru_list = $mysqli -> query($select_janru_query);
+	$janru_list = $dbc -> query($select_janru_query);
 	
 	if(!$janru_list){
-		printf('query failed.' . $mysqli -> error);
+		printf('query failed.' . $dbc -> error);
 		$mysqli -> close();
 		exit();
 	}

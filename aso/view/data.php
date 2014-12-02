@@ -56,20 +56,16 @@
 			$mname = $row['name'];
 			$mjanru = $row['j_id'];
  			$mimg = $row['m_img'];
-		  echo <div class="row"><!--実際に使う際はここをループさせて表示します-->;
+		  echo'<div class="row"><!--実際に使う際はここをループさせて表示します-->';
+      		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></a></div><!--SQLで撮ってきた画像に差し替え-->'
+		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
+		  echo'<div align="center" valign="bottom"><input type="submit"value="投票">';
+		  echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
+		  echo'</div></div>';
 
 		}
 
-?>
-    
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div><!--SQLで撮ってきた画像に差し替え-->
-      <div class="col-lg-3 col-sm-4 col-xs-6">name
-            <div align="center" valign="bottom"><input type="submit"value="投票">
-            </div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>
-        </div>  
-    </div>    
-        
-
+?>    
 	</body>
     
 </html>

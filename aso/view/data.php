@@ -62,40 +62,23 @@
 	
 	
 	
-      //  echo '<div class="row">';
-        
-	        echo'<form method="POST" action="insert.php" onsubmit="return submitChk()">';
-		echo'<div id="ku">';
-		        echo'<div class="col-lg-3 col-sm-4 col-xs-6" id="gazou">';
-			        echo'<a title="Image 1" href="#">';
-			       		echo'<img class="thumbnail img-responsive" src="img/'.$img.'"></a>';
-		        echo'</div><!--SQLで撮ってきた画像に差し替え-->';
-		        
-			echo'<div id="iti">';
-				echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
-					echo'<a href="user_profile_select.php?mid=' .$mid.'" >';
-						echo'<p1>'.$mname.'</p1>';
-					echo'</a>';
-				echo'</div>';
-			        
-				echo'<div align="" valign="bottom">';
-				        
-	        				echo'<input type="submit" value="戻る" />';
-				        	echo'<input type="submit" name="button2" value="投 票">';
-				        
-				echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです-->';
-			echo'</div>';
-		echo'</div>';	
-		        echo'<div class="row"><!--実際に使う際はここをループさせて表示-->';
-				echo'<input type="hidden" name="m_id" value="'.$mid.'">';
-			echo'</div>';
-		echo'</form>';
+      
 	}
 		
 
 
 ?>
 
+ <div class="row"><!--実際に使う際はここをループさせて表示します-->
+        
+
+        
+        
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div><!--SQLで撮ってきた画像に差し替え-->
+      <div class="col-lg-3 col-sm-4 col-xs-6">name
+            <div align="center" valign="bottom">戻る　投票
+            </div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>
+        </div>
 
 </body>
 </html>

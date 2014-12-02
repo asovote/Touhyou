@@ -100,7 +100,7 @@
 	} else {
 		require_once('session_out.php');
 		// 取得したデータを一覧表示
-		while($row = mysqli_fetch_array($result)){
+		while($row == mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];

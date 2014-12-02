@@ -75,7 +75,7 @@
 			printf($k);
 			
 			$bun2 = "参加者名:%s ";
-			$m_name = $row['m_name'];
+			$m_name = $row['name'];
 			printf($bun2,$m_name);
 			printf($k);
 

@@ -56,10 +56,10 @@
 			$mjanru = $row['j_id'];
  			$mimg = $row['m_img'];
 		  echo'<div class="row"><!--実際に使う際はここをループさせて表示します-->';
-		  echo '<form action="#.php" method="POST">';
+		  echo '<form action="ok.php" method="POST">';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></a></div><!--SQLで撮ってきた画像に差し替え-->';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
-		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="submitChk();"></form>';
+		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="submitChk();"><input type="hidden" name="mid" value="'.$mid.'"></form>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div></div>';
 

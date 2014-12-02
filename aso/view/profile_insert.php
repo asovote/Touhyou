@@ -91,8 +91,9 @@
 			//mj_listに格納するm_idを取得
 			$query = "select MAX(m_id) from member;";
 			$result = mysqli_query($dbc, $query);
-			$row = $result -> fetch_array();			
+			while($row = $result -> fetch_array()){			
 		 	$mid = $row['max(m_id)'];
+		 	}
 
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id',NULL);";
 			$result = mysqli_query($dbc, $query);

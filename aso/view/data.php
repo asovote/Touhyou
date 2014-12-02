@@ -29,7 +29,7 @@
 	<body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 <div class="container">
-    <h1>登録者一覧</h1>
+    <h1 align=center>出演者一覧</h1>
 <?php
 
 		//データベースにつなぐ

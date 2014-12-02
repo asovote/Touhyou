@@ -89,8 +89,8 @@
 			$result = mysqli_query($dbc, $query);
 
 			//mj_listに格納するm_idを取得
-			$query = "select MAX(m_id) from member;";
-			$result = mysqli_query($dbc, $query);
+			$query = "select max(m_id) from member;";
+			$result = mysqli->query($dbc, $query);
 			while($row = $result -> fetch_array()){			
 		 	$mid = $row['max(m_id)'];
 		 	}

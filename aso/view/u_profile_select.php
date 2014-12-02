@@ -59,7 +59,7 @@
       echo'</div><div class="row">';
       echo'</div></div>';
       echo'<div class="container">';
-      echo'<p>学校:'.$school.'</p>';
+      echo'<p>学校:'.$mschool.'</p>';
       echo'<p>'.$mfree.'</p>';
       echo'</div>';
 			

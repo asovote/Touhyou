@@ -17,7 +17,7 @@
 	    /**
 	     * 確認ダイアログの返り値によりフォーム送信
 	    */
-	    function submitChk () {
+	    function submitChk() {
 	        /* 確認ダイアログ表示 */
 	        var flag = confirm ( "投票してもよろしいですか？");
 	        /* send_flg が TRUEなら送信、FALSEなら送信しない */
@@ -59,7 +59,7 @@
 		  echo '<form action="#.php" method="POST">';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></a></div><!--SQLで撮ってきた画像に差し替え-->';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
-		  echo'<div align="center" valign="bottom"><input type="submit"value="投票"></form>';
+		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="return submitChk();"></form>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div></div>';
 

@@ -1,16 +1,18 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
+		<title>Title</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link type="text/css" href="./styles.css" rel="stylesheet">
-		
-		
+		<link href="css/styles.css" rel="stylesheet">
+
+				
 	<script type="text/javascript">
 	    /**
 	     * 確認ダイアログの返り値によりフォーム送信
@@ -22,11 +24,11 @@
 	        return flag;
 	    }
 	</script>
-
-</head>
-
-<body>
-<p>プロフィール参照</p>
+	</head>
+    
+	<body>
+<div class="container">
+    <h1>登録者一覧</h1>
 <?php
 
 		//データベースにつなぐ
@@ -38,64 +40,32 @@
 		$janru = $_POST['jid'];
 		$_SESSION['jid'] = $janru;
 		}else{
-		
+		header("Location: usertop.php");
 		}
-		
-				
-		echo '<form action="usertop.php" method="POST">';
+        	echo '<form action="usertop.php" method="POST">';
 
-		
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
-
+	
 		while($row = mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
-			$mschool = $row['school'];
-			$mfree = $row['free'];
-			$img = $row['m_img']
-			
-	
-	
-	
-      //  echo '<div class="row">';
-        
-	        echo'<form method="POST" action="insert.php" onsubmit="return submitChk()">';
-		echo'<div id="ku">';
-		        echo'<div class="col-lg-3 col-sm-4 col-xs-6" id="gazou">';
-			        echo'<a title="Image 1" href="#">';
-			       		echo'<img class="thumbnail img-responsive" src="img/'.$img.'"></a>';
-		        echo'</div><!--SQLで撮ってきた画像に差し替え-->';
-		        
-			echo'<div id="iti">';
-				echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
-					echo'<a href="user_profile_select.php?mid=' .$mid.'" >';
-						echo'<p1>'.$mname.'</p1>';
-					echo'</a>';
-				echo'</div>';
-			        
-				echo'<div align="" valign="bottom">';
-				        
-	        				echo'<input type="submit" value="戻る" />';
-				        	echo'<input type="submit" name="button2" value="投 票">';
-				        
-				echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです-->';
-			echo'</div>';
-		echo'</div>';	
-		        echo'<div class="row"><!--実際に使う際はここをループさせて表示-->';
-				echo'<input type="hidden" name="m_id" value="'.$mid.'">';
-			echo'</div>';
-		echo'</form>';
-	}
-		
+			$mjanru = $row['j_id'];
+ 			$mimg = $row['m_img'];
+		  echo'<div class="row"><!--実際に使う際はここをループさせて表示します-->';
+      		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></a></div><!--SQLで撮ってきた画像に差し替え-->';
+		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
+		  echo'<div align="center" valign="bottom"><input type="submit"value="投票">';
+		  echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
+		  echo'</div></div>';
 
+		}
 
-?>
-
-
-</body>
+?>    
+	</body>
+    
 </html>

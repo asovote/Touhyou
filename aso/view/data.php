@@ -62,7 +62,7 @@
 	
 	
 	
-        echo '<div class="row"><!--実際に使う際はここをループさせて表示します-->';
+      //  echo '<div class="row">';
         
 	        echo'<form method="POST" action="insert.php" onsubmit="return submitChk()">';
 		echo'<div id="ku">';

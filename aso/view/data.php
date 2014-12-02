@@ -31,7 +31,6 @@
 <div class="container">
     <h1 align=center>出演者一覧</h1>
 <?php
-		session_start();
 		//データベースにつなぐ
 		require_once('include_path.php');
 		require_once('db.php');

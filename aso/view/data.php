@@ -29,6 +29,7 @@
 <p>プロフィール参照</p>
 <?php
 
+		echo $_POST['janru'];
 		//データベースにつなぐ
 		require_once('include_path.php');
 		require_once('db.php');

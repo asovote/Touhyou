@@ -10,6 +10,7 @@
 <Div Align="center">
 
 	<?php
+		
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		require_once('include_path.php');
@@ -97,6 +98,7 @@
 			echo $_FILES["upfile"]["tmp_name"];			
 
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+			
   			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);
     			echo $_FILES["upfile"]["name"] . "をアップロードしました。";

@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=SHIFT-JIS">
-    <title>全件表示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>全件表示</title>
 </head>
 <body>
 
@@ -103,7 +103,7 @@
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			
-				$total = $vote_row['m_votes'];
+				$total = $vote_row['votes'];
 				printf("<br />"."得票数: %d \n", $total);
 					
 			}

@@ -5,7 +5,7 @@ if($row['m_img'] == null){
 	echo '画像が登録されていません。';
 } else {
 	echo $img;
-	}	
-printf($k);
+}
+printf($k);printf($k);
 
 ?>

@@ -27,7 +27,7 @@
 	if(isset($j_id)){
 	
 		//トップ画面へのリンク
-		echo '<p><a href="kanri_top.html">トップへ戻る</a>';
+		echo '<p><a href="usertop.php">トップへ戻る</a>';
 		
 	
 		//SQL文の格納

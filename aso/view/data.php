@@ -57,7 +57,7 @@
 			$mname = $row['name'];
 			$mschool = $row['school'];
 			$mfree = $row['free'];
-			
+			$img = $row['m_img']
 			
 	
 	
@@ -68,7 +68,7 @@
 		echo'<div id="ku">';
 		        echo'<div class="col-lg-3 col-sm-4 col-xs-6" id="gazou">';
 			        echo'<a title="Image 1" href="#">';
-			       		echo'<img class="thumbnail img-responsive" src="//placehold.it/200x120"></a>';
+			       		echo'<img class="thumbnail img-responsive" src="img/'.$img.'"></a>';
 		        echo'</div><!--SQLで撮ってきた画像に差し替え-->';
 		        
 			echo'<div id="iti">';

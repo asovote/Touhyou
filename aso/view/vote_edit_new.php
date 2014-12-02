@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<script type="text/javascript" src="js/textcheck.js" ></script>
 <script type="text/javascript" src="js/onlynum.js" ></script>
 
 <script type="text/javascript">
@@ -65,7 +66,11 @@ history.forward();
 		printf($bun2,$m_name);
 		printf($k);
 		
+		
+		
 		require('imgget.php');
+		
+		
 		
 		$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 		$vresult = $dbc -> query($vquery);
@@ -88,8 +93,6 @@ history.forward();
 <input type="submit" value="変更" name="VVV" >
 
 </form>
-
-<script type="text/javascript" src="js/textcheck.js" ></script>
 
 
 </body>

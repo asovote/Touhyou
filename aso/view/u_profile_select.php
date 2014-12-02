@@ -52,7 +52,7 @@
 			$mimg = $row['m_img'];
       echo'<div class="row">';        
       echo'<form action="#.php" method="POST">';
-      echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></div><!--SQLで撮ってきた画像に差し替え-->;
+      echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
       echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()"><input type="submit"value="投票">';
       echo'</div></div>';

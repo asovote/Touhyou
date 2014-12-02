@@ -13,7 +13,7 @@
 
 
 
-	$jid = $_SESSION['$janru']; //スレッドID
+	$jid = $_SESSION['$jid']; //スレッドID
 	
  	if(isset($_COOKIE[$id])){ 
  	print("連続投票です。"); 

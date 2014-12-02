@@ -62,6 +62,7 @@
 			$mjanru = $row['j_name'];
 			$mfree = $row['free'];
 			$mimg = $row['m_img'];
+			$_SESSION['jid'] = $row['j_id'];
       echo'<div class="row">';        
       echo'<form action="#.php" method="POST">';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></div><!--SQLで撮ってきた画像に差し替え-->';

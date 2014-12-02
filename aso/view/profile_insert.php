@@ -72,28 +72,27 @@
 			$school = $_POST["school"];
 			$free = $_POST["free"];
 			$j_id = $_POST["janru"];
-		
-					
+			
+			
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-			$query = "INSERT INTO member(m_id,name, school,janru, free,m_img) 
-					VALUE ('', '$name', '$school','$j_id', '$free',NULL)";
-				
+			$query = "INSERT INTO member(m_id,name,free,m_img,school) VALUES (null, '$name','$j_id', '$free',NULL,'$school')";
+			
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
 			$query = "select m_id from member where name='".$name."' and janru=".$j_id." ;";
-
-
-
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
+			
 			// 取得したデータを一覧表示
 			
 			
 			
 			
 		 	$mid = $row['m_id'];
+			echo $mid;
+			
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
   			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/" . $_FILES["upfile"]["name"])) {
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);

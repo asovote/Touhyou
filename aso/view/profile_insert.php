@@ -77,7 +77,7 @@
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
 			$query = "INSERT INTO member(m_id,name,free,m_img,school) VALUES (null, '$name','$j_id', '$free',NULL,'$school')";
-			
+			echo $query;
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 

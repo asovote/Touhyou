@@ -7,8 +7,8 @@
 
 <form method ="POST" action = "select_janru_manage.php">
 <input type ="submit" value="戻る">
-</form>
 
+</form>
 
 <?php
 	

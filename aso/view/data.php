@@ -38,7 +38,7 @@
 		$janru = $_GET['janru'];
 		$_SESSION['janru'] = $janru;
 		}else{
-		$janru = $_SESSION['janru'];
+		$janru = $_POST['janru'];
 		}
 		
 				

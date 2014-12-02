@@ -10,6 +10,6 @@
 		$result = mysqli_query($dbc, $query);
 		
 
-header('Location:ok.php/timer.html');
+header('Location:ok.php');
 
  ?>

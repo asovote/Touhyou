@@ -54,7 +54,7 @@
 		echo '<value='.$janru_id.'>';
 
 		echo '<form action="data.php" method="POST">';
-		echo '<div align="center"><input type="submit" style="width:100em;height:50em" name="jname" value="'.$j_name.'"></div>';
+		echo '<div align="center"><input type="submit"name="jname" value="'.$j_name.'"></div>';
 		echo '<input type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
 		echo '</form>';

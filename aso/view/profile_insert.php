@@ -83,27 +83,25 @@
 			$result = mysqli_query($dbc, $query);
 
 			$query = "select * from member where name='".$name."' and janru=".$j_id." ;";
-	
+
 
 
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 			// 取得したデータを一覧表示
-		
-			 	$mid = $row['m_id'];
-			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/" . $_FILES["upfile"]["name"])) {
-    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
-    			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
-    			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
-    			$result = $dbc -> query($query);
-  } else {
-    echo "ファイルをアップロードできません。";
-  }
-} else {
-  echo "ファイルが選択されていません。";
-}
-
+			
+			print<<<EOF
+			
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+			  ファイル：<br />
+			  <input type="file" name="upfile" size="30" /><br />
+			  <br />
+			  <input type="submit" value="アップロード" />
+			</form>
+			
+			EOF;
+			
+			
 			//データベースとの接続を切断
 			
 			require_once('session_out.php');

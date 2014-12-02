@@ -103,7 +103,7 @@
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			
-				$total = $vote_row['m_votes'];
+				$total = $vote_row['votes'];
 				printf("<br />"."得票数: %d \n", $total);
 					
 			}

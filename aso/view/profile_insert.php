@@ -81,7 +81,7 @@
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select m_id from member where name='".$name."' and janru=".$j_id." ;";
+			$query = "select m_id from member where name='".$name.";";
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 			

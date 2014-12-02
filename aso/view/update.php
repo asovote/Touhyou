@@ -11,8 +11,7 @@
 		$query ="update mj_list set votes = votes + 1 where m_id =".$_POST['mid']." and j_id =".$_POST['jid'].";";
 		$result = mysqli_query($dbc, $query);
 		
-		 echo $_SESSION['jid'];
 
-//header('Location:ok.php');
+		header('Location:ok.php');
 
  ?>

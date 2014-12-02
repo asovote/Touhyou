@@ -1,9 +1,9 @@
-Ôªø<html>
+<html>
 <head>
-<!--JavaScript‰ΩøÁî®„ÅÆÂÆ£Ë®Ä-->
+<!--JavaScriptégópÇÃêÈåæ-->
 <meta http-equiv='Content-Style-Type' content='text/javascript'>
 <meta http-equiv="Content-Type" content="text/html; charset=SHIFT-JIS">
-<title>ÂÖ®‰ª∂Ë°®Á§∫</title>
+<title>ëSåèï\é¶</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@ history.forward();
 	}
 	
 	printf('<form method="POST" action = "">');
-	printf('<input type="submit" value="Êàª„Çã" onClick="form.action=\'vote_manage.php\';return true"/>');
+	printf('<input type="submit" value="ñﬂÇÈ" onClick="form.action=\'vote_manage.php\';return true"/>');
 	printf('</form>');
 	
 	require_once('include_path.php');
@@ -40,10 +40,10 @@ history.forward();
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 	
-//	$userid = $mysqli -> real_escape_string($_post["xxx"]);  ‰Ωø„Çè„Å™„ÅÑ„ÄÇ
+//	$userid = $mysqli -> real_escape_string($_post["xxx"]);  égÇÌÇ»Ç¢ÅB
 	
 	
-//	$select_j_id = $_POST['select_j'];  //POST„ÅßÈÄÅ„Çâ„Çå„ÅüjanruIDÂèñÂæó
+//	$select_j_id = $_POST['select_j'];  //POSTÇ≈ëóÇÁÇÍÇΩjanruIDéÊìæ
 //	$is_j_id = (int)$select_j_id;
 	
 	printf($k);printf($k);printf($k);
@@ -56,13 +56,13 @@ history.forward();
 	$result = $dbc -> query($query);
 	while($row = $result -> fetch_assoc()) {
 	
-		$bun1 = "ÂèÇÂä†ËÄÖID:%d "; // ""ÂÜÖ„ÅØHTML
+		$bun1 = "éQâ¡é“ID:%d "; // ""ì‡ÇÕHTML
 		$m_id = $row['m_id'];
 		printf($bun1,$m_id);
 		printf($k);
 		
-		$bun2 = "ÂèÇÂä†ËÄÖÂêç:%s ";
-		$m_name = $row['m_name'];
+		$bun2 = "éQâ¡é“ñº:%s ";
+		$m_name = $row['name'];
 		printf($bun2,$m_name);
 		printf($k);
 		
@@ -73,8 +73,8 @@ history.forward();
 		//var_dump($vresult);
 		while($vote_row = $vresult -> fetch_assoc()) {
 			
-			$total = $vote_row['m_votes'];
-			printf("<br />"."ÂæóÁ•®Êï∞: %d \n", $total);
+			$total = $vote_row['votes'];
+			printf("<br />"."ìæï[êî: %d \n", $total);
 					
 		}
                 $vresult->close();
@@ -85,7 +85,7 @@ history.forward();
 <form method="POST" name="changeV" action = "vote_change.php">
 
 <input type="text" style="ime-mode: disabled;" istyle="4" format="6N" MODE="numeric" name="Vtext" size="10" maxlength="7" value="" onKeyup="this.value=this.value.replace(/[^0-9]+/,'')" onchange="chktext()"><br><br>
-<input type="submit" value="Â§âÊõ¥" name="VVV" disabled>
+<input type="submit" value="ïœçX" name="VVV" disabled>
 
 </form>
 

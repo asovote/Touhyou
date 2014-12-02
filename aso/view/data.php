@@ -62,8 +62,7 @@
 		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="submitChk();"><input type="hidden" name="mid" value="'.$mid.'"></form>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div></div>';
-
-		}
+		} echo $_SESSION['jid'];
 
 ?>    
 	</body>

@@ -1,5 +1,5 @@
 <?php	
-		session_start();
+		
 		$_SESSION['jid'] = $_POST['jid'];
 		//データベースにつなぐ
 		require_once('include_path.php');

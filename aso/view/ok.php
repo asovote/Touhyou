@@ -8,7 +8,8 @@
 </head>
 <body>
 <?php
-	echo $_SESSION['jid']; //スレッドID
+session_start();	
+echo $_SESSION['jid']; //スレッドID
 
 
  ?>

@@ -41,12 +41,11 @@
 		header("Location: usertop.php");
 		}
         
+?>
 
 
 
-
-
-      <div class="container">
+     <div class="container">
       
     <h1>登録者一覧</h1>
     <div class="row"><!--実際に使う際はここをループさせて表示します-->

@@ -17,7 +17,7 @@
   
       <div class="container">
       
-    <h1>登録者詳細</h1>
+    <h1 align="center">登録者詳細</h1>
     <div class="row"><!--実際に使う際はここをループさせて表示します-->        
         
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div><!--SQLで撮ってきた画像に差し替え-->

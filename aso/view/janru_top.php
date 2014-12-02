@@ -93,8 +93,8 @@
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from member where janru = '$j_id'";
 		$result = mysqli_query($dbc, $query);
-		
-	if(mysqli_num_rows($result) == 0) {
+		 $row_cnt = $result->num_rows;
+	if($row_cnt == 0) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {
@@ -125,7 +125,7 @@
 	
 		// 取得したデータを一覧表示
 		//arrayのデータ数分繰り返し、表示する
-			while($row = mysqli_fetch_array($result)) {
+			while($row == mysqli_fetch_array($result)) {
 				//セッションに格納
 				$_SESSION['member'][$row['m_id']] = array(
 				

@@ -10,7 +10,7 @@
 <?php
 session_start();	
 $jid = $_SESSION['jid']; //スレッドID
-if(isset($_COOKIE[$id])){ 
+if(isset($_COOKIE[$jid])){ 
  	print("連続投票です。"); 
 	exit; 
 	 }else{

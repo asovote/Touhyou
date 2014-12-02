@@ -11,6 +11,18 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+	<script type="text/javascript">
+	    /**
+	     * 確認ダイアログの返り値によりフォーム送信
+	    */
+	    function submitChk() {
+	        /* 確認ダイアログ表示 */
+	        var flag = confirm ( "投票してもよろしいですか？");
+	        /* send_flg が TRUEなら送信、FALSEなら送信しない */
+	        return flag;
+	    }
+	</script>
+
 	</head>
     
 	<body>
@@ -54,7 +66,7 @@
       echo'<form action="#.php" method="POST">';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
-      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()"><input type="submit"value="投票">';
+      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()"><input type="submit"value="投票" onClick="submitChk();">';
       echo'</div></div>';
       echo'</div><div class="row">';
       echo'</div></div>';

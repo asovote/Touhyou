@@ -81,7 +81,8 @@
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select m_id from member where name='".$name.";";
+			$query = "select m_id from member where name='".$name."';";
+			echo $query;
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 			

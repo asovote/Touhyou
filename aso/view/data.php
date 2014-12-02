@@ -8,7 +8,7 @@
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link type="text/css" href="./styles.css" rel="stylesheet">
+		<link type="text/css" href="css/styles.css" rel="stylesheet">
 		
 		
 	<script type="text/javascript">

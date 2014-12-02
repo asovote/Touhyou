@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<script type="text/javascript" src="js/textcheck.js" ></script>
 <script type="text/javascript" src="js/onlynum.js" ></script>
 
 <script type="text/javascript">
@@ -82,12 +81,16 @@ history.forward();
 	}
 ?>
 
+
 <form method="POST" name="changeV" action = "vote_change.php">
 
 <input type="text" style="ime-mode: disabled;" istyle="4" format="6N" MODE="numeric" name="Vtext" size="10" maxlength="7" value="" onKeyup="this.value=this.value.replace(/[^0-9]+/,'')" onchange="chktext()"><br><br>
 <input type="submit" value="変更" name="VVV" >
 
 </form>
+
+<script type="text/javascript" src="js/textcheck.js" ></script>
+
 
 </body>
 </html>

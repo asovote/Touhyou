@@ -61,7 +61,7 @@
 		echo '<a href= "data.php">'.$j_name.'</a></div>';
 		echo '<input type="hidden" name="janru" value="'.$janru_id.'">';
 		echo '</div></div></div>';
-		
+		echo $janru_id;
 		echo '</form>';
 		}
 			

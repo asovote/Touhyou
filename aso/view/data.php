@@ -57,7 +57,6 @@
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$mjanru = $row['janru'];
 			$mfree = $row['free'];
 			
 			

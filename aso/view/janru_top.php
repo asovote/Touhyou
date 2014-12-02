@@ -94,13 +94,13 @@
 		$query = "select * from member where janru = '$j_id'";
 		$result = mysqli_query($dbc, $query);
 		
-	if(mysqli_num_rows($result) == true) {
+	if(mysqli_num_rows($result) == 0) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {
 		require_once('session_out.php');
 		// 取得したデータを一覧表示
-		while($row = mysqli_fetch_array($result)){
+		while($row == mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];

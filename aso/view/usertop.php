@@ -30,9 +30,8 @@
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
 		
-		echo '<div id="kara">&nbsp</div>';
+
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
-		echo '<div id="kara">&nbsp</div>';
 
 	
 			

@@ -47,24 +47,17 @@
 		
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select j_name from janru where j_id='".$janru."'";
+		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
-		echo $query;
-		//SQL文の格納
-		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member where janru='$janru'";
-		$result = mysqli_query($dbc, $query);
-		
-		
+
 		while($row = mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$mjanru = $row['janru'];
 			$mfree = $row['free'];
-			
+			$img = $row['m_img']
 			
 	
 	
@@ -75,7 +68,7 @@
 		echo'<div id="ku">';
 		        echo'<div class="col-lg-3 col-sm-4 col-xs-6" id="gazou">';
 			        echo'<a title="Image 1" href="#">';
-			       		echo'<img class="thumbnail img-responsive" src="//placehold.it/200x120"></a>';
+			       		echo'<img class="thumbnail img-responsive" src="img/'.$img.'"></a>';
 		        echo'</div><!--SQLで撮ってきた画像に差し替え-->';
 		        
 			echo'<div id="iti">';

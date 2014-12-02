@@ -1,5 +1,4 @@
-<?php
-		
+<?php	
 		session_start();
 		$_SESSION['jid'] = $_POST['jid'];
 		//データベースにつなぐ
@@ -12,7 +11,8 @@
 		$query ="update mj_list set votes = votes + 1 where m_id =".$_POST['mid']." and j_id =".$_POST['jid'].";";
 		$result = mysqli_query($dbc, $query);
 		
+		$_SESSION['jid'];
 
-header('Location:ok.php');
+//header('Location:ok.php');
 
  ?>

@@ -47,8 +47,9 @@
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
+			$mjanru = $row['janru'];
 			$mfree = $row['free'];
-			echo '<a href="profile_select.php?mid=' .$mid.'" ><p>'.$mname.'</p></a>';
+			echo '<a href="u_profile_select.php?mid=' .$mid.'" ><p>'.$mname.'</p></a>';
 			echo '<p>名前：'.$mname.'</p>';
 			echo '<p>学校：'.$mschool.'</p>';
 			echo '<p>ジャンル：'.$mjanru.'</p>';

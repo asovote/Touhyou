@@ -92,7 +92,7 @@
 			$query = "select max(m_id) from member;";
 			$result = $mysqli->query($dbc, $query);
 			while($row = $result -> fetch_array()){			
-		 	$mid = $row['max(m_id)'];
+		 	(int)$mid = $row['max(m_id)'];
 		 	}
 
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id',NULL);";

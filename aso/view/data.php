@@ -52,9 +52,8 @@
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
-			$mschool = $row['school'];
-			$mjanru = $row['janru'];
-			$mfree = $row['free']; 
+			$mjanru = $row['j_id'];
+ 			$mimg = $row['m_img'];
 		}
 
 ?>

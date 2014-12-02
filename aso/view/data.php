@@ -49,7 +49,7 @@
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select j_name from janru where j_id='$janru'";
 		$result = mysqli_query($dbc, $query);
-		
+		echo $query;
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from member where janru='$janru'";
@@ -105,4 +105,4 @@
 
 
 </body>
-</html>html>
+</html>

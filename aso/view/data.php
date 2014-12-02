@@ -27,7 +27,25 @@
 	</head>
     
 	<body>
+<?php
+
+		//データベースにつなぐ
+		require_once('include_path.php');
+		require_once('db.php');
+		require_once('session_start.php');
+		
+		if(isset($_POST['jid'])){
+		$janru = $_POST['jid'];
+		$_SESSION['jid'] = $janru;
+		}else{
+		header("Location: usertop.php");
+		}
         
+
+
+
+
+
       <div class="container">
       
     <h1>登録者一覧</h1>

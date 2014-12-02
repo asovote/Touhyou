@@ -118,9 +118,9 @@
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from member,janru,mj_list 
-			where member.m_id = $mid and member.m_id = janru.m_id and
+			where member.m_id = $mid and member.m_id = mj_list.m_id and
 			mj_list.j_id = janru.j_id";
-		$result = $mysqli ->query($dbc, $query);
+		$result = mysqli_query($dbc, $query);
 		
 	
 		// 取得したデータを一覧表示

@@ -10,6 +10,7 @@
 <Div Align="center">
 
 	<?php
+		
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		require_once('include_path.php');
@@ -76,29 +77,38 @@
 			
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-			$query = "INSERT INTO member(m_id,name,free,m_img,school) VALUES (null, '$name', '$free',NULL,'$school');";
-			echo $query;
+			$query = "INSERT INTO member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free',NULL,'$school');";
+		//	echo $query;
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select m_id from member where name='".$name."' and janru=".$j_id." ;";
+			$query = "select m_id from member where name='".$name."';";
+		//	echo $query;
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 			
 			// 取得したデータを一覧表示
-			
-			
-			
-			
+						
 		 	$mid = $row['m_id'];
-			echo $mid;
-			
+
+			$query = "INSERT INTO mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id',NULL);";
+			$result = mysqli_query($dbc, $query);
+			$row = mysqli_fetch_array($result);
+
+
+
+	/*		echo $mid;
+			echo $_FILES["upfile"]["name"];
+			echo $_FILES["upfile"]["tmp_name"];			
+*/
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/" . $_FILES["upfile"]["name"])) {
+			
+  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);
-    			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
+   // 			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
     			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
     			$result = $dbc -> query($query);
+			header("Location: janru_top.php");
   } else {
     echo "ファイルをアップロードできません。";
   }
@@ -136,7 +146,7 @@
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);
-			
+			header("Location: janru_top.php");
 		
 		}else{
 				echo "値が見つかりません";

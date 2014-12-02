@@ -34,11 +34,11 @@
 		require_once('db.php');
 		require_once('session_start.php');
 		
-		if(isset($_GET['janru'])){
-		$janru = $_GET['janru'];
+		if(isset($_POST['janru'])){
+		$janru = $_POST['janru'];
 		$_SESSION['janru'] = $janru;
 		}else{
-		$janru = $_SESSION['janru'];
+		$janru = $_POST['janru'];
 		}
 		
 				
@@ -47,7 +47,7 @@
 		
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select j_name from janru where j_id='$janru'";
+		$query = "select j_name from janru where j_id='".$janru."'";
 		$result = mysqli_query($dbc, $query);
 		echo $query;
 		//SQL文の格納

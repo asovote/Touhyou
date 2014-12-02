@@ -1,7 +1,7 @@
 ﻿<?php
 session_start();
 if($_SESSION['ad_id'] == null){
-header('Location: http://localhost/aso/view/ad_login.php');
+header('Location: /ad_login.php');
 }
 
 ?>

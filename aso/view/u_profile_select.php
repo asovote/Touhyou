@@ -51,7 +51,6 @@
 			//該当する商品が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {
-		require_once('session_out.php');
 		// 取得したデータを一覧表示
 		while($row = mysqli_fetch_array($result)){
 			
@@ -64,10 +63,10 @@
 			$mimg = $row['m_img'];
 			$_SESSION['jid'] = $row['j_id'];
       echo'<div class="row">';        
-      echo'<form action="#.php" method="POST">';
+      echo'<form action="update.php" method="POST">';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
-      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()"><input type="submit"value="投票" onClick="submitChk();">';
+      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()"><input type="submit"value="投票" onClick="submitChk();"><input type="hidden" name="mid" value="'.$mid.'">';
       echo'</div></div>';
       echo'</div><div class="row">';
       echo'</div></div>';

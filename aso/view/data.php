@@ -38,7 +38,6 @@
 		
 		if(isset($_POST['jid'])){
 		$janru = $_POST['jid'];
-		$_SESSION['jid'] = $janru;
 		}else{
 		header("Location: usertop.php");
 		}
@@ -46,7 +45,7 @@
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
-	
+	       
 		while($row = mysqli_fetch_array($result)){
 			
 			//表示処理
@@ -54,6 +53,7 @@
 			$mname = $row['name'];
 			$jid = $row['j_id'];
  			$mimg = $row['m_img'];
+			$_SESSION['jid'] = $jid;
 		  echo'<div class="row"><!--実際に使う際はここをループさせて表示します-->';
 		  echo '<form action="update.php" method="POST">';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"></a></div><!--SQLで撮ってきた画像に差し替え-->';

@@ -104,6 +104,7 @@
     			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
     			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
     			$result = $dbc -> query($query);
+echo '<meta http-equiv="refresh" content="0;URL=janru_top.php">';
   } else {
     echo "ファイルをアップロードできません。";
   }
@@ -141,7 +142,7 @@
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);
-			
+echo '<meta http-equiv="refresh" content="0;URL=janru_top.php">';
 		
 		}else{
 				echo "値が見つかりません";

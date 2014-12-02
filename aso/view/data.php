@@ -29,15 +29,14 @@
 <p>プロフィール参照</p>
 <?php
 
-		echo $_POST['janru'];
 		//データベースにつなぐ
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
 		
-		if(isset($_POST['janru'])){
-		$janru = $_POST['janru'];
-		$_SESSION['janru'] = $janru;
+		if(isset($_POST['jid'])){
+		$janru = $_POST['jid'];
+		$_SESSION['jid'] = $janru;
 		}else{
 		
 		}

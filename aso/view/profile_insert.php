@@ -82,7 +82,7 @@
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select * from member where name='".$name."' and janru=".$j_id." ;";
+			$query = "select m_id from member where name='".$name."' and janru=".$j_id." ;";
 
 
 
@@ -91,7 +91,7 @@
 			// 取得したデータを一覧表示
 			
 			
-	
+			
 			
 		 	$mid = $row['m_id'];
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {

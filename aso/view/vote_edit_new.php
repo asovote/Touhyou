@@ -3,7 +3,7 @@
 <!--JavaScript使用の宣言-->
 <meta http-equiv='Content-Style-Type' content='text/javascript'>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>全件表示</title>
+<title>change</title>
 </head>
 <body>
 

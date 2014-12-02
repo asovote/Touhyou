@@ -58,7 +58,7 @@
 			$mschool = $row['school'];
 			$mfree = $row['free'];
 			$img = $row['m_img']
-		}
+		
 
 
 ?>

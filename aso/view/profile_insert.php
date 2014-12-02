@@ -78,12 +78,12 @@
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
 			$query = "INSERT INTO member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free',NULL,'$school');";
-			echo $query;
+		//	echo $query;
 			//SQL文実行
 			$result = mysqli_query($dbc, $query);
 
 			$query = "select m_id from member where name='".$name."';";
-			echo $query;
+		//	echo $query;
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 			
@@ -97,15 +97,15 @@
 
 
 
-			echo $mid;
+	/*		echo $mid;
 			echo $_FILES["upfile"]["name"];
 			echo $_FILES["upfile"]["tmp_name"];			
-
+*/
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
 			
   			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);
-    			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
+   // 			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
     			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
     			$result = $dbc -> query($query);
 			header("Location: janru_top.php");

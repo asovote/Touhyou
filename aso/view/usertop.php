@@ -55,13 +55,9 @@
 		echo '<value='.$janru_id.'>';
 
 		echo '<form action="data.php" method="POST">';
-		echo '<div id="janru"><a href= "data.php?janru=' .$janru_id.'" ><img src="btn041/btn041_02.png" width="280px" height="40px" /></a>';
-		echo '<div class="img_comment">';
-	
-		echo '<a href= "data.php">'.$j_name.'</a></div>';
-		echo '<input type="hidden" name="janru" value="'.$janru_id.'">';
+		echo '<input type="submit" name="jname" value="'.$jname.'">';
+		echo '<input type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
-		echo $janru_id;
 		echo '</form>';
 		}
 			

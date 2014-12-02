@@ -30,14 +30,7 @@
     <div class="container">  
     <h1 align="center">出演者詳細</h1>
 
-<?phpsession_start();	
-$jid = $_SESSION['jid']; //スレッドID
-if(isset($_COOKIE[$jid])){ 
- 	print("連続投票です。"); 
-	exit; 
-	 }else{
-	
-
+<?php
     //データベースに接続
 		require_once('include_path.php');
 		require_once('db.php');
@@ -85,7 +78,7 @@ if(isset($_COOKIE[$jid])){
 		}
 	}
 	}else if(isset($jid)){
-	} }
+	}
 ?>
 	</body>
     

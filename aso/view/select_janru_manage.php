@@ -33,7 +33,7 @@
 		printf($bun1);
 		printf($bun2,$j_id,$j_name);
 	}
-		echo '<p><a href="kanri_top.html">トップへ戻る</a>';
+		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
 
 ?>

@@ -41,6 +41,8 @@
 		header("Location: usertop.php");
 		}
         
+
+
 ?>
 
 
@@ -57,32 +59,8 @@
       <div class="col-lg-3 col-sm-4 col-xs-6">name
             <div align="center" valign="bottom">戻る　投票
             </div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>
-        </div>   <div class="row"><!--実際に使う際はここをループさせて表示します-->
-        
-
-        
-        
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div><!--SQLで撮ってきた画像に差し替え-->
-      <div class="col-lg-3 col-sm-4 col-xs-6">name
-            <div align="center" valign="bottom">戻る　投票
-            </div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>
-        </div>   <div class="row"><!--実際に使う際はここをループさせて表示します-->
-        
-
-        
-        
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div><!--SQLで撮ってきた画像に差し替え-->
-      <div class="col-lg-3 col-sm-4 col-xs-6">name
-            <div align="center" valign="bottom">戻る　投票
-            </div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>
-        </div>
-
+        </div>  
     </div>    
-        
-        
-        
-        
-        
         
 
 	</body>

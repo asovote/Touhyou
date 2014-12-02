@@ -93,7 +93,8 @@
 			
 		 	$mid = $row['m_id'];
 			echo $mid;
-			
+			echo $_FILES["upfile"]["tmp_name"];
+
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
   			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/" . $_FILES["upfile"]["name"])) {
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);

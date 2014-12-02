@@ -32,7 +32,7 @@
 	
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member where m_id = '$mid'";
+		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and member.m_id=".$mid.";";
 		$result = mysqli_query($dbc, $query);
 		
 	if(mysqli_num_rows($result) == 0) {
@@ -47,7 +47,7 @@
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$mjanru = $row['janru'];
+			$mjanru = $row['j_name'];
 			$mfree = $row['free'];
 			echo '<a href="u_profile_select.php?mid=' .$mid.'" ><p>'.$mname.'</p></a>';
 			echo '<p>名前：'.$mname.'</p>';

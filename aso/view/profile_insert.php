@@ -97,7 +97,7 @@
 			echo $_FILES["upfile"]["tmp_name"];			
 
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "/usr/share/nginx/html/Touhyou/aso/view/img/". $_FILES["upfile"]["name"])) {
+  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);
     			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
     			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";

@@ -85,7 +85,7 @@
 			
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-			$query = "insert into member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free','"$_FILES["upfile"]["name"]"','$school');";
+			$query = "insert into member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free','" .$_FILES["upfile"]["name"]. "','$school');";
 			$result = mysqli_query($dbc, $query);
 
 			//mj_listに格納するm_idを取得

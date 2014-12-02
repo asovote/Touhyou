@@ -1,4 +1,6 @@
 <?php
+		
+		session_start();
 		//データベースにつなぐ
 		require_once('include_path.php');
 		require_once('db.php');

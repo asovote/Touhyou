@@ -10,7 +10,6 @@
 <?php
         session_start();
         $jid = $_SESSION['$jid']; //スレッドID
-	
 	echo $jid;
 
  ?>

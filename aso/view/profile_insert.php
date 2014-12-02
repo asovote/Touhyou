@@ -27,7 +27,7 @@
 			$id = 3;
 		}else if(isset($_POST['fase2'])){
 			$id = 4;
-		}else{
+		}else {
 			$id = 0;
 		}
 		
@@ -48,17 +48,13 @@
 			while($row = mysqli_fetch_array($result)) {
 				$janru_id = $row['j_id'];
 				$j_name = $row['j_name'];
-				echo '<option value='.$janru_id.'>'.$j_name.'</option>';		
+				echo '<option value='.$janru_id.'>'.$j_name.'</option>';
 			}
 			
 			echo '</select></p>';
 		
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5"></textarea>';
-			
-			
 			echo '<p>写真：<input type="file" name="upfile"  size="30" /></p>';
-			
-
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';
@@ -75,23 +71,30 @@
 			$j_id = $_POST["janru"];
 			
 			
+			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
+  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
+    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
+			header("Location: janru_top.php");
+			} else {
+			echo "ファイルをアップロードできません。";
+			}
+			} else {
+			echo "ファイルが選択されていません。";
+			}
+			
+			
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-			$query = "INSERT INTO member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free',NULL,'$school');";
-		//	echo $query;
-			//SQL文実行
+			$query = "insert into member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free','"$_FILES["upfile"]["name"]"','$school');";
 			$result = mysqli_query($dbc, $query);
 
-			$query = "select m_id from member where name='".$name."';";
-		//	echo $query;
+			//mj_listに格納するm_idを取得
+			$query = "select MAX(m_id) from member;";
 			$result = mysqli_query($dbc, $query);
-			$row = mysqli_fetch_array($result);
-			
-			// 取得したデータを一覧表示
-						
+			$row = mysqli_fetch_array($result);			
 		 	$mid = $row['m_id'];
 
-			$query = "INSERT INTO mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id',NULL);";
+			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id',NULL);";
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 
@@ -101,20 +104,6 @@
 			echo $_FILES["upfile"]["name"];
 			echo $_FILES["upfile"]["tmp_name"];			
 */
-			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-			
-  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
-    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
-   // 			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
-    			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
-    			$result = $dbc -> query($query);
-			header("Location: janru_top.php");
-  } else {
-    echo "ファイルをアップロードできません。";
-  }
-} else {
-  echo "ファイルが選択されていません。";
-}
 
 			//データベースとの接続を切断
 			

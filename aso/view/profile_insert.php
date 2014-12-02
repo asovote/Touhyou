@@ -88,11 +88,15 @@
 			$row = mysqli_fetch_array($result);
 			
 			// 取得したデータを一覧表示
-			
-			
-			
-			
+						
 		 	$mid = $row['m_id'];
+
+			$query = "INSERT INTO mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id',NULL);";
+			$result = mysqli_query($dbc, $query);
+			$row = mysqli_fetch_array($result);
+
+
+
 			echo $mid;
 			echo $_FILES["upfile"]["name"];
 			echo $_FILES["upfile"]["tmp_name"];			
@@ -104,7 +108,7 @@
     			echo $_FILES["upfile"]["name"] . "をアップロードしました。";
     			$query = "update member set m_img = '" . $_FILES["upfile"]["name"] . "' where m_id = ".$mid.";";
     			$result = $dbc -> query($query);
-echo '<meta http-equiv="refresh" content="0;URL=janru_top.php">';
+			header("Location: janru_top.php");
   } else {
     echo "ファイルをアップロードできません。";
   }
@@ -142,7 +146,7 @@ echo '<meta http-equiv="refresh" content="0;URL=janru_top.php">';
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);
-echo '<meta http-equiv="refresh" content="0;URL=janru_top.php">';
+			header("Location: janru_top.php");
 		
 		}else{
 				echo "値が見つかりません";

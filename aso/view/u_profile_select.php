@@ -58,7 +58,7 @@
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$jid = $row['j_name'];
+			$jid = $row['j_id'];
 			$mfree = $row['free'];
 			$mimg = $row['m_img'];
 			$_SESSION['jid'] = $row['j_id'];

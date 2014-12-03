@@ -134,7 +134,6 @@
 				'mid' => $row['m_id'],
 				'mname' => $row['name'],
 				'mschool' => $row['school'],
-				'mjanru' => $row['janru'],
 				'jname' => $row['j_name'],
 				'mfree' => $row['free']
 				);

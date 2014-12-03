@@ -19,7 +19,7 @@
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 			$query = "select max(m_id) from member";
-			$result = $dbc->query($dbc, $query);
+			$result = $dbc -> query($query);
 			while($row = $result -> fetch_array()){			
 		 	echo $row['max(m_id)'];
 		 	}

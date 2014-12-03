@@ -35,7 +35,6 @@ document.write(data);</SCRIPT>'
 		require_once('db.php');
 		require_once('session_start.php');
 		
-		session_start();
 		$j_id = $_SESSION['select_j'];
 		//DB("1")が止まっている状態
 		$jtime = 1;

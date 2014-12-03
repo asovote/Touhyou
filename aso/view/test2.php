@@ -33,7 +33,6 @@ document.write(data);</SCRIPT>'
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
-		session_start();
 		$j_id = $_SESSION['select_j'];
 		//DB("0")が動いている状態
 		$jtime = 0;

@@ -29,15 +29,17 @@
 	<body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 <?php	
+		require_once('include_path.php');
+		require_once('db.php');
 		require_once('session_start.php');
 
 
 $jid = $_SESSION['jid']; //スレッドID
 
-if(isset($_COOKIE[$jid])){ 
+/*if(isset($_COOKIE[$jid])){ 
  	
 	header("Location: ok.php");
-}
+}*/
 ?>
 <div class="container">
     <h1 align=center>出演者一覧</h1>
@@ -49,8 +51,6 @@ if(isset($_COOKIE[$jid])){
 
 
 		//データベースにつなぐ
-		require_once('include_path.php');
-		require_once('db.php');
 		
 		if(isset($_POST['jid'])){
 		$janru = $_POST['jid'];

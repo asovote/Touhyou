@@ -14,6 +14,7 @@
 
 
   <?php
+  		session_start();
 		if($_SESSION['ad_id'] == null){
 		header('Location: /ad_login.php');
 		}
@@ -77,11 +78,6 @@
 		}echo '<div class="box2">';
 		
 		
-		//データベースに接続
-		require_once('include_path.php');
-		require_once('db.php');
-		require_once('session_start.php');
-	
 		if(isset($_GET['jid'])){
 		$j_id = $_GET['jid'];
 		}else if(isset($_GET['mid'])){

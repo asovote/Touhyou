@@ -38,7 +38,7 @@ $jid = $_POST['jid']; //スレッドID
 
 if(isset($_COOKIE[$jid])){ 
  	
-	header("Location: ok.php");
+	header("Location: usertop.php");
 }
 ?>
 <div class="container">

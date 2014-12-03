@@ -37,7 +37,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 	    		$row = mysql_fetch_assoc($result);
 	    		$_SESSION["ad_id"] = $row["ad_id"];
 	    		$_SESSION["pw"] = $row["pw"];
-				print($row['ad_id'].":".$row['pw']);
+				print($_SESSION['ad_id'].":".$_SESSION['pw']);
 	 	 	//header('Location: ./kanri_top.php');
 		
 		

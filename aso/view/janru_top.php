@@ -19,6 +19,8 @@
 		header('Location: /ad_login.php');
 		}
 
+		error_reporting(0);
+
   
 		//データベースに接続
 		require_once('include_path.php');

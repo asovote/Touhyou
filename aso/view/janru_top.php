@@ -117,7 +117,7 @@
 	}
 	}else if(isset($mid)){
 	
-		
+	
 	
 		//SQL文の格納
 		$query = "select * from member,janru,mj_list 
@@ -125,10 +125,7 @@
 			mj_list.j_id = janru.j_id";
 		$result = $dbc -> query($query);
 		
-	
-		// 取得したデータを一覧表示
-		//arrayのデータ数分繰り返し、表示する
-			while($row = $dbc -> fetch_assoc()) {
+			while($row = $result -> fetch_assoc()) {
 				//セッションに格納
 				$_SESSION['member'][$row['m_id']] = array(
 				

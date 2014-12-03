@@ -65,6 +65,8 @@
 			echo '<input type="reset" value="リセット" />';
 			
 			echo '</form>';
+			
+			
 		
 		}else if($id == 3){
 		
@@ -126,6 +128,8 @@
 			echo '<input type="reset" value="リセット" />';
 			
 			echo '</form>';
+			
+			$session = $_SESSION['ad_id'];
 		
 		}else if($id == 4){
 			//登録ボタンが押されたとき

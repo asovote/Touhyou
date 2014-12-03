@@ -18,7 +18,6 @@ header('Location: /ad_login.php');
 		//データベースに接続
 		require_once('include_path.php');
 		require_once('db.php');
-		require_once('session_start.php');
 	
 		echo '<p>参加者情報変更画面</p>';
 		

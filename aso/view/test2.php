@@ -39,13 +39,13 @@ document.write(data);</SCRIPT>'
 		//$jtime = $_POST['stime'];
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "update janru set jtime=".$jtime." where j_id = 15";
+		$query = "update janru set jtime=".$jtime." where j_id= 15";
 		$result = mysqli_query($dbc, $query);
 		if($jtime=0){
-		header('Location: /vote_manage.php');
 
 			}
-		
+			header('Location: /vote_manage.php');
+	
 		
 	//	echo "データベース更新";
 	?>

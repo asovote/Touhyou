@@ -26,7 +26,7 @@
 
 
 			$imgget = "select * from member where m_id = 50"; 
-			$result = $dbc -> query($query);
+			$result = $dbc -> query($imgget);
 			while($row = $result -> fetch_assoc()) {
 			require('imgget.php');
 			}

@@ -38,7 +38,7 @@
 		
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from janru where jtime = 0;";
+		$query = "select * from janru where jtime = '0'";
 		$result = mysqli_query($dbc, $query);
 		
 		

@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>プロフィール編集画面</title>
 <link type="text/css" rel="stylesheet" href="./main.css">
+<?php require_once($classDir . 'session_start.php') ?>
 </head>
 	
 <body>
@@ -15,7 +16,7 @@
 
 
   <?php
-  		session_start();
+  	//	session_start();
 		if($_SESSION['ad_id'] == null){
 		header('Location: /ad_login.php');
 		}

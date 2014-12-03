@@ -106,7 +106,7 @@
 			$result = mysqli_query($dbc, $query);
 			$row = mysqli_fetch_array($result);
 
-
+		
 
 	/*		echo $mid;
 			echo $_FILES["upfile"]["name"];

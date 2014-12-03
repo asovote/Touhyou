@@ -43,7 +43,8 @@ document.write(data);</SCRIPT>'
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "update janru set jtime=".$jtime." where j_id= ".$j_id."";
 		$result = mysqli_query($dbc, $query);
-		
+		header('Location: /vote_manage.php');
+
 	//	echo "データベース更新";
 	?>
 

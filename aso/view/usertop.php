@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -18,7 +18,7 @@
 
 </head>
 
-<body style="background-image:url(背景2.png);background-attachment:fixed; class="img">
+<body style="background-image":url(背景2.png);background-attachment:fixed; class="img">
 
 
 
@@ -38,7 +38,7 @@
 		
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from janru where jtime = '0'";
+		$query = "select * from janru ;";
 		$result = mysqli_query($dbc, $query);
 		
 		
@@ -52,10 +52,9 @@
 				$janru_id = $row['j_id'];
 				$j_name = $row['j_name'];
 		echo '<value='.$janru_id.'>';
-
 		echo '<form action="data.php" method="POST">';
-		echo '<div align="center"><input type="submit"name="jname" value="'.$j_name.'"></div>';
-		echo '<input type="hidden" name="jid" value="'.$janru_id.'">';
+		echo '<div align="center"><input type="submit" name="jname" value="'.$j_name.'"></div>';
+		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
 		echo '</form>';
 		}

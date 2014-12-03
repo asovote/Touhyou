@@ -34,12 +34,12 @@
 		require_once('session_start.php');
 
 
-$jid = $_SESSION['jid']; //スレッドID
+$jid = $_POST['jid']; //スレッドID
 
-/*if(isset($_COOKIE[$jid])){ 
+if(isset($_COOKIE[$jid])){ 
  	
 	header("Location: ok.php");
-}*/
+}
 ?>
 <div class="container">
     <h1 align=center>出演者一覧</h1>

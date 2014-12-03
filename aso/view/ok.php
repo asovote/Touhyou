@@ -8,16 +8,17 @@
 </head>
 <body>
 <?php
+session_start();	
+$jid = $_SESSION['jid']; //スレッドID
 
-        $jid = $_SESSION['$janru']; //スレッドID
-	
- 	if(isset($_COOKIE[$id])){ 
+if(isset($_COOKIE[$jid])){ 
  	print("連続投票です。"); 
 	exit; 
 	 }else{
 	echo '投票ありがとうございました'; 
-	setcookie($jid, "vete_flg", time()+$3600*24*7); 
+	setcookie($jid,"vote_flag",time()+3600*24*7,"/"); 
 	 } 
+
  ?>
 </body>
 </html>

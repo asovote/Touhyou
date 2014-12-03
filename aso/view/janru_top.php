@@ -14,7 +14,11 @@
 
 
   <?php
-  
+  		session_start();
+		if($_SESSION['ad_id'] == null){
+		header('Location: /ad_login.php');
+		}
+
   
 		//データベースに接続
 		require_once('include_path.php');
@@ -91,16 +95,16 @@
 	
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member where janru = '$j_id'";
+		$query = "select * from member where janru = $j_id";
 		$result = mysqli_query($dbc, $query);
-		
-	if(mysqli_num_rows($result) == 0) {
+		$row_cnt = mysqli_num_rows($result);
+	if($row_cnt == 0) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {
 		require_once('session_out.php');
 		// 取得したデータを一覧表示
-		while($row = mysqli_fetch_array($result)){
+		while($row == mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];
@@ -117,14 +121,15 @@
 	
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member,janru 
-			where member.m_id = '$mid' and member.janru = janru.j_id ";
+		$query = "select * from member,janru,mj_list 
+			where member.m_id = $mid and member.m_id = mj_list.m_id and
+			mj_list.j_id = janru.j_id";
 		$result = mysqli_query($dbc, $query);
 		
 	
 		// 取得したデータを一覧表示
 		//arrayのデータ数分繰り返し、表示する
-			while($row = mysqli_fetch_array($result)) {
+			while($row == mysqli_fetch_array($result)) {
 				//セッションに格納
 				$_SESSION['member'][$row['m_id']] = array(
 				

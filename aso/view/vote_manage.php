@@ -7,11 +7,15 @@
 
 <form method ="POST" action = "select_janru_manage.php">
 <input type ="submit" value="戻る">
+
 </form>
 
-
 <?php
-	
+	session_start();
+if($_SESSION['ad_id'] == null){
+header('Location: /ad_login.php');
+}
+
 	session_start();
 	$k = "<br/>";
 //	$get_janru = $_POST['select_j'];  //POSTで送られたjanruID取得
@@ -77,7 +81,7 @@
 			printf($k);
 			
 			$bun2 = "参加者名:%s ";
-			$m_name = $row['m_name'];
+			$m_name = $row['name'];
 			printf($bun2,$m_name);
 			printf($k);
 
@@ -103,7 +107,7 @@
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			
-				$total = $vote_row['m_votes'];
+				$total = $vote_row['votes'];
 				printf("<br />"."得票数: %d \n", $total);
 					
 			}

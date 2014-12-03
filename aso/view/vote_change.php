@@ -27,7 +27,7 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 (int)$votes = $_POST['Vtext'];
 
-$changeV = "update mj_list set m_votes = " . $votes . " where m_id = " . $m_id ;
+$changeV = "update mj_list set votes = " . $votes . " where m_id = " . $m_id ;
 
 
 printf($_POST['Vtext']);

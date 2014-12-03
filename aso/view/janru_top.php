@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>プロフィール編集画面</title>
 <link type="text/css" rel="stylesheet" href="./main.css">
-<?php require_once($classDir . 'session_start.php') ?>
+<?php session_start() ?>
 </head>
 	
 <body>

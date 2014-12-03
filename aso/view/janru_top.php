@@ -104,7 +104,7 @@
 	} else {
 		// 取得したデータを一覧表示
 		$result = $dbc -> query($query);
-		while($row = $result -> fetch_aassoc()){
+		while($row = $result -> fetch_assoc()){
 			
 			//表示処理
 			$mid = $row['m_id'];

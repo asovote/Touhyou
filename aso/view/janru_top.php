@@ -5,18 +5,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>プロフィール編集画面</title>
 <link type="text/css" rel="stylesheet" href="./main.css">
-<?php session_start() ?>
 </head>
 	
 <body>
 
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
-<?php print($_SESSION['ad_id']) ?>
 
 
 
   <?php
-  	//	session_start();
+  		session_start();
 		if($_SESSION['ad_id'] == null){
 		header('Location: /ad_login.php');
 		}
@@ -92,16 +90,13 @@
 	
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member,janru,mj_list 
-			where mj_list.j_id = $j_id and member.m_id = mj_list.m_id and
-			mj_list.j_id = janru.j_id";
+		$query = "select * from member where janru = $j_id";
 		$result = mysqli_query($dbc, $query);
 		$row_cnt = mysqli_num_rows($result);
 	if($row_cnt == 0) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {
-		require_once('session_out.php');
 		// 取得したデータを一覧表示
 		while($row == mysqli_fetch_array($result)){
 			

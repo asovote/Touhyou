@@ -115,7 +115,6 @@
 
 			//データベースとの接続を切断
 			
-			require_once('session_out.php');
 		
 		
 		}else if($id == 2){

@@ -5,9 +5,22 @@
 </head>
 <body>
 
+<table>
+<tr><th>
 <form method ="POST" action = "select_janru_manage.php">
 <input type ="submit" value="戻る">
-
+<<<<<<< HEAD
+</form></th><th>
+<form method ="POST" action = "vote_manage.php">
+<input type="hidden" name="db_st" value="0">
+<input type="submit" value="スタート">
+</form></th><th>
+<form method ="POST" action = "vote_manage.php">
+<input type="hidden" name="db_st" value="1">
+<input type="submit" value="ストップ">
+</form></th>
+</tr>
+</table>
 </form>
 
 <?php

@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 #kara	{
@@ -127,7 +127,7 @@ height: auto;
     margin:0;
 /*    text-shadow:3px 3px 3px #000;*/
 }
-input#subbtn {
+#subbtn {
     
     margin-top:20px;
     margin-left: auto;

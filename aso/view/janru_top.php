@@ -23,6 +23,10 @@
 		//データベースに接続
 		require_once('include_path.php');
 		require_once('db.php');
+
+		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+
+		
 	echo '<div id="tag">';
 		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
@@ -89,7 +93,6 @@
 	
 	
 		//SQL文の格納
-		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from member,janru,mj_list where member.m_id = mj_list.m_id and janru.j_id = mj_list.j_id and janru.j_id =" .$j_id. ";
 		$result = $dbc -> query($query);
 		while($row = $result -> fetch_assoc()){
@@ -117,11 +120,10 @@
 		
 	
 		//SQL文の格納
-		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from member,janru,mj_list 
 			where member.m_id = $mid and member.m_id = mj_list.m_id and
 			mj_list.j_id = janru.j_id";
-		$result = mysqli_query($dbc, $query);
+		$result = $dbc -> query($query);
 		
 	
 		// 取得したデータを一覧表示

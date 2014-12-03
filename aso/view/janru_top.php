@@ -147,6 +147,7 @@
 			$imgget = "select * from member where m_id =" . $mid; 
 			$result = $dbc -> query($query);
 			while($row = $result -> fetch_assoc()) {
+			
 			require('imgget.php');
 			}
 			echo '</div>';

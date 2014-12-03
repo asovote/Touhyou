@@ -1,9 +1,9 @@
-<HTML>
+﻿<HTML>
 <HEAD>
 <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
 <TITLE>次のページに情報を渡す方法</TITLE>
 <SCRIPT TYPE="text/javascript">//データベースを止める処理"１"
-function DataReceive(){
+/*function DataReceive(){
 		//?以降の文字を取得する
 	get_search = document.location.search;
 	get_search = get_search.substring(1,get_search.length);
@@ -18,7 +18,7 @@ function DataReceive(){
 	
 
 }
-DataReceive();
+DataReceive();*/
 </SCRIPT>
 </HEAD>
 <BODY>
@@ -43,7 +43,7 @@ document.write(data);</SCRIPT>'
 		$query = "update janru set jtime=".$jtime." where j_id = 5";
 		$result = mysqli_query($dbc, $query);
 		if($jtime=0){
-			
+		header('Location: /vote_manage.php');
 			}
 		
 		

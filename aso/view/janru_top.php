@@ -142,7 +142,7 @@
 			 $mfree =$member['mfree'];
 			
 			echo '<div id = "set">';
-			echo '<div id="photo">
+			echo '<div id="photo">';
 			require('imgget.php');
 			echo '</div>';
 			echo '<div id="ww">';

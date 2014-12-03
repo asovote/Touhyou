@@ -91,8 +91,8 @@
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from member where janru = $j_id";
-		$result = $dbc -> query($query);
-		$row = $result -> fetch_array();
+		$result = $dbc -> query($dbc, $query);
+		$row_cnt = mysqli_num_rows($result);
 	if($row_cnt == 0) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';

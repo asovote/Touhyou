@@ -10,10 +10,12 @@
 <Div Align="center">
 
 	<?php
-session_start();
-if($_SESSION['ad_id'] == null){
-header('Location: /ad_login.php');
-}
+
+
+		session_start();
+		if($_SESSION['ad_id'] == null){
+		header('Location: /ad_login.php');
+		}
 
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
@@ -63,6 +65,8 @@ header('Location: /ad_login.php');
 			echo '<input type="reset" value="リセット" />';
 			
 			echo '</form>';
+			
+			
 		
 		}else if($id == 3){
 		
@@ -93,8 +97,8 @@ header('Location: /ad_login.php');
 
 			//mj_listに格納するm_idを取得
 			$query = "select max(m_id) from member;";
-			$result = $mysqli->query($dbc, $query);
-			while($row = $result -> fetch_array()){			
+			$result = $dbc -> query($query);
+			while($row = $result -> fetch_array()){
 		 	(int)$mid = $row['max(m_id)'];
 		 	}
 
@@ -111,7 +115,6 @@ header('Location: /ad_login.php');
 
 			//データベースとの接続を切断
 			
-			require_once('session_out.php');
 		
 		
 		}else if($id == 2){
@@ -124,6 +127,8 @@ header('Location: /ad_login.php');
 			echo '<input type="reset" value="リセット" />';
 			
 			echo '</form>';
+			
+			$session = $_SESSION['ad_id'];
 		
 		}else if($id == 4){
 			//登録ボタンが押されたとき

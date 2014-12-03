@@ -5,16 +5,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>プロフィール編集画面</title>
 <link type="text/css" rel="stylesheet" href="./main.css">
+<?php session_start() ?>
 </head>
 	
 <body>
 
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
+<?php print($_SESSION['ad_id']) ?>
 
 
 
   <?php
-  		session_start();
+  	//	session_start();
 		if($_SESSION['ad_id'] == null){
 		header('Location: /ad_login.php');
 		}

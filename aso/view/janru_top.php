@@ -144,7 +144,7 @@
 			echo '<div id = "set">';
 			echo '<div id="photo">
 			require('imgget.php');
-			</div>';
+			echo '</div>';
 			echo '<div id="ww">';
 			echo '<h1><span><p2>名前</p2></span></h1><p3>'.$mname.'</p3><br>';
 			echo '<h1><span><p2>学校</p2></span></h1><p3>'.$mschool.'</p3><br>';

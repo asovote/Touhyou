@@ -96,9 +96,9 @@
 		$query = "select * from member,janru,mj_list where member.m_id = mj_list.m_id and janru.j_id = mj_list.j_id and janru.j_id =" .$j_id. ";
 		$result = $dbc -> query($query);
 		while($row = $result -> fetch_assoc()){
-		$row['m_id'];
+		$getid = $row['m_id'];
 		}
-	if($row['m_id'] == null) {
+	if($getid == null) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {

@@ -10,10 +10,6 @@
 <Div Align="center">
 
 	<?php
-session_start();
-if($_SESSION['ad_id'] == null){
-header('Location: /ad_login.php');
-}
 
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
@@ -23,7 +19,7 @@ header('Location: /ad_login.php');
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 			$query = "select max(m_id) from member;";
-			$result = $mysqli->query($dbc, $query);
+			$result = $dbc->query($dbc, $query);
 			while($row = $result -> fetch_array()){			
 		 	echo $row['max(m_id)'];
 		 	}

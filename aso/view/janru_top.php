@@ -10,6 +10,7 @@
 <body>
 
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
+<?php print($_session['ad_id']) ?>
 
 
 

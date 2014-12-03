@@ -10,6 +10,11 @@
 
 
 	<?php
+		session_start();
+if($_SESSION['ad_id'] == null){
+header('Location: /ad_login.php');
+}
+
 		//データベースに接続
 		require_once('include_path.php');
 		require_once('db.php');

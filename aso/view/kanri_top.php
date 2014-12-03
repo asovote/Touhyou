@@ -33,6 +33,9 @@ header('Location: /ad_login.php');
     <p><a href="janru_top.php">
       <input type="button" name="button4" id="button4" style="color:blue;" value="出演者一覧">
     </p>
+    <p><a href="sessionout.php">
+      <input type="button" name="button4" id="button4" style="color:blue;" value="ログアウト">
+    </p>
     
   </center>
 </div>

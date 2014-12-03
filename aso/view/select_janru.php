@@ -10,6 +10,10 @@
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 
 <?php
+		session_start();
+if($_SESSION['ad_id'] == null){
+header('Location: /ad_login.php');
+}
 
 		echo '<div id="link"><p><a href="kanri_top.php">トップへ戻る</a></p></div>';
 		echo '<div id="top"><p1>投票結果画面</p1></div>';

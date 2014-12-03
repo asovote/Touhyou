@@ -18,11 +18,19 @@
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
-			$query = "select max(m_id) from member";
-			$result = $dbc -> query($query);
-			while($row = $result -> fetch_array()){			
-		 	echo $row['max(m_id)'];
-		 	}
+//			$query = "select max(m_id) from member";
+//			$result = $dbc -> query($query);
+//			while($row = $result -> fetch_array()){			
+//		 	echo $row['max(m_id)'];
+//		 	}
+
+
+			$imgget = "select * from member where m_id = 50"; 
+			$result = $dbc -> query($imgget);
+			while($row = $result -> fetch_assoc()) {
+			require('imgget.php');
+			}
+
 
 	?>
 	</div>

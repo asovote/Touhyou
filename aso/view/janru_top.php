@@ -143,7 +143,13 @@
 			
 			echo '<div id = "set">';
 			echo '<div id="photo">';
+
+			$imgget = "select * from member where m_id =" . $mid; 
+			$result = $dbc -> query($imgget);
+			while($row = $result -> fetch_assoc()) {
+			
 			require('imgget.php');
+			}
 			echo '</div>';
 			echo '<div id="ww">';
 			echo '<h1><span><p2>名前</p2></span></h1><p3>'.$mname.'</p3><br>';

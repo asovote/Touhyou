@@ -128,7 +128,7 @@
 	
 		// 取得したデータを一覧表示
 		//arrayのデータ数分繰り返し、表示する
-			while($row == mysqli_fetch_array($result)) {
+			while($row = $dbc -> fetch_assoc()) {
 				//セッションに格納
 				$_SESSION['member'][$row['m_id']] = array(
 				

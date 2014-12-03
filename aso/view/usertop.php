@@ -53,7 +53,7 @@
 				$j_name = $row['j_name'];
 		echo '<value='.$janru_id.'>';
 		echo '<form action="data.php" method="POST">';
-		echo '<div align="center"><input type="submit" name="jname" value="'.$j_name.'"></div>';
+		echo '<div id="subbtn" align="center"><input type="submit" name="jname" value="'.$j_name.'"></div>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
 		echo '</form>';

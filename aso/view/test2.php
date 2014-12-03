@@ -33,13 +33,13 @@ document.write(data);</SCRIPT>'
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
-		
+		$j_id = $_SESSION['select_j'];
 		//DB("0")が動いている状態
 		$jtime = 0;
 		//$jtime = $_POST['stime'];
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "update janru set jtime=".$jtime." where j_id= 15";
+		$query = "update janru set jtime=".$jtime." where j_id= ".$j_id."";
 		$result = mysqli_query($dbc, $query);
 		if($jtime=0){
 

@@ -10,10 +10,12 @@
 <Div Align="center">
 
 	<?php
-session_start();
-if($_SESSION['ad_id'] == null){
-header('Location: /ad_login.php');
-}
+
+
+		session_start();
+		if($_SESSION['ad_id'] == null){
+		header('Location: /ad_login.php');
+		}
 
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');

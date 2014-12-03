@@ -23,7 +23,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
     exit('文字コードを指定できませんでした。');
   }
 
-  $result = mysql_query("SELECT * FROM admin WHERE ad_id = '$ad_id' and pw = '$pw'" , $con);
+  $result = mysql_query("SELECT * FROM admin WHERE ad_id = $ad_id and pw = $pw" , $con);
 
  
 	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
@@ -33,7 +33,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 	
 
 		}else if (mysql_num_rows($result) == 1){
-			echo "alert(\"eeeee\")";
+			
 	    		$row = mysql_fetch_assoc($result);
 	    		$_SESSION['ad_id'] = $row['ad_id'];
 	    		$_SESSION['pw'] = $row['pw'];

@@ -90,21 +90,24 @@
 	
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from member where janru = $j_id";
-		$result = $dbc -> query($dbc, $query);
-		$row_cnt = mysqli_num_rows($result);
-	if($row_cnt == 0) {
+		$query = "select * from member,janru,mj_list where member.m_id = mj_list.m_id and janru.j_id = mj_list.j_id and janru.j_id =" .$j_id. ";
+		$result = $dbc -> query($query);
+		while($row = $result -> fetch_assoc()){
+		$row['m_id'];
+		}
+	if($row['m_id'] == null) {
 			//該当する人物が見つからない場合
 			echo '<p>該当する人物が見つかりませんでした。</p>';
 	} else {
 		// 取得したデータを一覧表示
-		while($row == mysqli_fetch_array($result)){
+		$result = $dbc -> query($query);
+		while($row = $result -> fetch_aassoc()){
 			
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$mjanru = $row['janru'];
+			$mimg = $row['m_img'];
 			$mfree = $row['free'];
 			echo '<a href="janru_top.php?mid=' .$mid.'" ><p>'.$mname.'</p></a>';
 		}

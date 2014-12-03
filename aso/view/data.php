@@ -40,7 +40,7 @@ $jid = $_SESSION['jid']; //スレッドID
 
 if(isset($_COOKIE[$jid])){ 
  	print("連続投票です。"); 
-	<meta http-equiv="refresh" content="3; URL=../usertop.php">
+	echo '<meta http-equiv="refresh" content="3; URL=../usertop.php">';
 
 }else{
 

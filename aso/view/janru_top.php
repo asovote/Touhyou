@@ -19,6 +19,8 @@
 		header('Location: /ad_login.php');
 		}
 
+		error_reporting(0);
+
   
 		//データベースに接続
 		require_once('include_path.php');
@@ -90,7 +92,7 @@
 		
 		
 	if(isset($j_id)){
-	
+	unset($_SESSION['member']);
 	
 		//SQL文の格納
 		$query = "select * from member,janru,mj_list where member.m_id = mj_list.m_id and janru.j_id = mj_list.j_id and janru.j_id =" .$j_id. "";
@@ -118,27 +120,20 @@
 	}else if(isset($mid)){
 	
 	
-	
-		//SQL文の格納
-		$query = "select * from member,janru,mj_list 
-			where member.m_id = $mid and member.m_id = mj_list.m_id and
-			mj_list.j_id = janru.j_id";
+		//$mid=一覧から選択した人のm_id
+		$query = "select * from member,janru,mj_list where member.m_id = $mid and member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id";
 		$result = $dbc -> query($query);
 		
 			while($row = $result -> fetch_assoc()) {
-				//セッションに格納
 				$_SESSION['member'][$row['m_id']] = array(
-				
-				
-				//表示処理
 				'mid' => $row['m_id'],
 				'mname' => $row['name'],
 				'mschool' => $row['school'],
 				'jname' => $row['j_name'],
-				'mfree' => $row['free']
+				'mfree' => $row['free'],
 				);
 			}
-
+			
 			//SESSIONでメンバーを作成
 			foreach ($_SESSION['member'] as $m_id => $member) {
 			 $mname = $member['mname'];
@@ -147,41 +142,29 @@
 			 $mfree =$member['mfree'];
 			
 			echo '<div id = "set">';
-				echo '<div id="photo">
-						<img src="人アイコン『おばあちゃん』.png" width="300" height="300"  alt=""/>
-					</div>';
-				
-					echo '<div id="ww">';
-					echo '<h1><span><p2>名前</p2></span></h1><p3>'.$mname.'</p3><br>';
-					echo '<h1><span><p2>学校</p2></span></h1><p3>'.$mschool.'</p3><br>';
-					echo '<h1><span><p2>ジャンル</p2></span></h1><p3>'.$jname.'</p3><br>';
-					echo '<h1><span><p2>フリーワード</p2></span></h1><p3>'.$mfree.'</p3><br>';
-					echo '</div>';
-					
-					echo '<div id="space">&nbsp;</div>';
+			echo '<div id="photo">
+			require('imgget.php');
+			</div>';
+			echo '<div id="ww">';
+			echo '<h1><span><p2>名前</p2></span></h1><p3>'.$mname.'</p3><br>';
+			echo '<h1><span><p2>学校</p2></span></h1><p3>'.$mschool.'</p3><br>';
+			echo '<h1><span><p2>ジャンル</p2></span></h1><p3>'.$jname.'</p3><br>';
+			echo '<h1><span><p2>フリーワード</p2></span></h1><p3>'.$mfree.'</p3><br>';
+			echo '</div>';		
+			echo '<div id="space">&nbsp;</div>';
 					
 		echo '<div id="tag2">';
 		echo '<a href="profile_update.php">プロフィールの変更</a>';
 		echo '</div>';
-		
 		echo '&nbsp&nbsp';
-		
 		echo '<div id="tag2">';		
 		echo '<a href="profile_delete.php">プロフィールの削除</a>';
+		echo '</div>';			
 		echo '</div>';
-					
-			echo '</div>';
 			
-			}
-			
-
+		}
 	}
-								
-
-	?>
-  
-  
-  
+?>
 </div>
 </body>
 </html>

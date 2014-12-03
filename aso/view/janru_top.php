@@ -130,10 +130,10 @@
 				'mname' => $row['name'],
 				'mschool' => $row['school'],
 				'jname' => $row['j_name'],
-				'mfree' => $row['free']
+				'mfree' => $row['free'],
 				);
 			}
-
+			
 			//SESSIONでメンバーを作成
 			foreach ($_SESSION['member'] as $m_id => $member) {
 			 $mname = $member['mname'];
@@ -142,17 +142,16 @@
 			 $mfree =$member['mfree'];
 			
 			echo '<div id = "set">';
-			echo '<div id="photo">
-						<img src="人アイコン『おばあちゃん』.png" width="300" height="300"  alt=""/>
-					</div>';
-				
-					echo '<div id="ww">';
-					echo '<h1><span><p2>名前</p2></span></h1><p3>'.$mname.'</p3><br>';
-					echo '<h1><span><p2>学校</p2></span></h1><p3>'.$mschool.'</p3><br>';
-					echo '<h1><span><p2>ジャンル</p2></span></h1><p3>'.$jname.'</p3><br>';
-					echo '<h1><span><p2>フリーワード</p2></span></h1><p3>'.$mfree.'</p3><br>';
-					echo '</div>';		
-					echo '<div id="space">&nbsp;</div>';
+			echo '<div id="photo">';
+			require('imgget.php');
+			echo '</div>';
+			echo '<div id="ww">';
+			echo '<h1><span><p2>名前</p2></span></h1><p3>'.$mname.'</p3><br>';
+			echo '<h1><span><p2>学校</p2></span></h1><p3>'.$mschool.'</p3><br>';
+			echo '<h1><span><p2>ジャンル</p2></span></h1><p3>'.$jname.'</p3><br>';
+			echo '<h1><span><p2>フリーワード</p2></span></h1><p3>'.$mfree.'</p3><br>';
+			echo '</div>';		
+			echo '<div id="space">&nbsp;</div>';
 					
 		echo '<div id="tag2">';
 		echo '<a href="profile_update.php">プロフィールの変更</a>';

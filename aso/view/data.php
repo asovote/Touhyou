@@ -91,8 +91,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="submitChk();"><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div></div>';
-	}	
-} 
+	}	 
 
 ?>    </body>
     

@@ -11,18 +11,6 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
-	<script type="text/javascript">
-	    /**
-	     * 確認ダイアログの返り値によりフォーム送信
-	    */
-	    function submitChk() {
-	        /* 確認ダイアログ表示 */
-	        var flag = confirm ( "投票してもよろしいですか？");
-	        /* send_flg が TRUEなら送信、FALSEなら送信しない */
-	        return flag;
-	    }
-	</script>
-
 	</head>
     
 	<body>

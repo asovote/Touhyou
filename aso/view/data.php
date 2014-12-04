@@ -68,14 +68,10 @@ echo'<input type="button" value="戻る" onclick="history.back()">';
 		  echo'</div>'; 	
 
 
-
 }else{
-?>
-<div class="container">
-    <h1 align=center>出演者一覧</h1>
-<input type="button" value="戻る" onclick="history.back()">
-
-<?php
+echo'<div class="container">';
+    echo'<h1 align=center>出演者一覧</h1>';
+echo'<input type="button" value="戻る" onclick="history.back()">';
 
 
 

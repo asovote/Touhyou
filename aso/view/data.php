@@ -74,7 +74,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo'<h3>'.$mname.'</h3>';
 		  echo'<div align="center" valign="bottom">>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
-		  echo'</div></div>';
+		  echo'</div>';
 		} 
 
 

@@ -24,9 +24,7 @@
 	        return flag;
 	    }
 	</script>
-	</head>
-    
-	<body>
+	</head>  
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 <?php	
 		require_once('include_path.php');
@@ -37,12 +35,9 @@
 $jid = $_POST['jid']; //スレッドID
 
 if(isset($_COOKIE[$jid])){ 
- 	
-<div class="container">
-    <h1 align=center>出演者一覧</h1>
-<input type="button" value="戻る" onclick="history.back()">
-
-<?php
+echo'<div class="container">';
+    echo'<h1 align=center>出演者一覧</h1>';
+echo'<input type="button" value="戻る" onclick="history.back()">';
 
 
 
@@ -67,22 +62,14 @@ if(isset($_COOKIE[$jid])){
 			$jid = $row['j_id'];
  			$mimg = $row['m_img'];
 			$_SESSION['jid'] = $jid;
-            <!--実際に使う際はここをループさせて表示します-->
-          echo'<div class="row">';
-		  
+         	  echo'<div class="row">';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"width="600" height="350" ></a></div><!--SQLで撮ってきた画像に差し替え-->';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo'<h3>'.$mname.'</h3>';
-		  echo'<div align="center" valign="bottom">>';
-                  echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
-		  echo'</div>';
-		} 
-
-
-?>    
+		  echo'</div>'; 	
 
 
 
-}
+}else{
 ?>
 <div class="container">
     <h1 align=center>出演者一覧</h1>
@@ -113,18 +100,16 @@ if(isset($_COOKIE[$jid])){
 			$jid = $row['j_id'];
  			$mimg = $row['m_img'];
 			$_SESSION['jid'] = $jid;
-            <!--実際に使う際はここをループさせて表示します-->
-          echo'<div class="row">';
+         	  echo'<div class="row">';
 		  echo '<form action="update.php" method="POST">';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"width="600" height="350" ></a></div><!--SQLで撮ってきた画像に差し替え-->';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo'<h3>'.$mname.'</h3>';
-		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="return submitChk();"><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form>';
+		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" onClick="submitChk();"><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div></div>';
-		} 
+	}	
+} 
 
-
-?>    
-	</body>
+?>    </body>
     
 </html>

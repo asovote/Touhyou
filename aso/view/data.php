@@ -26,6 +26,10 @@
 	</script>
 	</head>  
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
+<div class="container">
+<h1 align=center>出演者一覧</h1>
+<input type="button" value="戻る" onclick="history.back()"
+
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');
@@ -35,13 +39,6 @@
 $jid = $_POST['jid']; //スレッドID
 
 if(isset($_COOKIE[$jid])){ 
-echo'<div class="container">';
-    echo'<h1 align=center>出演者一覧</h1>';
-echo'<input type="button" value="戻る" onclick="history.back()">';
-
-
-
-
 		//データベースにつなぐ
 		
 		if(isset($_POST['jid'])){
@@ -66,16 +63,7 @@ echo'<input type="button" value="戻る" onclick="history.back()">';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"width="600" height="350" ></a></div><!--SQLで撮ってきた画像に差し替え-->';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo'<h3>'.$mname.'</h3>';
 		  echo'</div>'; 	
-
-
 }else{
-echo'<div class="container">';
-    echo'<h1 align=center>出演者一覧</h1>';
-echo'<input type="button" value="戻る" onclick="history.back()">';
-
-
-
-
 		//データベースにつなぐ
 		
 		if(isset($_POST['jid'])){

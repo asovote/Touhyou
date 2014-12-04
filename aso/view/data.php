@@ -81,9 +81,7 @@ if(isset($_COOKIE[$jid])){
 
 
 ?>    
-	</body>
-    
-</html>
+
 }
 
 ?>

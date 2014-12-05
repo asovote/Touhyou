@@ -106,7 +106,7 @@
 			$result = mysqli_query($dbc, $query);
 			if(!isset($result)){
 			}else{
-			$row = mysqli_fetch_array($result)
+			$row = mysqli_fetch_array($result);
 			}
 
 		

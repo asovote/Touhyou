@@ -28,6 +28,7 @@
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 <div class="container">
 <h1 align=center>出演者一覧</h1>
+<input type="button" value="戻る" onclick="history.back()"></br></br>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');

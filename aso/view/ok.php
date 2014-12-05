@@ -16,7 +16,7 @@ if(isset($_COOKIE[$jid])){
 	exit; 
 	 }else{
 	echo '投票ありがとうございました'; 
-	setcookie($jid,"vote_flag",time()+3600*24*7,"/"); 
+	setcookie($jid,"vote_flag",time()+3600*24*3,"/"); 
 	 } 
 
  ?>

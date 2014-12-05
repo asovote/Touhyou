@@ -28,7 +28,7 @@
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 <div class="container">
 <h1 align=center>出演者一覧</h1>
-<input type="button" value="戻る" onclick="history.back()"></br></br>
+<input type="button" value="戻る" onclick="history.back()"></br>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');
@@ -64,7 +64,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo'<h4>'.$mname.'</h4>';
 		  echo'<div align="center" valign="bottom">';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
-		  echo'</div></div>';
+		  echo'</div>';
 }
 }else{
 		//データベースにつなぐ
@@ -93,9 +93,9 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo'<h3>'.$mname.'</h3>';
 		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" "><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
-		  echo'</div></div>';
+		  echo'</div>';
 	}	 
 }
-?>    </body>
+?>   </div> </body>
     
 </html>

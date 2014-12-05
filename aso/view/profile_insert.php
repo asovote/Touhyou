@@ -104,7 +104,9 @@
 
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
 			$result = mysqli_query($dbc, $query);
-			$row = mysqli_fetch_array($result);
+			if!($result == null){
+			$row = mysqli_fetch_array($result)
+			}
 
 		
 

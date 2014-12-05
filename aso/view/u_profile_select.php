@@ -66,7 +66,7 @@
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
       echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()">;        
-      echo'<form action="update.php" method="POST" onClick="return submitChk();>';
+      echo'<form action="update.php" method="POST" onClick="return submitChk();">';
       echo'<input type="submit"value="投票" "><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'">';
       echo'</div></div>';
       echo'</div><div class="row">';

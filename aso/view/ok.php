@@ -10,15 +10,17 @@
 <?php
 session_start();	
 $jid = $_SESSION['jid']; //スレッドID
-
+echo '<center>';
+echo '<p><font size="80px">';
 if(isset($_COOKIE[$jid])){ 
  	print("連続投票です。"); 
 	exit; 
 	 }else{
-	echo '投票ありがとうございました'; 
+	echo '<br><br>投票ありがとうございました'; 
 	setcookie($jid,"vote_flag",time()+3600*24*7,"/"); 
 	 } 
-
+echo '</font></p>';
+echo '</center>';
  ?>
 </body>
 </html>

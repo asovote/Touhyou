@@ -14,6 +14,8 @@
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
+		
+	     	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
 		echo '<p>参加者情報変更画面</p>';
 		
@@ -67,12 +69,11 @@
                     //SQL文格納（UPDATE）
                     $query = "DELETE from member WHERE m_id = '$mid';";
                     //SQL文実行
-                    $result = mysqli_query($dbc, $query);
+                    $result = $dbc -> query($query);
 
                     //自分自身を検索
-                   	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 			$query = "select * from member where m_id = '$mid'";
-			$result = mysqli_query($dbc, $query);
+			$result = $dbc -> query($query);
 			
 		
 			// 取得したデータを一覧表示

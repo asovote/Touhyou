@@ -5,9 +5,12 @@
 <head>
 </head>
 <body>
+<body style="background-image:url(背景2.png);background-attachment:fixed;">
 <center>
 <?php
 	session_start();
+	echo '<div id="link"><p><a href="kanri_top.php">トップへ戻る</a></p></div>';
+
 	
 	require_once('include_path.php');
 	require_once('db.php');
@@ -33,7 +36,6 @@
 		printf($bun1);
 		printf($bun2,$j_id,$j_name);
 	}
-		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
 
 ?>

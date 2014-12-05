@@ -21,7 +21,6 @@
 		
 		//トップ画面へのリンク
 		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
-		echo '<a href="profile_delete.php">/プロフィールの削除</a>';
 		
 		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {
@@ -46,12 +45,7 @@
 			echo '<p>ジャンル：<input type="hidden" name="janru" value='.$jname.'/>'.$jname.'</p>';
 			echo '<p>フリー：<input type="hidden" name="free" value='.$mfree.'/>'.$mfree.'</p>';
 			
-			
-			echo '<p>写真：<input type="file" name="upfile" /></p>';
-			
 			echo '<input type="submit" value="削除" name="fase1" />';
-			
-			echo '<p>本当にデータを削除してもよろしいですか？</p>';
 			
 			echo '</form>';
 			
@@ -92,7 +86,7 @@
 			echo '<p>ジャンル：'.$jname.'</p>';
 			echo '<p>フリーワード：'.$mfree.'</p>';
 			}
-                    $result = mysqli_query($dbc, $query);
+                    $result = $dbc -> query($query);
                     //データベースとの接続を切断
                     mysqli_close($dbc);
 

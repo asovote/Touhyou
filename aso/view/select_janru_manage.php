@@ -5,7 +5,7 @@
 <head>
 </head>
 <body>
-
+<center>
 <?php
 	session_start();
 	
@@ -37,6 +37,7 @@
 
 
 ?>
+</center>
 
 </body>
 </html>

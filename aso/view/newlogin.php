@@ -92,7 +92,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 
 
 			
-<form name="ad_login" method="post" action="ad_login.php">
+<form name="ad_login" method="post" action="newlogin.php">
 
  <table class="login" style="margin-left: auto; margin-right: auto;">
 					<tr>

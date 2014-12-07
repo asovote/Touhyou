@@ -2,8 +2,8 @@
 <!doctype html>
 <html>
     <head>
-    	<meta charset="utf-8" />
 
+<meta http-equic="Content-Type" content="text/html; charset=utf-8" />
 		
 		 
 		
@@ -45,7 +45,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
 		
 		$errmsg = "ID、パスワードを入力してください。";
-
+		echo $errmsg;
 	
 
 		}else if (mysql_num_rows($result) == 1){

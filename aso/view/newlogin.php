@@ -106,7 +106,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 </tr>
 <tr>
 <td>
-<?php if($errmsg != null){ echo $errmsg; }; ?>
+aaaa<?php if($errmsg != null){ echo $errmsg; }; ?>
 </td>               											
 <tr>
 <td style="padding-top: 10px;">

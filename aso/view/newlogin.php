@@ -38,7 +38,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
   if (!$result) {
     exit('文字コードを指定できませんでした。');
   }
-echo "aaaaaaa";
+
   $result = mysql_query("SELECT * FROM admin WHERE ad_id = $ad_id and pw = $pw" , $con);
 
  
@@ -92,7 +92,7 @@ echo "aaaaaaa";
 
 
 			
-<form name="ad_login" method="post" action="#">
+<form name="ad_login" method="post" action="ad_login.php">
 
  <table class="login" style="margin-left: auto; margin-right: auto;">
 					<tr>

@@ -1,17 +1,3 @@
-
-<!doctype html>
-<html>
-    <head>
-
-<meta http-equic="Content-Type" content="text/html; charset=utf-8" />
-		
-		 
-		
-		
-		
-
-<title>投票システム</title>
-<link rel="stylesheet" type="text/css" href="/css/ad_login.css"/>
 <?php
   session_start();
 
@@ -74,6 +60,20 @@ $con = mysql_connect(db_host,db_user,db_pass);
 }
 
 ?>
+<!doctype html>
+<html>
+    <head>
+
+<meta http-equic="Content-Type" content="text/html; charset=utf-8" />
+		
+		 
+		
+		
+		
+
+<title>投票システム</title>
+<link rel="stylesheet" type="text/css" href="/css/ad_login.css"/>
+
 </head>
 <body class="small login">
     	
@@ -96,7 +96,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 
  <table class="login" style="margin-left: auto; margin-right: auto;">
 					<tr>
-							<td width="450"><p class="mtop0 mbottom025"><strong><label for="email">UserID</label></strong></p><input id="email" tabindex="1" class="inputtext" type="text" name="ad_id" /></td>
+							<td width="450"><p class="mtop0 mbottom025"><strong><label for="userid">UserID</label></strong></p><input id="email" tabindex="1" class="inputtext" type="text" name="ad_id" /></td>
 						</tr>
 						<tr>
 							<td><p class="mtop05 mbottom025"><strong><label for="password">Password</label></strong></p><input tabindex="2" class="inputtext" type="password" name="pw" id="password" />

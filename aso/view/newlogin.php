@@ -111,7 +111,7 @@ aaaa<?php // if($errmsg != "1"){ echo $errmsg; } ?>
 <input class="public-button" type="reset" tabindex="4" value="Reset"></td>
 </tr>
 </table>
-<input type="submit">
+
 </form>
 			
 			

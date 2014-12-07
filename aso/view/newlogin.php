@@ -3,16 +3,12 @@
 
 require_once('include_path.php');
 require_once('db.php');
-$errmsg = "1";
 
 if (isset($_POST["login"])) {
 
 $ad_id = $_POST['ad_id'];
 $pw = $_POST['pw'];
-
 $con = mysql_connect(db_host,db_user,db_pass);
-
-
   if (!$con) {
     exit('データベースに接続できませんでした。');
   }
@@ -32,8 +28,8 @@ $con = mysql_connect(db_host,db_user,db_pass);
  
 	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
 		
-		$errmsg = "ID、パスワードを入力してください。";
-		echo $errmsg;
+		echo "ID、パスワードを入力してください。";
+
 	
 
 		}else if (mysql_num_rows($result) == 1){
@@ -47,7 +43,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		
 		} else if (mysql_num_rows($result) == 0) {
 
-		      $errmsg = "ID、またはパスワードが間違っています。";
+		      echo "ID、またはパスワードが間違っています。";
 		      
 	    
 
@@ -62,7 +58,6 @@ $con = mysql_connect(db_host,db_user,db_pass);
 }
 
 ?>
-<!doctype html>
 <html>
     <head>
 
@@ -74,7 +69,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		
 
 <title>投票システム</title>
-
+<link rel="stylesheet" type="text/css" href="/css/ad_login.css"/>
 
 </head>
 <body class="small login">
@@ -94,7 +89,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 
 
 			
-<form name="ad_login" method="post" action="ad_login.php">
+<form name="ad_login" method="post" action="#">
 
  <table class="login" style="margin-left: auto; margin-right: auto;">
 					<tr>
@@ -108,7 +103,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 </tr>
 <tr>
 <td>
-aaaa<?php if($errmsg != "1"){ echo $errmsg; } ?>
+aaaa<?php // if($errmsg != "1"){ echo $errmsg; } ?>
 </td>               											
 <tr>
 <td style="padding-top: 10px;">
@@ -116,6 +111,7 @@ aaaa<?php if($errmsg != "1"){ echo $errmsg; } ?>
 <input class="public-button" type="reset" tabindex="4" value="Reset"></td>
 </tr>
 </table>
+<input type="submit">
 </form>
 			
 			

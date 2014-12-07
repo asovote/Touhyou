@@ -17,13 +17,13 @@
 
 require_once('include_path.php');
 require_once('db.php');
-
+$errmsg = null;
 if (isset($_POST["login"])) {
 
 $ad_id = $_POST['ad_id'];
 $pw = $_POST['pw'];
 $con = mysql_connect(db_host,db_user,db_pass);
-$errmsg = null;
+
 
   if (!$con) {
     exit('データベースに接続できませんでした。');

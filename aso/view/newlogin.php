@@ -9,6 +9,7 @@ if (isset($_POST["login"])) {
 
 $ad_id = $_POST['ad_id'];
 $pw = $_POST['pw'];
+echo  ($ad_id.":".$pw);
 $con = mysql_connect(db_host,db_user,db_pass);
 
 

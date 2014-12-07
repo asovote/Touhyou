@@ -74,7 +74,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		
 
 <title>投票システム</title>
-<link rel="stylesheet" type="text/css" href="/css/ad_login.css"/>
+
 
 </head>
 <body class="small login">

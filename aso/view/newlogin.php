@@ -9,7 +9,7 @@ if (isset($_POST["login"])) {
 
 $ad_id = $_POST['ad_id'];
 $pw = $_POST['pw'];
-echo  ($ad_id.":".$pw);
+
 $con = mysql_connect(db_host,db_user,db_pass);
 
 
@@ -94,7 +94,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 
 
 			
-<form name="ad_login" method="post" action="newlogin.php">
+<form name="ad_login" method="post" action="ad_login.php">
 
  <table class="login" style="margin-left: auto; margin-right: auto;">
 					<tr>

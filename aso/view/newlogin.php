@@ -4,7 +4,7 @@
 require_once('include_path.php');
 require_once('db.php');
 $errmsg = null;
-echo "aaaaaaaa";
+echo $errmsg;
 if (isset($_POST["login"])) {
 
 $ad_id = $_POST['ad_id'];

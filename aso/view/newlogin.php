@@ -3,8 +3,8 @@
 
 require_once('include_path.php');
 require_once('db.php');
-$errmsg = null;
-print($errmsg);
+$errmsg = "1";
+
 if (isset($_POST["login"])) {
 
 $ad_id = $_POST['ad_id'];
@@ -107,7 +107,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 </tr>
 <tr>
 <td>
-aaaa<?php if($errmsg != null){ echo $errmsg; }; ?>
+aaaa<?php if($errmsg != "1"){ echo $errmsg; }; ?>
 </td>               											
 <tr>
 <td style="padding-top: 10px;">

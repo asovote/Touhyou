@@ -99,10 +99,10 @@
 			$query = "select max(m_id) from member;";
 			$result = $dbc -> query($query);
 			while($row = $result -> fetch_array()){
-		 	(int)$mid = $row['max(m_id)'];
-		 	
+		 //	(int)$mid = $row['max(m_id)'];
+		 	$mid = $row['max(m_id)'];
 		 	}
-echo $mid;
+		 	
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
 			$result = $dbc -> query($dbc, $query);
 

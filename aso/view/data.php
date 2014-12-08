@@ -88,7 +88,10 @@ if(isset($_COOKIE[$jid])){
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
 	       
-		while($row = mysqli_fetch_array($result)){
+	       $fruits = $result;
+	　　　 shuffle ($fruits);　
+	       
+		while($row = mysqli_fetch_array($fruits)){
 			
 			//表示処理
 			$mid = $row['m_id'];
@@ -103,7 +106,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" "><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div>';
-	}	 
+		}	 
 }
 ?>   </div> </body>
     

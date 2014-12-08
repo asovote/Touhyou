@@ -88,6 +88,8 @@
 		$j_id = $_GET['jid'];
 		}else if(isset($_GET['mid'])){
 		$mid = $_GET['mid'];
+		}else if(isset($_GET['up'])){
+		$up=$_GET['up'];
 		}
 		
 		
@@ -161,7 +163,7 @@
 			echo '<div id="space">&nbsp;</div>';
 					
 		echo '<div id="tag2">';
-		echo '<a href="profile_update.php">プロフィールの変更</a>';
+		echo '<a href="profile_update.php?up=1">プロフィールの変更</a>';
 		echo '</div>';
 		echo '&nbsp&nbsp';
 		echo '<div id="tag2">';		
@@ -170,6 +172,8 @@
 		echo '</div>';
 			
 		}
+	}else if(isset($up)){
+	require_once('profile_update.php');
 	}
 ?>
 </div>

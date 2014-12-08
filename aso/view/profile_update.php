@@ -63,7 +63,7 @@ header('Location: /ad_login.php');
 		
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
 			
-			echo '<p>写真：<input type="file" name="upfile" value="'.$mimg.'"/></p>';
+			echo '<p>写真：<input type="file" name="upfile" /></p>';
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';

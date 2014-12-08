@@ -17,10 +17,12 @@
 		
 	     	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
-		echo '<p>参加者情報削除画面</p>';
 		
 		//トップ画面へのリンク
 	//	echo '<p><a href="kanri_top.php">トップへ戻る</a>';
+		echo '<a href="janru_top.php?up=1">プロフィールの変更</a>';
+		echo '<p>参加者情報削除画面</p>';
+	
 		
 		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {
@@ -39,7 +41,7 @@
 			 $mfree =$member['mfree'];
 			}
 		
-			echo '<form action="profile_delete.php?del=1" method="POST">';
+			echo '<form action="janru_top.php?del=1" method="POST">';
 			echo '<p>氏名：<input type="hidden" name="name" value='.$mname.'/>'.$mname.'</p>';
 			echo '<p>学校：<input type="hidden" name="school" value='.$mschool.'/>'.$mschool.'</p>';
 			echo '<p>ジャンル：<input type="hidden" name="janru" value='.$jname.'/>'.$jname.'</p>';

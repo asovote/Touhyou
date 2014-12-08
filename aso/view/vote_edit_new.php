@@ -32,7 +32,7 @@ history.forward();
 	}
 	
 	printf('<form method="POST" action = "">');
-	printf('<input type="submit" value="全体の状況へ戻る" onClick="form.action=\'select_janru_manage.php\';return true"/>');
+	printf('<input type="submit" value="全体の状況へ戻る" onClick="form.action=\'vote_manage.php\';return true"/>');
 	printf('</form>');
 	
 	require_once('include_path.php');

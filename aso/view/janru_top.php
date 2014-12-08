@@ -90,6 +90,8 @@
 		$mid = $_GET['mid'];
 		}else if(isset($_GET['up'])){
 		$up=$_GET['up'];
+		}else if(isset($_GET['del'])){
+		$del=$_GET['del'];
 		}
 		
 		
@@ -167,13 +169,15 @@
 		echo '</div>';
 		echo '&nbsp&nbsp';
 		echo '<div id="tag2">';		
-		echo '<a href="profile_delete.php">プロフィールの削除</a>';
+		echo '<a href="profile_delete.php?del=1">プロフィールの削除</a>';
 		echo '</div>';			
 		echo '</div>';
 			
 		}
 	}else if(isset($up)){
 	require_once('profile_update.php');
+	}else if(isset($del)){
+	require_once('profile_delete.php');
 	}
 ?>
 </div>

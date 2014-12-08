@@ -19,11 +19,13 @@ header('Location: /ad_login.php');
 		require_once('include_path.php');
 		require_once('db.php');
 	
-		echo '<p>参加者情報変更画面</p>';
 		
 		//トップ画面へのリンク
-		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
+	//	echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 		echo '<a href="profile_delete.php">/プロフィールの削除</a>';
+
+		echo '<p>参加者情報変更画面</p>';
+
 		
 		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {

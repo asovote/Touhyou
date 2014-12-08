@@ -48,7 +48,7 @@ header('Location: /ad_login.php');
 			 $mimg=$member['mimg'];
 			}
 		
-			echo '<form action="profile_update.php" method="POST">';
+			echo '<form action="profile_update.php" method="POST" enctype="multipart/form-data">';
 			echo '<p>氏名：<input type="text" name="name" value="'.$mname.'"/></p>';
 			echo '<p>学校：<input type="text" name="school" value="'.$mschool.'"/></p>';
 			echo '<p>ジャンル：<select name="janru" value="'.$jname.'">';

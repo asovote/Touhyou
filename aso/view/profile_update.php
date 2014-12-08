@@ -81,7 +81,7 @@ header('Location: /ad_login.php');
 			$free = $_POST["free"];
 			//$j_id = $_POST["janru"];
 
-		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
@@ -91,9 +91,9 @@ header('Location: /ad_login.php');
                     $result = mysqli_query($dbc, $query);
 
                     //自分自身を検索
-                   	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-			$query = "select * from member,janru 
-				where member.m_id = '$mid' and member.janru = janru.j_id ";
+                   //	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+			$query = "select * from member,janru,mj_list
+				where member.m_id = '$mid' and mj_list.m_id = member.m_id and mj_list.j_id =janru.j_id ";
 			$result = mysqli_query($dbc, $query);
 			
 		

@@ -31,11 +31,13 @@ header('Location: /ad_login.php');
 		                echo "メンバーが入っていません。";
 	           	 } else {
 	           	 
+	           	 //値の表示をし登録前の画面の表示
+	           	 
 			 $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 			 $query = "select * from janru ;";
 			 $result = mysqli_query($dbc, $query);
 			
-	           	            	 
+	           	
 			//SESSIONのメンバーからデータを取得
 			foreach ($_SESSION['member'] as $m_id => $member) {
 			 $mid = $member['mid'];
@@ -68,20 +70,21 @@ header('Location: /ad_login.php');
 			echo '</form>';
 			
 			}
-		}else{
+	}else{
+		     //登録画面
 			foreach ($_SESSION['member'] as $m_id => $member) {
 			 $mid = $member['mid'];
+			
 			}
 			$name = $_POST["name"];
 			$school = $_POST["school"];
 			$free = $_POST["free"];
-			$j_id = $_POST["janru"];
+			//$j_id = $_POST["janru"];
 		
 		    //通常時の処理
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
-                    				janru = '$j_id',
                     				free = '$free' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);

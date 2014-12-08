@@ -99,13 +99,13 @@
 			$query = "select max(m_id) from member;";
 			$result = $dbc -> query($query);
 			while($row = $result -> fetch_array()){
-		 //	(int)$mid = $row['max(m_id)'];
-		 	$mid = $row['max(m_id)'];
+		 	(int)$mid = $row['max(m_id)'];
+		 //	$mid = $row['max(m_id)'];
 		 	}
 		 	
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
-			$result = $dbc -> query($dbc, $query);
-
+		//	$result = $dbc -> query($dbc, $query);
+			$result = mysqli_query($dbc, $query);
 		
 
 		/*		echo "m_idの値：".$mid;

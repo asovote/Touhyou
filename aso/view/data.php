@@ -34,12 +34,15 @@
 		require_once('db.php');
 		require_once('session_start.php');
 
-
+if(isset($_POST['jid']){
 $jid = $_POST['jid']; //スレッドID
+$_SESSION['jid']=$jid;
+}else{
+$jid=$_SESSION['jid'];
+}
 
 if(isset($_COOKIE[$jid])){ 
 		//データベースにつなぐ
-		
 		if(isset($_POST['jid'])){
 		$janru = $_POST['jid'];
 		}else{

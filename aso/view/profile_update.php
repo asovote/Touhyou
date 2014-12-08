@@ -79,10 +79,10 @@ header('Location: /ad_login.php');
 		
 		    //通常時の処理
                     //SQL文格納（UPDATE）
-                    $query = "UPDATE member SET
-						name = '$name', school = '$school', 
-						janru = '$j_id', free = '$free'					
-						WHERE m_id = '$mid';";
+                    $query = "UPDATE member SET name = '$name',
+                    				school = '$school',
+                    				janru = '$j_id',
+                    				free = '$free' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
 

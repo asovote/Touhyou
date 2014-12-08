@@ -33,6 +33,10 @@
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
+		header('Expires:-1');
+header('Cache-Control:');
+header('Pragma:');
+
 
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID

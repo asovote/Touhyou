@@ -87,9 +87,11 @@ header('Location: /ad_login.php');
     			chmod("img/" . $_FILES["upfile"]["name"], 0644);
 			header("Location: janru_top.php");
 			} else {
+			echo '<br>';
 			echo "ファイルをアップロードできません。";
 			}
 			} else {
+			echo '<br>';
 			echo "ファイルが選択されていません。";
 			}
 

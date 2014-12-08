@@ -45,6 +45,7 @@ header('Location: /ad_login.php');
 			 $mschool =$member['mschool'];
 			 $jname =$member['jname'];
 			 $mfree =$member['mfree'];
+			 $mimg=$member['m_img'];
 			}
 		
 			echo '<form action="profile_update.php" method="POST">';
@@ -62,7 +63,7 @@ header('Location: /ad_login.php');
 		
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
 			
-			echo '<p>写真：<input type="file" name="upfile" /></p>';
+			echo '<p>写真：<input type="file" name="upfile" />'.$mimg.'</p>';
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';

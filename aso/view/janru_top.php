@@ -131,6 +131,7 @@
 				'mschool' => $row['school'],
 				'jname' => $row['j_name'],
 				'mfree' => $row['free'],
+				'mimg' => $row['m_img'],
 				);
 			}
 			

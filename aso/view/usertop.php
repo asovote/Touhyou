@@ -28,8 +28,7 @@
 		$classDir = __DIR__ . "/../class/";
 		//require_once('include_path.php');
 		require_once($classDir . 'db.php');
-		require_once($classDir . 'session_start.php');
-		require_once('session_out.php');
+		require_once($classDir . 'session_out.php');
 
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 

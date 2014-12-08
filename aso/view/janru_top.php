@@ -32,8 +32,8 @@
 	echo '<div id="tag">';
 		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
-		echo '<a href="janru_top.php?id=1" >/プロフィールの追加</a>';
-		echo '<a href="janru_top.php?id=2" >/ジャンルの追加</a>';
+		echo '<a href="profile_insert.php?id=1" >/プロフィールの追加</a>';
+		echo '<a href="profile_insert.php?id=2" >/ジャンルの追加</a>';
 	echo '</div>';	
 		
 	echo '<div id="top">';
@@ -92,8 +92,6 @@
 		$up=$_GET['up'];
 		}else if(isset($_GET['del'])){
 		$del=$_GET['del'];
-		}else if(isset($_GET['id'])){
-		$id=$_GET['id'];
 		}
 		
 		
@@ -180,10 +178,6 @@
 	require_once('profile_update.php');
 	}else if(isset($del)){
 	require_once('profile_delete.php');
-	}else if(isset($id)){
-	require_once('profile_insert.php?id=1');
-	}else{
-	echo 'どの値にも当てはまらない';
 	}
 ?>
 </div>

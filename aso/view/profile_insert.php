@@ -100,6 +100,7 @@
 			$result = $dbc -> query($query);
 			while($row = $result -> fetch_array()){
 		 	(int)$mid = $row['max(m_id)'];
+		 	echo "m_idの値：".$mid;
 		 	}
 
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
@@ -107,8 +108,8 @@
 
 		
 
-			echo "m_idの値：".$mid;
-		/*	echo $_FILES["upfile"]["name"];
+		/*		echo "m_idの値：".$mid;
+		echo $_FILES["upfile"]["name"];
 			echo $_FILES["upfile"]["tmp_name"];			
 */
 

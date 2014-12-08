@@ -7,7 +7,7 @@
 </head>
 	
 <body>
-<--!<Div Align="center">-->
+//<Div Align="center">
 
 	<?php
 		session_start();
@@ -147,6 +147,6 @@ header('Location: /ad_login.php');
 	
 	?>
 	
-<--!	</div> -->
+//</div>
 </body>
 </html>

@@ -18,7 +18,6 @@
 		}
 
 		//データベースに接続
-	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		require_once('include_path.php');
 		require_once('db.php');
 		
@@ -134,7 +133,7 @@
 			//登録ボタンが押されたとき
 			
 			$jname = $_POST["janru"];
-			echo $jname;
+		//	echo $jname;
 					
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
@@ -150,7 +149,7 @@
 				echo "値が見つかりません";
 		}
 		//トップ画面へのリンク
-		echo '<a href="kanri_top.php>戻る</a>';
+		echo '<a href="kanri_top.php">戻る</a>';
 ?>
 	</Div>
 </body>

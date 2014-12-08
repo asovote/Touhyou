@@ -80,6 +80,8 @@ header('Location: /ad_login.php');
 			$school = $_POST["school"];
 			$free = $_POST["free"];
 			//$j_id = $_POST["janru"];
+
+		　　$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		
 		    //通常時の処理
                     //SQL文格納（UPDATE）

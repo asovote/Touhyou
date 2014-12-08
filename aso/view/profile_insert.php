@@ -24,7 +24,7 @@
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 		echo '<p>参加者情報登録画面</p>';
-		echo $_GET['id'];
+		
 		if(isset($_GET['id'])){
 			$id = $_GET['id'];
 		}else if(isset($_POST['fase1'])){

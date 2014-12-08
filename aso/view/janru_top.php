@@ -181,7 +181,7 @@
 	}else if(isset($del)){
 	require_once('profile_delete.php');
 	}else if(isset($id)){
-	require_once('profile_insert.php?id='.$gid);
+	require_once('profile_insert.php?id=$gid');
 	}
 ?>
 </div>

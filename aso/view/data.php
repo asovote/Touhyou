@@ -63,21 +63,6 @@ if(isset($_COOKIE[$jid])){
 	        //SimpleClassのリストを宣言　sList
 	       
 		while($row = mysqli_fetch_array($result)){
-		
-		     //SimpleClass を　new する　変数名：sc
-		     //scの$m_idに$row['m_id']を入れる
-		     //・・
-		     //sListにscを追加
-		 //}
-		 
-		 //ｓListにシャッフルをする
-		 
-		 //for　0番目から、配列の件数までループ
-		 //｛
-		 　　//sListのi番目を表示
-		 
-		 //｝
-		while($row = mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];
@@ -93,6 +78,7 @@ if(isset($_COOKIE[$jid])){
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div>';
 		}	 
+	 
 
 }else{
 		//データベースにつなぐ

@@ -35,7 +35,10 @@
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
-	
+		header('Expires:-1');
+		header('Cache-Control:');
+		header('Pragma:');
+
 		if(isset($_GET['jid'])){
 		$j_id = $_GET['jid'];
 		}else if(isset($_GET['mid'])){

@@ -24,8 +24,8 @@
 		require_once('db.php');
 		require_once('session_start.php');
 		header('Expires:-1');
-header('Cache-Control:');
-header('Pragma:');
+		header('Cache-Control:');
+		header('Pragma:');
 
 	
 		if(isset($_GET['jid'])){

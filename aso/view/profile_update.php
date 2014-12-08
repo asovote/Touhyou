@@ -104,7 +104,7 @@ header('Location: /ad_login.php');
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$mjanru = $row['janru'];
+			$mjanru = $row['j_id'];
 			$jname = $row['j_name'];
 			$mfree = $row['free'];
 			

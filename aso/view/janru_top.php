@@ -182,6 +182,8 @@
 	require_once('profile_delete.php');
 	}else if(isset($id)){
 	require_once('profile_insert.php?id=1');
+	}else{
+	echo 'どの値にも当てはまらない';
 	}
 ?>
 </div>

@@ -7,7 +7,7 @@
 </head>
 	
 <body>
-
+<Div Align="center">
 
 	<?php
 		//データベースに接続
@@ -104,5 +104,6 @@
 	
 	
 	?>
+</Div>
 </body>
 </html>

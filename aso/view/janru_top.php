@@ -92,6 +92,8 @@
 		$up=$_GET['up'];
 		}else if(isset($_GET['del'])){
 		$del=$_GET['del'];
+		}else if(isset($_GET['in'])){
+		$in=$_GET['in'];
 		}
 		
 		
@@ -177,6 +179,8 @@
 	}else if(isset($up)){
 	require_once('profile_update.php');
 	}else if(isset($del)){
+	require_once('profile_delete.php');
+	}else if(isset($in)){
 	require_once('profile_delete.php');
 	}
 ?>

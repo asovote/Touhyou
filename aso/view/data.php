@@ -37,8 +37,10 @@
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
 $_SESSION['jid']=$jid;
-}else{
+}else if($_SESSION['jid']){
 $jid=$_SESSION['jid'];
+}else{
+echo '値が入っていません';
 }
 
 if(isset($_COOKIE[$jid])){ 

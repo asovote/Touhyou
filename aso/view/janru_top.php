@@ -163,7 +163,7 @@
 			echo '<div id="space">&nbsp;</div>';
 					
 		echo '<div id="tag2">';
-		echo '<a href="profile_update.php?up=1">プロフィールの変更</a>';
+		echo '<a href="janru_top.php?up=1">プロフィールの変更</a>';
 		echo '</div>';
 		echo '&nbsp&nbsp';
 		echo '<div id="tag2">';		

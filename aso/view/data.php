@@ -34,7 +34,7 @@
 		require_once('db.php');
 		require_once('session_start.php');
 
-if(isset($_POST['jid']){
+if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
 $_SESSION['jid']=$jid;
 }else{

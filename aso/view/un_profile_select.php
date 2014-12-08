@@ -54,7 +54,7 @@
       echo'<form action="update.php" method="POST">';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
-      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="data.php">';
+      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="location.href='data.php'">';
       echo'</div></div>';
       echo'</div><div class="row">';
       echo'</div></div>';

@@ -43,7 +43,7 @@
 		$result = mysqli_query($dbc,  $query);
 		
 		
-			echo '<form action="janru_top.php?gid=3" method="POST" enctype="multipart/form-data">';
+			echo '<form action="profile_insert.php" method="POST" enctype="multipart/form-data">';
 			
 			echo '<p>氏名：<input type="text" name="name" /></p>';
 			echo '<p>学校：<input type="text" name="school" /></p>';
@@ -118,7 +118,7 @@
 		
 		}else if($id == 2){
 			
-			echo '<form action="janru_top.php?gid=4" method="POST">';
+			echo '<form action="profile_insert.php" method="POST">';
 			
 			echo '<p>ジャンル名：<input type="text" name="janru" /></p>';
 		

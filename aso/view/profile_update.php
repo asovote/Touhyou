@@ -7,8 +7,6 @@
 </head>
 	
 <body>
-//<Div Align="center">
-
 	<?php
 		session_start();
 if($_SESSION['ad_id'] == null){
@@ -146,7 +144,5 @@ header('Location: /ad_login.php');
 	
 	
 	?>
-	
-//</div>
 </body>
 </html>

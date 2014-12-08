@@ -181,6 +181,7 @@
 	}else if(isset($del)){
 	require_once('profile_delete.php');
 	}else if(isset($id)){
+	echo $_GET['$id'];
 	require_once('profile_insert.php?id='.$id);
 	}
 ?>

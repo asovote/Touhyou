@@ -26,7 +26,15 @@
 	</script>
 	</head>  
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
-
+<?php /*
+class SimpleClass
+{
+public $m_id;
+public $name;
+public $j_id;
+public $m_img;
+}*/
+?>
 <div class="container">
 <h1 align=center>出演者一覧</h1>
 <input type="button" value="戻る" onclick="history.back()"></br>
@@ -64,8 +72,20 @@ if(isset($_COOKIE[$jid])){
 	       
 		while($row = mysqli_fetch_array($result)){
 		
-
-			
+/*		     //SimpleClass を　new する　変数名：sc
+		     //scの$m_idに$row['m_id']を入れる
+		     //・・
+		     //sListにscを追加
+		 //}
+		 
+		 //ｓListにシャッフルをする
+		 
+		 //for　0番目から、配列の件数までループ
+		 //｛
+		 　　//sListのi番目を表示
+		 
+		 //｝
+*/			
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];

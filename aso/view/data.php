@@ -26,15 +26,7 @@
 	</script>
 	</head>  
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
-<?php /*
-class SimpleClass
-{
-public $m_id;
-public $name;
-public $j_id;
-public $m_img;
-}*/
-?>
+
 <div class="container">
 <h1 align=center>出演者一覧</h1>
 <input type="button" value="戻る" onclick="history.back()"></br>

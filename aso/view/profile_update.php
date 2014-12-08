@@ -63,7 +63,7 @@ header('Location: /ad_login.php');
 		
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
 			
-			echo '<p>写真：<input type="file" name="upfile" /></p>';
+			echo '<p>写真：<input type="file" name="upfile" size="30"/></p>';
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';
@@ -80,14 +80,26 @@ header('Location: /ad_login.php');
 			$name = $_POST["name"];
 			$school = $_POST["school"];
 			$free = $_POST["free"];
-			//$j_id = $_POST["janru"];
+			$j_id = $_POST["janru"];
+
+			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
+  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
+    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
+			header("Location: janru_top.php");
+			} else {
+			echo "ファイルをアップロードできません。";
+			}
+			} else {
+			echo "ファイルが選択されていません。";
+			}
+
 
 			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
-                    				free = '$free' WHERE m_id = '$mid'";
+                    				free = '$free',m_img ='".$_FILES["upfile"]["name"]."'  WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
 

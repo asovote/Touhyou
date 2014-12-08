@@ -80,7 +80,7 @@ header('Location: /ad_login.php');
 			$name = $_POST["name"];
 			$school = $_POST["school"];
 			$free = $_POST["free"];
-			$j_id = $_POST["janru"];
+			$j_id = $_POST["janru_id"];
 
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
   			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {

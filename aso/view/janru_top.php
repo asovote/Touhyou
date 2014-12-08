@@ -169,7 +169,7 @@
 		echo '</div>';
 		echo '&nbsp&nbsp';
 		echo '<div id="tag2">';		
-		echo '<a href="profile_delete.php?del=1">プロフィールの削除</a>';
+		echo '<a href="janru_top.php?del=1">プロフィールの削除</a>';
 		echo '</div>';			
 		echo '</div>';
 			

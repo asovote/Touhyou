@@ -100,9 +100,9 @@
 			$result = $dbc -> query($query);
 			while($row = $result -> fetch_array()){
 		 	(int)$mid = $row['max(m_id)'];
-		 	echo "m_idの値：".$mid;
+		 	
 		 	}
-
+echo $mid;
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
 			$result = $dbc -> query($dbc, $query);
 

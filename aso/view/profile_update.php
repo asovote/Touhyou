@@ -85,13 +85,13 @@ header('Location: /ad_login.php');
 			$j_id = $_POST["janru"];
 
 			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
-  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
-    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
-			header("Location: janru_top.php");
-			} else {
-			echo '<br>';
-			echo "ファイルをアップロードできません。";
-			}
+	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
+	    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
+				header("Location: janru_top.php");
+				} else {
+				echo '<br>';
+				echo "ファイルをアップロードできません。";
+				}
 			} else {
 			echo '<br>';
 			echo "ファイルが選択されていません。";
@@ -138,7 +138,9 @@ header('Location: /ad_login.php');
                         //update処理失敗時の処理
                         echo 'データの更新に失敗しました。しばらくお待ちの上再度お試し下さい。<br />';
 		
-		}
+					}else{
+						echo 'データを更新しました。';
+					}
 	}
 	
 	

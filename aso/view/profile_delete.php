@@ -14,12 +14,13 @@
 		require_once('include_path.php');
 		require_once('db.php');
 		require_once('session_start.php');
+		
+	     	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
 		echo '<p>参加者情報変更画面</p>';
 		
 		//トップ画面へのリンク
-		echo '<p><a href="kanri_top.html">トップへ戻る</a>';
-		echo '<a href="profile_delete.php">/プロフィールの削除</a>';
+		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 		
 		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {
@@ -44,12 +45,7 @@
 			echo '<p>ジャンル：<input type="hidden" name="janru" value='.$jname.'/>'.$jname.'</p>';
 			echo '<p>フリー：<input type="hidden" name="free" value='.$mfree.'/>'.$mfree.'</p>';
 			
-			
-			echo '<p>写真：<input type="file" name="upfile" /></p>';
-			
 			echo '<input type="submit" value="削除" name="fase1" />';
-			
-			echo '<p>本当にデータを削除してもよろしいですか？</p>';
 			
 			echo '</form>';
 			
@@ -67,12 +63,11 @@
                     //SQL文格納（UPDATE）
                     $query = "DELETE from member WHERE m_id = '$mid';";
                     //SQL文実行
-                    $result = mysqli_query($dbc, $query);
+                    $result = $dbc -> query($query);
 
                     //自分自身を検索
-                   	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 			$query = "select * from member where m_id = '$mid'";
-			$result = mysqli_query($dbc, $query);
+			$result = $dbc -> query($query);
 			
 		
 			// 取得したデータを一覧表示
@@ -91,7 +86,7 @@
 			echo '<p>ジャンル：'.$jname.'</p>';
 			echo '<p>フリーワード：'.$mfree.'</p>';
 			}
-                    $result = mysqli_query($dbc, $query);
+                    $result = $dbc -> query($query);
                     //データベースとの接続を切断
                     mysqli_close($dbc);
 

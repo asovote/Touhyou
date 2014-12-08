@@ -8,7 +8,7 @@
 </head>
 <body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
-
+<center>
 <?php
 session_start();
 if($_SESSION['ad_id'] == null){
@@ -46,6 +46,7 @@ header('Location: /ad_login.php');
 	echo '</div>';
 
 ?>
+</center>
 
 </body>
 </html>

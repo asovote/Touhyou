@@ -149,13 +149,9 @@
 		}else{
 				echo "値が見つかりません";
 		}
-	
-
 		//トップ画面へのリンク
 		echo '<a href="kanri_top.php>戻る</a>';
-	
-
-	?>
+?>
 	</Div>
 </body>
 </html>

@@ -26,6 +26,15 @@
 	</script>
 	</head>  
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
+<?php 
+class SimpleClass
+{
+public $m_id;
+public $name;
+public $j_id;
+public $m_img;
+}
+?>
 <div class="container">
 <h1 align=center>出演者一覧</h1>
 <input type="button" value="戻る" onclick="history.back()"></br>
@@ -58,8 +67,24 @@ if(isset($_COOKIE[$jid])){
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
+		
+	        //SimpleClassのリストを宣言　sList
 	       
 		while($row = mysqli_fetch_array($result)){
+		
+		     //SimpleClass を　new する　変数名：sc
+		     //scの$m_idに$row['m_id']を入れる
+		     //・・
+		     //sListにscを追加
+		 //}
+		 
+		 //ｓListにシャッフルをする
+		 
+		 //for　0番目から、配列の件数までループ
+		 //｛
+		 　　//sListのi番目を表示
+		 
+		 //｝
 			
 			//表示処理
 			$mid = $row['m_id'];
@@ -74,7 +99,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div align="center" valign="bottom">';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div>';
-}
+		}
 }else{
 		//データベースにつなぐ
 		
@@ -88,10 +113,9 @@ if(isset($_COOKIE[$jid])){
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
 	       
-	       $fruits = $result;
-	　　　 shuffle ($fruits);　
 	       
-		while($row = mysqli_fetch_array($fruits)){
+	       
+		while($row = mysqli_fetch_array($result)){
 			
 			//表示処理
 			$mid = $row['m_id'];

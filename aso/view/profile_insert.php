@@ -107,8 +107,8 @@
 
 		
 
-	/*		echo $mid;
-			echo $_FILES["upfile"]["name"];
+			echo "m_idの値：".$mid;
+		/*	echo $_FILES["upfile"]["name"];
 			echo $_FILES["upfile"]["tmp_name"];			
 */
 

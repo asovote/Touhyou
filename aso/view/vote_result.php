@@ -64,7 +64,7 @@
 		}
 		$k = "<br/>";
 		
-		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
+		$query = "select * from member,mj_list,janru where m_id =" . $m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes desc; //とってきたジャンルで選択されたmemberを一人ずつ表示
 		$result = $dbc -> query($query);
 					
 		while($row = $result -> fetch_assoc()) {

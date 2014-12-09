@@ -22,7 +22,6 @@ header('Location: /ad_login.php');
 		
 		//トップ画面へのリンク
 	//	echo '<p><a href="kanri_top.php">トップへ戻る</a>';
-		echo '<a href="janru_top.php?del=1">プロフィールの削除</a>';
 
 		echo '<p>参加者情報変更画面</p>';
 

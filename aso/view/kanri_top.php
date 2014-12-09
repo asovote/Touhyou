@@ -24,9 +24,9 @@ header('Location: /ad_login.php');
 <center><p1>管理者メニュー</p1></center>
 <div id="main">
   <center>
-    <p><a href="select_janru.php">
+    <!--<p><a href="select_janru.php">
       <input type="button" name="button" id="button" style="color:blue;" value="投票結果確認">
-    </p>
+    </p> -->
     <p><a href="select_janru_manage.php">
       <input type="button" name="button2" id="button2" style="color:blue;" value="中間状況確認">
     </p>

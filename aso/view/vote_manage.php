@@ -60,7 +60,7 @@ header('Location: /ad_login.php');
 	printf($k);printf($k);
 	
 	
-	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by m_id"; // . "order by m_id"
+	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by desc"; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
 	$mj_list_result = $dbc -> query($mj_list_query);
@@ -116,7 +116,7 @@ header('Location: /ad_login.php');
 			printf($bun3,$free);
 			printf($k);
 			
-			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'] ."order by votes desc ";
+			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			

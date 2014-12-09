@@ -17,7 +17,7 @@
 		
 	     	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
-		echo '<p>参加者情報変更画面</p>';
+		echo '<h1><p>参加者情報変更画面</p></h1>';
 		
 		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {

@@ -23,7 +23,7 @@ header('Location: /ad_login.php');
 		//トップ画面へのリンク
 	//	echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
-		echo '<p>参加者情報変更画面</p>';
+		echo '<h1><p>参加者情報変更画面</p></h1>';
 
 		
 		if(!isset($_POST['fase1'])){

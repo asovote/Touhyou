@@ -18,13 +18,14 @@
 		}
 
 		//データベースに接続
-	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		require_once('include_path.php');
 		require_once('db.php');
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 		echo '<p>参加者情報登録画面</p>';
+			//トップ画面へのリンク
+		echo '<a href="janru_top.php">戻る</a>';
 		
 		if(isset($_GET['id'])){
 			$id = $_GET['id'];
@@ -100,19 +101,16 @@
 			$result = $dbc -> query($query);
 			while($row = $result -> fetch_array()){
 		 	(int)$mid = $row['max(m_id)'];
+		 //	$mid = $row['max(m_id)'];
 		 	}
-
+		 	
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
+		//	$result = $dbc -> query($dbc, $query);
 			$result = mysqli_query($dbc, $query);
-			if(!isset($result)){
-			}else{
-			$row = mysqli_fetch_array($result);
-			}
-
 		
 
-	/*		echo $mid;
-			echo $_FILES["upfile"]["name"];
+		/*		echo "m_idの値：".$mid;
+		echo $_FILES["upfile"]["name"];
 			echo $_FILES["upfile"]["tmp_name"];			
 */
 
@@ -137,7 +135,7 @@
 			//登録ボタンが押されたとき
 			
 			$jname = $_POST["janru"];
-			echo $jname;
+		//	echo $jname;
 					
 			//通常時の処理
 			//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
@@ -153,12 +151,7 @@
 				echo "値が見つかりません";
 		}
 	
-
-		//トップ画面へのリンク
-		echo '<a href="kanri_top.php>戻る</a>';
-	
-
-	?>
-	</div>
+?>
+	</Div>
 </body>
 </html>

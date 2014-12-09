@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -29,8 +29,8 @@
 		//require_once('include_path.php');
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
+		unset($_SESSION['jid']);
 		
-
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 
 	
@@ -58,7 +58,7 @@
 		echo '</div></div></div>';
 		echo '</form>';
 		}
-			
+					
 		
 	?>
         

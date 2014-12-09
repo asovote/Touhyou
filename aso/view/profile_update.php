@@ -19,11 +19,13 @@ header('Location: /ad_login.php');
 		require_once('include_path.php');
 		require_once('db.php');
 	
-		echo '<p>参加者情報変更画面</p>';
 		
 		//トップ画面へのリンク
-		echo '<p><a href="kanri_top.html">トップへ戻る</a>';
-		echo '<a href="profile_delete.php">/プロフィールの削除</a>';
+	//	echo '<p><a href="kanri_top.php">トップへ戻る</a>';
+		echo '<a href="janru_top.php?del=1">プロフィールの削除</a>';
+
+		echo '<p>参加者情報変更画面</p>';
+
 		
 		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {
@@ -31,11 +33,13 @@ header('Location: /ad_login.php');
 		                echo "メンバーが入っていません。";
 	           	 } else {
 	           	 
+	           	 //値の表示をし登録前の画面の表示
+	           	 
 			 $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 			 $query = "select * from janru ;";
 			 $result = mysqli_query($dbc, $query);
 			
-	           	            	 
+	           	
 			//SESSIONのメンバーからデータを取得
 			foreach ($_SESSION['member'] as $m_id => $member) {
 			 $mid = $member['mid'];
@@ -43,9 +47,10 @@ header('Location: /ad_login.php');
 			 $mschool =$member['mschool'];
 			 $jname =$member['jname'];
 			 $mfree =$member['mfree'];
+			 $mimg=$member['mimg'];
 			}
 		
-			echo '<form action="profile_update.php" method="POST">';
+			echo '<form action="janru_top.php?up=1" method="POST" enctype="multipart/form-data">';
 			echo '<p>氏名：<input type="text" name="name" value="'.$mname.'"/></p>';
 			echo '<p>学校：<input type="text" name="school" value="'.$mschool.'"/></p>';
 			echo '<p>ジャンル：<select name="janru" value="'.$jname.'">';
@@ -60,7 +65,7 @@ header('Location: /ad_login.php');
 		
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
 			
-			echo '<p>写真：<input type="file" name="upfile" /></p>';
+			echo '<p>写真：<input type="file" name="upfile" size="30"/></p>';
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';
@@ -68,28 +73,44 @@ header('Location: /ad_login.php');
 			echo '</form>';
 			
 			}
-		}else{
+	}else{
+		     //登録画面
 			foreach ($_SESSION['member'] as $m_id => $member) {
 			 $mid = $member['mid'];
+			
 			}
 			$name = $_POST["name"];
 			$school = $_POST["school"];
 			$free = $_POST["free"];
 			$j_id = $_POST["janru"];
-		
+
+			if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
+	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
+	    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
+				header("Location: janru_top.php");
+				} else {
+				echo '<br>';
+				echo "ファイルをアップロードできません。";
+				}
+			} else {
+			echo '<br>';
+			echo "ファイルが選択されていません。";
+			}
+
+
+			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
                     //SQL文格納（UPDATE）
-                    $query = "UPDATE member SET
-						name = '$name', school = '$school', 
-						janru = '$j_id', free = '$free'					
-						WHERE m_id = '$mid';";
+                    $query = "UPDATE member SET name = '$name',
+                    				school = '$school',
+                    				free = '$free',m_img ='".$_FILES["upfile"]["name"]."'  WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
 
                     //自分自身を検索
-                   	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-			$query = "select * from member,janru 
-				where member.m_id = '$mid' and member.janru = janru.j_id ";
+                   //	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+			$query = "select * from member,janru,mj_list
+				where member.m_id = '$mid' and mj_list.m_id = member.m_id and mj_list.j_id =janru.j_id ";
 			$result = mysqli_query($dbc, $query);
 			
 		
@@ -100,7 +121,7 @@ header('Location: /ad_login.php');
 			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$mjanru = $row['janru'];
+			$mjanru = $row['j_id'];
 			$jname = $row['j_name'];
 			$mfree = $row['free'];
 			
@@ -117,13 +138,15 @@ header('Location: /ad_login.php');
                         //update処理失敗時の処理
                         echo 'データの更新に失敗しました。しばらくお待ちの上再度お試し下さい。<br />';
 		
-		}
+					}else{
+						echo 'データを更新しました。';
+					}
 	}
 	
 	
 	
 	?>
 	
-	</div>
+</Div>
 </body>
 </html>

@@ -32,7 +32,7 @@ history.forward();
 	}
 	
 	printf('<form method="POST" action = "">');
-	printf('<input type="submit" value="全体の状況へ戻る" onClick="form.action=\'select_janru_manage.php\';return true"/>');
+	printf('<input type="submit" value="全体の状況へ戻る" onClick="form.action=\'vote_manage.php\';return true"/>');
 	printf('</form>');
 	
 	require_once('include_path.php');
@@ -90,7 +90,7 @@ history.forward();
 <form method="POST" name="changeV" action = "vote_change.php">
 
 <input type="text" style="ime-mode: disabled;" istyle="4" format="6N" MODE="numeric" name="Vtext" size="10" maxlength="7" value="" onKeyup="this.value=this.value.replace(/[^0-9]+/,'')" onchange="chktext()"><br><br>
-<input type="submit" value="変更" name="VVV" >
+<input type="submit" value="変更" name="VVV"  disabled>
 
 </form>
 

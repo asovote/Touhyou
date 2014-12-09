@@ -88,6 +88,10 @@
 		$j_id = $_GET['jid'];
 		}else if(isset($_GET['mid'])){
 		$mid = $_GET['mid'];
+		}else if(isset($_GET['up'])){
+		$up=$_GET['up'];
+		}else if(isset($_GET['del'])){
+		$del=$_GET['del'];
 		}
 		
 		
@@ -131,6 +135,7 @@
 				'mschool' => $row['school'],
 				'jname' => $row['j_name'],
 				'mfree' => $row['free'],
+				'mimg' => $row['m_img'],
 				);
 			}
 			
@@ -160,15 +165,19 @@
 			echo '<div id="space">&nbsp;</div>';
 					
 		echo '<div id="tag2">';
-		echo '<a href="profile_update.php">プロフィールの変更</a>';
+		echo '<a href="janru_top.php?up=1">プロフィールの変更</a>';
 		echo '</div>';
 		echo '&nbsp&nbsp';
 		echo '<div id="tag2">';		
-		echo '<a href="profile_delete.php">プロフィールの削除</a>';
+		echo '<a href="janru_top.php?del=1">プロフィールの削除</a>';
 		echo '</div>';			
 		echo '</div>';
 			
 		}
+	}else if(isset($up)){
+	require_once('profile_update.php');
+	}else if(isset($del)){
+	require_once('profile_delete.php');
 	}
 ?>
 </div>

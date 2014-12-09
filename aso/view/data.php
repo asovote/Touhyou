@@ -72,7 +72,7 @@ if(isset($_COOKIE[$jid])){
 	       
 		while($row = mysqli_fetch_array($result)){
 		
-		     //SimpleClass を　new する　変数名：sc
+/*		     //SimpleClass を　new する　変数名：sc
 		     //scの$m_idに$row['m_id']を入れる
 		     //・・
 		     //sListにscを追加
@@ -85,7 +85,7 @@ if(isset($_COOKIE[$jid])){
 		 　　//sListのi番目を表示
 		 
 		 //｝
-			
+*/			
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];

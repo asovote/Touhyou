@@ -116,7 +116,7 @@ header('Location: /ad_login.php');
 			printf($bun3,$free);
 			printf($k);
 			
-			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'] ."order by votes desc ";
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			

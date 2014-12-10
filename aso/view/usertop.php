@@ -32,19 +32,11 @@
 		unset($_SESSION['jid']);
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
-
-	
-			
-		
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru where jtime ='0';";
 		$result = mysqli_query($dbc, $query);
 		
-		
-			
-			
-			
 		while($row = mysqli_fetch_array($result)) {
 		echo '<div class= "menu4">';
 			
@@ -58,8 +50,30 @@
 		echo '</div></div></div>';
 		echo '</form>';
 		}
-					
 		
+		
+		
+		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+		$query = "select * from janru where jtime ='2';";
+		$result = mysqli_query($dbc, $query);
+		
+		if(isset(mysqli_fetch_array($result))){
+			echo '<div class="heading07"><p1>投票ページ</p1></div>';
+			
+			while($row = mysqli_fetch_array($result)) {
+			echo '<div class= "menu4">';
+				
+				echo '<name="janru">';	
+					$janru_id = $row['j_id'];
+					$j_name = $row['j_name'];
+			echo '<value='.$janru_id.'>';
+			echo '<form action="data.php" method="POST">';
+			echo '<div align="center"><input id="subbtn" type="submit" name="jname" value="'.$j_name.'"></div>';
+			echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
+			echo '</div></div></div>';
+			echo '</form>';
+			}
+		}
 	?>
         
 </body>

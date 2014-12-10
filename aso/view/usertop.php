@@ -28,17 +28,11 @@
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		$classDir = __DIR__ . "/../class/";
-		require_once($classDir . 'session_start.php');
-		
-		if(isset($_SESSION['flg'])){
-			exit("Cookieを有効にしてください。");
-		}
-		
-		
 		//require_once('include_path.php');
 		require_once($classDir . 'db.php');
-		
+		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
+		
 		
 		
 		
@@ -46,11 +40,15 @@
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
 			
+			$_SESSION['flg'] = 0;
+			
+			if($_SESSION['flg'] ==1){
+			exit("Cookieを有効にしてください。");
+			}else{
 			$_SESSION['flg'] = 1;
 		//	echo $_SESSION['flg'];
 		   	header('Location: /usertop.php');
-		   	
-		   	
+		   	}
 			
 		}else{
 		

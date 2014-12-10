@@ -40,7 +40,7 @@
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
 			
-			if(isset($_SESSION['flg'])){
+			if($_SESSION['flg'] =1){
 			echo 'Cookieを有効にしてください。';
 			exit;
 			}else{

@@ -30,7 +30,7 @@ header('Location: /ad_login.php');
       <input type="image" src="btn041/member.png" alt="出演者一覧">
     </p>
     <p><a href="sessionout.php">
-      <input type="image" src="btn041/logout.PNG" alt="ログアウト">
+      <input type="image" src="btn041/logout.png" alt="ログアウト">
     </p>
     
   </center>

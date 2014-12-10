@@ -19,10 +19,6 @@
 </head>
 
 <body style="background-image":url(背景2.png);background-attachment:fixed; class="img">
-	<?php
-			setcookie("use_cookie",'true',time()+60*60*24*1);
-
-	?>
 
 
 	<?php
@@ -33,11 +29,10 @@
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
-		
+		require_once($classDir . 'user_cookie.php');
 		
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
-			
 					    echo '投票は、Cookieを有効にする必要があります。';
 			
 		}else{

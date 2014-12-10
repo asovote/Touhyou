@@ -18,9 +18,11 @@ header('Location: /ad_login.php');
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 
 <div id="header">
-  <center><p>投票システム</p></center>
+  <center>
+    <p><img src="btn041/222.png" width="515" height="111"  alt=""/></p>
+  </center>
 </div>
-<center><p1>管理者メニュー</p1></center>
+<center><p>管理者メニュー</p></center>
 <div id="main">
   <center>
     <p><a href="select_janru_manage.php">

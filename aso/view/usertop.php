@@ -35,8 +35,10 @@
 		
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
-		    echo '投票は、Cookieを有効にする必要があります。';
-		}else{		
+			if(!isset($_COOKIE['use_cookie'])){
+					    echo '投票は、Cookieを有効にする必要があります。';
+			}
+		}
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		
@@ -85,7 +87,7 @@
 			}
 		}
 		
-	}
+	
 	?>
         
 </body>

@@ -68,6 +68,8 @@
 		
 			echo '<div class="heading07"><p1>投票結果</p1></div>';
 			
+			mysqli_data_seek($result,0);
+			
 			while($row = mysqli_fetch_array($result)) {
 			echo '<div class= "menu4">';
 				

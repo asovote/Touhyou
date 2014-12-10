@@ -68,6 +68,8 @@
 		
 			echo '<div class="heading07"><p1>投票結果</p1></div>';
 			
+			mysqli_data_seek($result,0);
+			
 			while($row = mysqli_fetch_array($result)) {
 			echo '<div class= "menu4">';
 				
@@ -75,7 +77,7 @@
 					$janru_id = $row['j_id'];
 					$j_name = $row['j_name'];
 			echo '<value='.$janru_id.'>';
-			echo '<form action="data.php" method="POST">';
+			echo '<form action="user_result.php" method="POST">';
 			echo '<div align="center"><input id="subbtn" type="submit" name="jname" value="'.$j_name.'"></div>';
 			echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 			echo '</div></div></div>';

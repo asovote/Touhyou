@@ -24,16 +24,11 @@ header('Location: /ad_login.php');
 <div id="main">
   <center>
     <!--<p><a href="select_janru.php">
-      <input type="button" name="button" id="button" style="color:blue;" value="投票結果確認">
+      <input type="image" src="btn041/vote.png" alt="投票状況確認">
     </p> -->
-<div class="button_box">
-<a href="select_janru_manage.php" target="_blank" title="ボタン画像">
-<img src="btn041/4.png" alt="ボタン画像" width="200" height="113" />
-</a>
-<p class="img_comment">
-<a href="select_janru_manage.php" target="_blank" title="投票状況確認">投票状況確認</a>
-</p>
-</div>
+    <p><a href="select_janru_manage.php">
+      <input type="image" name="button4" id="button4" style="color:blue;" value="出演者一覧">
+    </p>
     <p><a href="janru_top.php">
       <input type="button" name="button4" id="button4" style="color:blue;" value="出演者一覧">
     </p>

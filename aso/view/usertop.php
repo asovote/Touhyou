@@ -36,8 +36,8 @@
 		
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
-			
-						if(isset($_SESSION['flg'])){
+			$_SESSION['flg']=0;
+						if($_SESSION['flg'] ==0){
 						$_SESSION['flg']=1;
 					   	header('Location: /usertop.php');
 					   	}else{

@@ -50,7 +50,7 @@
 		//	echo $_SESSION['flg'];
 		   	header('Location: /usertop.php');
 		   	
-		   	}
+		   	
 			
 		}else{
 		

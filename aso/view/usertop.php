@@ -37,12 +37,13 @@
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
 			$_SESSION['flg']=0;
-						if($_SESSION['flg'] ==0){
-						$_SESSION['flg']=1;
-					   	header('Location: /usertop.php');
-					   	}else{
-					    echo 'Cookieを有効にしてください。';
-					   	}
+			if($_SESSION['flg'] ==0){
+			$_SESSION['flg'] = 1;
+			echo $_SESSION['flg'];
+		   	//header('Location: /usertop.php');
+		   	}else{
+		    echo 'Cookieを有効にしてください。';
+		   	}
 			
 		}else{
 		

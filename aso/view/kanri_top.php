@@ -24,7 +24,7 @@ header('Location: /ad_login.php');
 <div id="main">
   <center>
     <!--<p><a href="select_janru.php">
-      <input type="image" src="btn041/vote.png" alt="投票状況確認">
+      <input type="image" src="btn041/vote.PNG" alt="投票状況確認">
     </p> -->
     <p><a href="select_janru_manage.php">
       <input type="image" name="button4" id="button4" style="color:blue;" value="出演者一覧">

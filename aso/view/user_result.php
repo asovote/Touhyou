@@ -6,7 +6,7 @@
 <body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 
-<form method ="POST" action = "select_janru.php">
+<form method ="POST" action = "usertop.php">
 <input type ="submit" value="戻る">
 </form>
 

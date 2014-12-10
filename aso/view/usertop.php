@@ -32,11 +32,11 @@
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
-		require_once('user_cookie.php');
+		
 		
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
-					    echo '投票は、Cookieを有効にする必要があります。';
+					   	header('Location: /user_cookie.php');
 			
 		}else{
 		

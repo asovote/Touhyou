@@ -14,7 +14,6 @@ header('Location: /ad_login.php');
 </head>
 
 <body>
-
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 
 <div id="header">
@@ -22,7 +21,8 @@ header('Location: /ad_login.php');
     <p><img src="btn041/222.png" width="515" height="111"  alt=""/></p>
   </center>
 </div>
-<center><p>管理者メニュー</p></center>
+<center>
+  <p><strong><font size="6">管理者メニュー</font></strong></p></center>
 <div id="main">
   <center>
     <p><a href="select_janru_manage.php">

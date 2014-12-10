@@ -10,12 +10,16 @@
 <form method ="POST" action = "select_janru_manage.php">
 <input type ="submit" value="戻る">
 </form></th><th>
-<form method ="POST" action = "test2.php">
-<input type="hidden" name="db_st" value="0">
+<form method ="POST" action = "db_change.php">
+<input type="hidden" name="time" value="0">
 <input type="submit" value="スタート">
 </form></th><th>
-<form method ="POST" action = "test3.php">
-<input type="hidden" name="db_st" value="1">
+<form method ="POST" action = "db_change.php">
+<input type="hidden" name="time" value="1">
+<input type="submit" value="ストップ">
+</form></th><th>
+<form method ="POST" action = "db_change.php">
+<input type="hidden" name="time" value="2">
 <input type="submit" value="ストップ">
 </form></th>
 </tr>

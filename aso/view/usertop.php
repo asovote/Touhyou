@@ -38,8 +38,6 @@
 		    echo '投票は、Cookieを有効にする必要があります。';
 		}else{
 		
-		
-		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

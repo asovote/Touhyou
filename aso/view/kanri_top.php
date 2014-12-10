@@ -26,13 +26,13 @@ header('Location: /ad_login.php');
 <div id="main">
   <center>
     <p><a href="select_janru_manage.php">
-      <input type="image" src="btn041/vote.PNG" alt="投票状況確認">
+      <input type="image" src="btn041/vote.PNG" alt="投票状況確認"></a>
     </p>
     <p><a href="janru_top.php">
-      <input type="image" src="btn041/member.png" alt="出演者一覧">
+      <input type="image" src="btn041/member.png" alt="出演者一覧"></a>
     </p>
     <p><a href="sessionout.php">
-      <input type="image" src="btn041/logout.png" alt="ログアウト">
+      <input type="image" src="btn041/logout.png" alt="ログアウト"></a>
     </p>
     
   </center>

@@ -1,39 +1,18 @@
 ﻿<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>全件表示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>全件表示</title>
 </head>
 <body>
+<body style="background-image:url(背景2.png);background-attachment:fixed;">
 
-<table>
-<tr><th>
-<form method ="POST" action = "select_janru_manage.php">
+<form method ="POST" action = "usertop.php">
 <input type ="submit" value="戻る">
-</form></th><th>
-<form method ="POST" action = "db_change.php">
-<input type="hidden" name="time" value="0">
-<input type="submit" value="スタート">
-</form></th><th>
-<form method ="POST" action = "db_change.php">
-<input type="hidden" name="time" value="1">
-<input type="submit" value="ストップ">
-</form></th><th>
-<form method ="POST" action = "db_change.php">
-<input type="hidden" name="time" value="2">
-<input type="submit" value="結果表示">
-</form></th>
-</tr>
-</table>
 </form>
 
 <?php
-
-session_start();
-
-if($_SESSION['ad_id'] == null){
-header('Location: /ad_login.php');
-}
-
+	
+	session_start();
 	$k = "<br/>";
 //	$get_janru = $_POST['select_j'];  //POSTで送られたjanruID取得
 //	printf('<form method="POST" action = "../e_m_e_search">');
@@ -41,6 +20,18 @@ header('Location: /ad_login.php');
 	
 	
 	
+	if(isset($_POST['jid'])){
+	$select_j_id = $_POST['jid']; //スレッドID
+	$_SESSION['jid']=$select_j_id;
+	}else if($_SESSION['jid']){
+	$select_j_id=$_SESSION['jid'];
+	}else{
+	echo '値が入っていません';
+	}
+
+	
+	
+/*	
 	if(!isset($_POST['select_j'])) {
 	$select_j_id = $_SESSION['select_j'];
 	}else{
@@ -48,23 +39,21 @@ header('Location: /ad_login.php');
 	$_SESSION['select_j'] =$select_j_id;
 	}
 	
+*/	
+
+
+	
 	require_once('include_path.php');
 	require_once('db.php');
-	
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-	
-//	$userid = $mysqli -> real_escape_string($_post["xxx"]);  使わない。
-	
-	
-//	$select_j_id = $_POST['select_j'];  //POSTで送られたjanruID取得
-//	$is_j_id = (int)$select_j_id;
+
 	
 	printf($k);printf($k);printf($k);
 	
 	printf($k);printf($k);
 	
 	
-	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc"; // . "order by m_id"
+	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
 	$mj_list_result = $dbc -> query($mj_list_query);
@@ -87,8 +76,9 @@ header('Location: /ad_login.php');
 		}
 		$k = "<br/>";
 		
-		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
-		$result = $dbc -> query($query);					
+		$query = "select * from member,mj_list,janru where member.m_id =".$m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes desc"; //とってきたジャンルで選択されたmemberを一人ずつ表示
+		$result = $dbc -> query($query);
+					
 		while($row = $result -> fetch_assoc()) {
 			
 			
@@ -115,10 +105,12 @@ header('Location: /ad_login.php');
 
 			require('imgget.php');		
 		
+		
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
 			printf($bun3,$free);
 			printf($k);
+			
 			
 			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);
@@ -128,14 +120,6 @@ header('Location: /ad_login.php');
 				printf("<br />"."得票数: %d \n", $total);
 					
 			}
-			
-			
-			$vm1 = "<p><form method=\"post\" action=\"vote_edit_new.php\"></p>";
-			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 投票数変更 </button></p>";
-			printf($vm1);
-			printf($vm2,$img_m_id);
-			printf('</form>');
-			
 			
 			
 			printf($k);printf($k);printf($k);printf($k);printf($k);
@@ -150,7 +134,7 @@ header('Location: /ad_login.php');
 	printf($k);printf($k);printf($k);
 	
 	
-
+	
 
 	
 		
@@ -159,6 +143,7 @@ header('Location: /ad_login.php');
 //	unset($_SESSION['img_id']);
 
 ?>
+
 <html>
 </body>
 </html>

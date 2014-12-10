@@ -39,9 +39,10 @@
 			$_SESSION['flg']=0;
 			if($_SESSION['flg'] ==0){
 			$_SESSION['flg'] = 1;
-			echo $_SESSION['flg'];
-		   	//header('Location: /usertop.php');
+		//	echo $_SESSION['flg'];
+		   	header('Location: /usertop.php');
 		   	}else{
+		   				echo $_SESSION['flg'];
 		    echo 'Cookieを有効にしてください。';
 		   	}
 			

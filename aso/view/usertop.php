@@ -19,7 +19,10 @@
 </head>
 
 <body style="background-image":url(背景2.png);background-attachment:fixed; class="img">
+	<?php
+			setcookie("use_cookie",'true',time()+60*60*24*1);
 
+	?>
 
 	<?php
 		//データベースに接続

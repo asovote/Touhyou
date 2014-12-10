@@ -1,4 +1,9 @@
 	<?php
-			setcookie("use_cookie",'true',time()+60*60*24*1);
+		if(!isset($_COOKIE['use_cookie'])){
+					    echo '投票は、Cookieを有効にする必要があります。';
+			
+		}else{
+			header('Location: /usertop.php');
+		}
 
 	?>

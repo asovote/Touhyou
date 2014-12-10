@@ -31,20 +31,11 @@
 		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
 		
-		if(empty($_COOKIE['test'])){
-		　　if(setcookie("test","",time()+60)){
-		　　　　$_COOKIE['test'] = "test";
-			　　　　if(empty($_COOKIE['test'])){
-			　　　　	$cookmess = "Cookieが無効。";
-			　　　　}else{
-			　　　　$cookmess = "有効だよ！";
-			　　　　}
-		　　}else{
-		　　$cookmess = "Cookieが無効。";
-		　　}
+		setcookie("use_cookie",'true',time()+60*60*24*1);
+		// Cookieが有効でない場合
+		if(!isset($_COOKIE['use_cookie'])){
+		    $message = '投票は、Cookieを有効にする必要があります。';
 		}else{
-		$cookmess = "有効だよ";
-		} 
 		
 		
 		
@@ -92,6 +83,7 @@
 			echo '</form>';
 			}
 		}
+	}
 	?>
         
 </body>

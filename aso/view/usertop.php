@@ -31,6 +31,16 @@
 		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
 		
+		if(empty($_COOKIE['test'])){
+		　　if(setcookie("test","",time()+60)){
+		　　　　$_COOKIE['test'] = "test";
+		　　　　if(empty($_COOKIE['test'])){$cookmess = "Cookieが無効。";
+		　　　　}else{$cookmess = "有効だよ！";}
+		　　}else{$cookmess = "Cookieが無効。";}
+		}else{$cookmess = "有効だよ";} 
+		
+		
+		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

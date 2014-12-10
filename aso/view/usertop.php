@@ -34,10 +34,17 @@
 		if(empty($_COOKIE['test'])){
 		　　if(setcookie("test","",time()+60)){
 		　　　　$_COOKIE['test'] = "test";
-		　　　　if(empty($_COOKIE['test'])){$cookmess = "Cookieが無効。";
-		　　　　}else{$cookmess = "有効だよ！";}
-		　　}else{$cookmess = "Cookieが無効。";}
-		}else{$cookmess = "有効だよ";} 
+			　　　　if(empty($_COOKIE['test'])){
+			　　　　	$cookmess = "Cookieが無効。";
+			　　　　}else{
+			　　　　$cookmess = "有効だよ！";
+			　　　　}
+		　　}else{
+		　　$cookmess = "Cookieが無効。";
+		　　}
+		}else{
+		$cookmess = "有効だよ";
+		} 
 		
 		
 		

@@ -28,33 +28,29 @@
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		$classDir = __DIR__ . "/../class/";
-		session_start();
-		
-		// Cookieが有効でない場合
-		if(!isset($_COOKIE['use_cookie'])){
-			
-			$_SESSION['flg'] = 0;
-			
-			if($_SESSION['flg'] ==1){
-			exit("Cookieを有効にしてください。");
-			}else{
-			$_SESSION['flg'] = 1;
-		//	echo $_SESSION['flg'];
-		   	header('Location: /usertop.php');
-		   	}
-			
-		}else{
-	
 		//require_once('include_path.php');
 		require_once($classDir . 'db.php');
-		
+		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
 		
 		
 		
 		
 		
-
+		// Cookieが有効でない場合
+		if(!isset($_COOKIE['use_cookie'])){
+			
+			$_SESSION['flg'] = 1;
+			if($_SESSION['flg'] ==1){
+			exit("Cookieを有効にしてください。");
+			}else{
+			$_SESSION['flg'] = 1;
+		//	echo $_SESSION['flg'];
+		   	header('Location: /usertop.php');
+		   	exit;
+		   	}
+			
+		}else{
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		

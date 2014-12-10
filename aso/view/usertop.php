@@ -57,8 +57,9 @@
 		$query = "select * from janru where jtime ='2';";
 		$result = mysqli_query($dbc, $query);
 		
-		if(mysqli_fetch_array($result) != 0){
-			echo '<div class="heading07"><p1>投票ページ</p1></div>';
+		if(mysqli_fetch_row($result) != 0){
+		
+			echo '<div class="heading07"><p1>投票結果</p1></div>';
 			
 			while($row = mysqli_fetch_array($result)) {
 			echo '<div class= "menu4">';

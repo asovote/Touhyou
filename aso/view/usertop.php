@@ -46,7 +46,7 @@
 		   	exit;
 		   	
 			
-		}else{
+		}else if(isset($_COOKIE['use_cookie'])){
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		
@@ -95,7 +95,9 @@
 			}
 		}
 		
-	}
+		}else{
+			 echo 'Cookieを有効にしてください。';
+		}
 	?>
         
 </body>

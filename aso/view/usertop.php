@@ -29,7 +29,7 @@
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
-		require_once($classDir . 'user_cookie.php');
+		require_once('user_cookie.php');
 		
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){

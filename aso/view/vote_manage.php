@@ -20,7 +20,7 @@
 </form></th><th>
 <form method ="POST" action = "db_change.php">
 <input type="hidden" name="time" value="2">
-<input type="submit" value="ストップ">
+<input type="submit" value="結果表示">
 </form></th>
 </tr>
 </table>

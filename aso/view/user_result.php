@@ -112,7 +112,7 @@
 			printf($k);
 			
 			
-			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+	/*		$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			
@@ -120,7 +120,7 @@
 				printf("<br />"."得票数: %d \n", $total);
 					
 			}
-			
+	*/		
 			
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 			printf("----------------------------------------------------------------------------------------------");

@@ -31,7 +31,12 @@
 		require_once($classDir . 'session_start.php');
 		unset($_SESSION['jid']);
 		
+		setcookie("use_cookie",'true',time()+60*60*24*1);
 		
+		// Cookieが有効でない場合
+		if(!isset($_COOKIE['use_cookie'])){
+		    echo '投票は、Cookieを有効にする必要があります。';
+		}else{		
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		
@@ -77,6 +82,8 @@
 			echo '</form>';
 			}
 		}
+		
+	}
 	?>
         
 </body>

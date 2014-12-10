@@ -28,14 +28,7 @@
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		$classDir = __DIR__ . "/../class/";
-		//require_once('include_path.php');
-		require_once($classDir . 'db.php');
-		require_once($classDir . 'session_start.php');
-		unset($_SESSION['jid']);
-		
-		
-		
-		
+		session_start();
 		
 		// Cookieが有効でない場合
 		if(!isset($_COOKIE['use_cookie'])){
@@ -51,6 +44,17 @@
 		   	}
 			
 		}else{
+	
+		//require_once('include_path.php');
+		require_once($classDir . 'db.php');
+		
+		unset($_SESSION['jid']);
+		
+		
+		
+		
+		
+
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';
 		

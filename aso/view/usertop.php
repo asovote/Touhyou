@@ -37,7 +37,7 @@
 		
 		
 		// Cookieが有効でない場合
-		if(!isset($_COOKIE['use_cookie']) && !isset($GET['ch'])){
+		if(!isset($_COOKIE['use_cookie']) && !isset($_GET['ch'])){
 			
 			setcookie("use_cookie",'true',time()+60*60*24*1);
 

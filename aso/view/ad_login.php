@@ -70,12 +70,12 @@ function check() {
 
 	var flag = 0;
 
-	if (document.ad_id.ad_id.value.match(/[^0-9]+/)) {
+	if (document.ad_login.ad_id.value.match(/[^0-9]+/)) {
 
 		flag = 1;
 
 	}
-	else if (document.ad_id.pw.value.match(/[^0-9]+/)) {
+	else if (document.ad_login.pw.value.match(/[^0-9]+/)) {
 
 		flag = 1;
 

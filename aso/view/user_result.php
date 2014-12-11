@@ -52,7 +52,7 @@
 	
 	printf($k);printf($k);
 	
-	
+	$sum = 0;
 	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc limit 3"; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
@@ -79,13 +79,15 @@
 		$query = "select * from member,mj_list,janru where member.m_id =".$m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes "; //とってきたジャンルで選択されたmemberを一人ずつ表示
 		$result = $dbc -> query($query);
 		
-		$sum = 0;
+		
 		
 		while($row = $result -> fetch_assoc()) {
 			
 			//順位の表示
 			$sum += 1;
+			
 			echo '第'.$sum.'位';
+			
 			printf($k);printf($k);
 			//参加者情報
 			

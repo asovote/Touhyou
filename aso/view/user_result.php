@@ -79,14 +79,14 @@
 		$query = "select * from member,mj_list,janru where member.m_id =".$m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes "; //とってきたジャンルで選択されたmemberを一人ずつ表示
 		$result = $dbc -> query($query);
 		
-		$i =0;
+		$sum = 0;
 		
 		while($row = $result -> fetch_assoc()) {
 			
 			//順位の表示
-			$i += 1;
-			echo '第'.$i.'位';
-			
+			$sum += 1;
+			echo '第'.$sum.'位';
+			printf($k);printf($k);
 			//参加者情報
 			
 			$bun2 = "参加者名:%s ";

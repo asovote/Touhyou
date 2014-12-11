@@ -83,7 +83,7 @@ function check() {
 
 	if (flag) {
 
-		window.alert('数字以外が入力されています。');
+		window.alert('IDまたはパスワードに数字以外が入力されています。');
 
 		return false;
 

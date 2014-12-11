@@ -131,7 +131,7 @@ header('Location: /ad_login.php');
 			
 			
 			$vm1 = "<p><form method=\"post\" action=\"vote_edit_new.php\"></p>";
-			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 投票数変更 </button></p>";
+			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 得票数変更 </button></p>";
 			printf($vm1);
 			printf($vm2,$img_m_id);
 			printf('</form>');

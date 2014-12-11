@@ -19,7 +19,7 @@
 	
 		echo '<h2>参加者情報変更画面</h2>';
 		
-		if(!isset($_GET['fase1'])){
+		if(!isset($_POST['fase1'])){
 			if(!isset($_SESSION['member'])) {
 		                //カートに商品が無い場合
 		                echo "メンバーが入っていません。";
@@ -36,7 +36,7 @@
 			 $mfree =$member['mfree'];
 			}
 		
-			echo '<form action="janru_top.php" method="GET">';
+			echo '<form action="profile_delete.php" method="POST">';
 			echo '<p>氏名：<input type="hidden" name="name" value='.$mname.'/>'.$mname.'</p>';
 			echo '<p>学校：<input type="hidden" name="school" value='.$mschool.'/>'.$mschool.'</p>';
 			echo '<p>ジャンル：<input type="hidden" name="janru" value='.$jname.'/>'.$jname.'</p>';
@@ -92,7 +92,8 @@
                         echo '<p>データの削除に失敗しました。しばらくお待ちの上再度お試し下さい。</p>';
 		
 		}else{
-                        echo '<p>データを削除しました。</p>';
+			header('location: janru_top.php?del=2');
+			exit();
 		}
 	}
 	

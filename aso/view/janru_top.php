@@ -175,9 +175,13 @@
 			
 		}
 	}else if(isset($up)){
-	require_once('profile_update.php');
+		require_once('profile_update.php');
 	}else if(isset($del)){
-	require_once('profile_delete.php');
+		if($del == 1){
+		require_once('profile_delete.php');
+		}else if($del ==2){
+		echo '<p>データを削除しました。</p>';
+		}
 	}
 ?>
 </div>

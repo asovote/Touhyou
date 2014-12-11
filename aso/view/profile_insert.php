@@ -81,13 +81,13 @@
 			if($name =="" || $school =="" || $free == "" || $j_id == ""){
 				$err = "";
 				if($name == ""){
-					$err += '名前';
+					$err -> '名前';
 				}else if($school ==""){
-					$err += '学校';
+					$err -> '学校';
 				}else if($free == ""){
-					$err += 'フリーワード';
+					$err -> 'フリーワード';
 				}else if($j_id == ""){
-					$err += 'ジャンル';
+					$err -> 'ジャンル';
 				}
 				echo $err.'を入力してください。';
 				

@@ -36,7 +36,7 @@
 			 $mfree =$member['mfree'];
 			}
 		
-			echo '<form action="janru_top?del=1.php" method="POST">';
+			echo '<form action="janru_top.php" method="POST">';
 			echo '<p>氏名：<input type="hidden" name="name" value='.$mname.'/>'.$mname.'</p>';
 			echo '<p>学校：<input type="hidden" name="school" value='.$mschool.'/>'.$mschool.'</p>';
 			echo '<p>ジャンル：<input type="hidden" name="janru" value='.$jname.'/>'.$jname.'</p>';

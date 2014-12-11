@@ -92,6 +92,8 @@
 		$up=$_GET['up'];
 		}else if(isset($_GET['del'])){
 		$del=$_GET['del'];
+		}else if(isset($_GET['in'])){
+		$in=$_GET['in'];
 		}
 		
 		
@@ -184,6 +186,10 @@
 		echo '<p>データを削除しました。</p>';
 		echo '</Div>';
 		}
+	}else if(isset($in)){
+		echo '<Div Align="center">';
+		echo '<p>データを追加しました。</p>';
+		echo '</Div>';
 	}
 ?>
 </div>

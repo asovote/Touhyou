@@ -81,17 +81,21 @@
 			if($name =="" || $school =="" || $free == "" || $j_id == ""){
 				$err = "";
 				if($name == ""){
-					$err -> '名前';
-				}else if($school ==""){
-					$err -> '学校';
-				}else if($free == ""){
-					$err -> 'フリーワード';
-				}else if($j_id == ""){
-					$err -> 'ジャンル';
-				}
+				$err = '名前'; 
 				echo $err.'を入力してください。';
-				
-
+				}
+				if($school ==""){
+				$err = '学校';
+				echo $err.'を入力してください。';
+				}
+				if($free == ""){
+				$err = 'フリーワード';
+				echo $err.'を入力してください。';
+				}
+				if($j_id == ""){
+				$err = 'ジャンル';
+				echo $err.'を入力してください。';
+				}
 			}else{
 
 				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			

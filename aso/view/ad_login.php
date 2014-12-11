@@ -76,7 +76,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		 
 		  <tr>
 		    <td>管理者ID</td>
-		　　<td><input pattern="^[0-9A-Za-z]+$" maxlenght="4" name="ad_id"></td>
+		　　<td><input pattern="^[0-9]+$" maxlenght="4" name="ad_id"></td>
 		 </tr>
 		 
 		 <tr>

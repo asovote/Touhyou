@@ -53,7 +53,7 @@
 	printf($k);printf($k);
 	
 	
-	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . "order by votes desc";
+	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc"; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
 	$mj_list_result = $dbc -> query($mj_list_query);

@@ -64,7 +64,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 
 
 <script type="text/javascript"> 
-<!-- 
+ 
 function check() {
 
 	var flag = 0;

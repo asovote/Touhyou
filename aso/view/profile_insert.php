@@ -107,7 +107,7 @@
 			$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
 		//	$result = $dbc -> query($dbc, $query);
 			$result = mysqli_query($dbc, $query);
-		
+			header("Location: janru_top.php?in=1");
 
 		/*		echo "m_idの値：".$mid;
 		echo $_FILES["upfile"]["name"];
@@ -145,7 +145,7 @@
 			//自分自身を検索
 			$query = "SELECT * FROM janru ";
 			$result = mysqli_query($dbc, $query);
-			header("Location: janru_top.php");
+			header("Location: janru_top.php?in=1");
 		
 		}else{
 				echo "値が見つかりません";

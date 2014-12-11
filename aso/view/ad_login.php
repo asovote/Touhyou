@@ -62,10 +62,45 @@ $con = mysql_connect(db_host,db_user,db_pass);
 <head>
 <title>投票システム</title>
 
+
+<script type="text/javascript"> 
+<!--
+ 
+function check() {
+
+	var flag = 0;
+
+	if (document.ad_id.ad_id.value.match(/[^0-9]+/)) {
+
+		flag = 1;
+
+	}
+	else if (document.ad_id.pw.value.match(/[^0-9]+/)) {
+
+		flag = 1;
+
+	}
+
+	if (flag) {
+
+		window.alert('数字以外が入力されています。');
+
+		return false;
+
+	}
+	else {
+		
+		return true;
+
+	}
+}
+
+-->
+</script>
 </head>
 <body>
 
-<form method="POST" action="ad_login.php" name="ad_login">
+<form method="POST" action="ad_login.php" name="ad_login" onSubmit="return check()">
 
 <meta http-equic="Content-Type" content="text/html; charset=utf-8" />
 

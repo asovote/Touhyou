@@ -23,7 +23,6 @@
 		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
-		echo '<p>参加者情報登録画面</p>';
 			//トップ画面へのリンク
 		echo '<a href="janru_top.php">戻る</a>';
 		
@@ -39,7 +38,7 @@
 		
 		if($id == 1){
 		//fase2の登録ボタンが押されてないとき
-		
+		echo '<p>参加者情報登録画面</p>';
 		
 		$query = "select * from janru ;";
 		$result = mysqli_query($dbc,  $query);
@@ -79,22 +78,22 @@
 			$j_id = $_POST["janru"];
 			
 			if($name =="" || $school =="" || $free == "" || $j_id == ""){
-				$err = "";
+				$err = "".'<br>';
 				if($name == ""){
 				$err = '名前'; 
-				echo $err.'を入力してください。';
+				echo $err.'を入力してください。<br>';
 				}
 				if($school ==""){
 				$err = '学校';
-				echo $err.'を入力してください。';
+				echo $err.'を入力してください。<br>';
 				}
 				if($free == ""){
 				$err = 'フリーワード';
-				echo $err.'を入力してください。';
+				echo $err.'を入力してください。<br>';
 				}
 				if($j_id == ""){
 				$err = 'ジャンル';
-				echo $err.'を入力してください。';
+				echo $err.'を入力してください。<br>';
 				}
 			}else{
 
@@ -138,7 +137,10 @@
 		
 		
 		}else if($id == 2){
-			
+
+		echo '<p>ジャンル名登録画面</p>';
+
+
 			echo '<form action="profile_insert.php" method="POST">';
 			
 			echo '<p>ジャンル名：<input type="text" name="janru" /></p>';
@@ -156,7 +158,7 @@
 			$jname = $_POST["janru"];
 			
 			if($jname == ""){
-				echo 'ジャンルを選択してください。';
+				echo '追加ジャンル名を入力してください。';
 			
 			}else{
 			

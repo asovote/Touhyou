@@ -105,6 +105,12 @@ header('Location: /ad_login.php');
                     				free = '$free',m_img ='".$_FILES["upfile"]["name"]."'  WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
+                    
+                    
+                    $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
+                    //SQL文実行
+                    $result = mysqli_query($dbc, $query);
+
 
                     //自分自身を検索
                    //	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

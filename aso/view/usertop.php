@@ -36,16 +36,17 @@
 		
 		
 		
-		// Cookieが有効でない場合
-		if(!isset($_COOKIE['use_cookie']) && !isset($_GET['ch'])){
-			
+		// Cookieが無効の場合
+		if(!isset($_COOKIE['use_cookie'])){
 			setcookie("use_cookie",'true',time()+60*60*24*1);
-
-		//	echo $_SESSION['flg'];
+			//$_GETの値がない場合
+			if(!isset($_GET['ch'])){
 		   	header('Location: /usertop.php?ch=1');
 		   	exit;
-		   	
-			
+			}else{
+			echo 'Cookieを有効にしてください。';
+			}
+		//Cookieが有効の場合
 		}else if(isset($_COOKIE['use_cookie'])){
 		
 		echo '<div class="heading07"><p1>投票ページ</p1></div>';

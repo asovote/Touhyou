@@ -109,11 +109,17 @@ function check() {
 		
 		 <table border="1" align="center">
 		 
-		  <tr>
-		    <td>管理者ID</td>
-		　　<td><input pattern="^[0-9]+$" maxlenght="4" name="ad_id"></td>
-		 </tr>
+	//	 <tr>
+	//	    <td>管理者ID</td>
+	//	　　<td><input pattern="^[0-9]+$" maxlenght="4" name="ad_id"></td>
+	//	 </tr>
 		 
+		 <tr>
+		    <td>管理者ID</td>
+		　　<td><input type = "text" maxlenght="4" name="ad_id"></td>
+		 </tr>
+
+
 		 <tr>
 		    <td>管理者パスワード</td>
 		    <td><input type="password" maxlenght="4" name="pw" style="ime-mode:disabled"></td>

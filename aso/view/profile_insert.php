@@ -78,22 +78,22 @@
 			$j_id = $_POST["janru"];
 			
 			if($name =="" || $school =="" || $free == "" || $j_id == ""){
-				$err = "".'<br>';
+				$err = "";
 				if($name == ""){
-				$err = '名前'; 
-				echo $err.'を入力してください。<br>';
+				$err = '<br>名前'; 
+				echo $err.'を入力してください。';
 				}
 				if($school ==""){
-				$err = '学校';
-				echo $err.'を入力してください。<br>';
+				$err = '<br>学校';
+				echo $err.'を入力してください。';
 				}
 				if($free == ""){
-				$err = 'フリーワード';
-				echo $err.'を入力してください。<br>';
+				$err = '<br>フリーワード';
+				echo $err.'を入力してください。';
 				}
 				if($j_id == ""){
-				$err = 'ジャンル';
-				echo $err.'を入力してください。<br>';
+				$err = '<br>ジャンル';
+				echo $err.'を入力してください。';
 				}
 			}else{
 
@@ -158,7 +158,7 @@
 			$jname = $_POST["janru"];
 			
 			if($jname == ""){
-				echo '追加ジャンル名を入力してください。';
+				echo '<br>追加するジャンル名を入力してください。';
 			
 			}else{
 			

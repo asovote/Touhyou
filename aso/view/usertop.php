@@ -39,12 +39,20 @@
 		// Cookieが無効の場合
 		if(!isset($_COOKIE['use_cookie'])){
 			setcookie("use_cookie",'true',time()+60*60*24*1);
-			//$_GETの値がない場合
-			if(!isset($_GET['ch'])){
-		   	header('Location: /usertop.php?ch=1');
-		   	exit;
+			//$_SESSIONの値がない場合
+			if(!isset($_SESSION['cookie_ch'])){
+				//$_GETの値がない場合
+				if(!isset($_GET['ch'])){
+		   			header('Location: /usertop.php?ch=1');
+		   			exit;
+				}else{
+				$_SESSION['cookie_ch']=1;
+				echo 'Cookieを有効にしてください。';
+				}
 			}else{
-			echo 'Cookieを有効にしてください。';
+			unset($_SESSION['cookie_ch']);
+   			header('Location: /usertop.php?ch=1');
+		   	exit;
 			}
 		//Cookieが有効の場合
 		}else if(isset($_COOKIE['use_cookie'])){

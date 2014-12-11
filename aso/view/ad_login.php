@@ -28,8 +28,8 @@ $con = mysql_connect(db_host,db_user,db_pass);
  
 	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
 		
-		echo "ID、パスワードを入力してください。";
-
+		//echo "ID、パスワードを入力してください。";
+		window.alert('ID、パスワードを入力してください。');
 	
 
 		}else if (mysql_num_rows($result) == 1){
@@ -43,8 +43,8 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		
 		} else if (mysql_num_rows($result) == 0) {
 
-		      echo "ID、またはパスワードが間違っています。";
-		      
+		      //echo "ID、またはパスワードが間違っています。";
+		      window.alert('ID、またはパスワードが間違っています。');
 	    
 
 		}

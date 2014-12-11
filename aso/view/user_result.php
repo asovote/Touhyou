@@ -45,6 +45,11 @@
 	
 	require_once('include_path.php');
 	require_once('db.php');
+	header('Expires:-1');
+	header('Cache-Control:');
+	header('Pragma:');
+
+	
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 	

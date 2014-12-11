@@ -30,6 +30,10 @@
 		//require_once('include_path.php');
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
+		header('Expires:-1');
+		header('Cache-Control:');
+		header('Pragma:');
+
 		unset($_SESSION['jid']);
 		
 		

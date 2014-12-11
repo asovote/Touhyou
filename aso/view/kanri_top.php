@@ -14,23 +14,25 @@ header('Location: /ad_login.php');
 </head>
 
 <body>
-
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
 
 <div id="header">
-  <center><p>投票システム</p></center>
+  <center>
+    <p><img src="btn041/222.png" width="515" height="111"  alt=""/></p>
+  </center>
 </div>
-<center><p1>管理者メニュー</p1></center>
+<center>
+  <p><strong><font size="6">管理者メニュー</font></strong></p></center>
 <div id="main">
   <center>
     <p><a href="select_janru_manage.php">
-      <input type="image" src="btn041/vote.PNG" alt="投票状況確認">
+      <input type="image" src="btn041/vote.PNG" alt="投票状況確認"></a>
     </p>
     <p><a href="janru_top.php">
-      <input type="image" src="btn041/member.png" alt="出演者一覧">
+      <input type="image" src="btn041/member.png" alt="出演者一覧"></a>
     </p>
     <p><a href="sessionout.php">
-      <input type="image" src="btn041/logout.png" alt="ログアウト">
+      <input type="image" src="btn041/logout.png" alt="ログアウト"></a>
     </p>
     
   </center>

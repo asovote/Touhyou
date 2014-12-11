@@ -1,0 +1,9 @@
+@charset "utf-8";
+input {
+	height: 50px;
+	width: 200px;
+}
+strong {
+	font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+
+}

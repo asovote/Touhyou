@@ -53,7 +53,7 @@
 	printf($k);printf($k);
 	
 	
-	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc"; // . "order by m_id"
+	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc limit 3"; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
 	$mj_list_result = $dbc -> query($mj_list_query);
@@ -84,14 +84,10 @@
 		while($row = $result -> fetch_assoc()) {
 			
 			//順位の表示
-			$i = $i + 1;
+			$i += 1;
 			echo '第'.$i.'位';
 			
 			//参加者情報
-			$bun1 = "参加者ID:%d "; // ""内はHTML
-			$img_m_id = $row['m_id'];
-			printf($bun1,$img_m_id);
-			printf($k);
 			
 			$bun2 = "参加者名:%s ";
 			$m_name = $row['name'];

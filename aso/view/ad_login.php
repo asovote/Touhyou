@@ -28,10 +28,6 @@ $con = mysql_connect(db_host,db_user,db_pass);
  
 	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
 		
-		echo "ID、パスワードを入力してください。";
-		
-	
-
 		}else if (mysql_num_rows($result) == 1){
 			
 	    		$row = mysql_fetch_assoc($result);

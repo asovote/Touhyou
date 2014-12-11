@@ -180,7 +180,9 @@
 		if($del == 1){
 		require_once('profile_delete.php');
 		}else if($del ==2){
+		echo '<Div Align="center">';
 		echo '<p>データを削除しました。</p>';
+		echo '</Div>';
 		}
 	}
 ?>

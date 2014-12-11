@@ -40,11 +40,11 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		} else if (mysql_num_rows($result) == 0) {
 
 		      echo "ID、またはパスワードが間違っています。";
-		      
+		      echo "";
 
 		}
 
-		echo "";
+		
 
   $con = mysql_close($con);
   if (!$con) {

@@ -64,6 +64,7 @@ $con = mysql_connect(db_host,db_user,db_pass);
 
 
 <script type="text/javascript"> 
+<!--
  
 function check() {
 
@@ -94,6 +95,8 @@ function check() {
 	}
 }
 
+-->
+</script>
 </head>
 <body>
 

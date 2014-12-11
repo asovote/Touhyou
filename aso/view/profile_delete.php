@@ -61,6 +61,11 @@
                     $query = "DELETE from member WHERE m_id = '$mid';";
                     //SQL文実行
                     $result = $dbc -> query($query);
+                    
+                    $query = "DELETE from mj_list WHERE m_id = '$mid';";
+                    //SQL文実行
+                    $result = $dbc -> query($query);
+
 
                     //自分自身を検索
 			$query = "select * from member where m_id = '$mid'";

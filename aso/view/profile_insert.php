@@ -81,16 +81,16 @@
 			if($name =="" || $school =="" || $free == "" || $j_id == ""){
 				$err = "";
 				if($name == ""){
-					$err += '名前';
+					$err => '名前';
 				}else if($school ==""){
-					$err += '学校';
+					$err => '学校';
 				}else if($free == ""){
-					$err += 'フリーワード';
+					$err => 'フリーワード';
 				}else if($j_id == ""){
-					$err += 'ジャンル';
+					$err => 'ジャンル';
 				}
 				echo $err.'を入力してください。';
-				echo '<a href="janru_top.php">戻る</a>';
+				
 
 			}else{
 
@@ -153,7 +153,7 @@
 			
 			if($jname == ""){
 				echo 'ジャンルを選択してください。';
-				echo '<a href="janru_top.php">戻る</a>';
+			
 			}else{
 			
 		//	echo $jname;

@@ -89,7 +89,7 @@
 				}else if($j_id == ""){
 					$err += 'ジャンル';
 				}
-				echo .'を入力してください。';
+				echo $err.'を入力してください。';
 				echo '<a href="janru_top.php">戻る</a>';
 
 			}else{

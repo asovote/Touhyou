@@ -109,6 +109,16 @@
 					
 			}
 			
+			$pquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+			$presult = $dbc -> query($pquery);
+			while($vote_row = $presult -> fetch_assoc()) {
+			
+				$total = $vote_row['votes'];
+				printf("<br />"."得票数: %d \n", $total);
+					
+			}
+
+			
 			
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 			printf("----------------------------------------------------------------------------------------------");

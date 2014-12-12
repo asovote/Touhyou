@@ -53,6 +53,18 @@ header('Location: /ad_login.php');
 	
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
+
+function ignore($str){
+	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
+}
+
+function tag_kyoka($str){
+ $search = array('&lt;br&gt;');
+ $replace = array('<br>');
+return str_replace($search,$replace,$str);
+}
+
+
 //	$userid = $mysqli -> real_escape_string($_post["xxx"]);  使わない。
 	
 	
@@ -118,17 +130,8 @@ header('Location: /ad_login.php');
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
 
-function ignore_tag_br($str){
-	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
-}
 
-function tag_kyoka($str){
- $search = array('&lt;br&gt;');
- $replace = array('<br>');
-return str_replace($search,$replace,$str);
-}
-
-$free = ignore_tag_br($free);
+$free = ignore($free);
 $free = tag_kyoka($free);
 			printf($bun3,$free);
 			printf($k);

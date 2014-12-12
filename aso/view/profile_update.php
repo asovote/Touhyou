@@ -50,14 +50,14 @@ header('Location: /ad_login.php');
 			}
 		
 	
-function h($mfree){
-	return htmlspecialchars($mfree,ENT_QUOTES,"UTF-8");
+function h($str){
+	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
 }
 
-function tag_kyoka($mfree){
+function tag_kyoka($str){
  $search = array('&lt;br&gt;');
  $replace = array('<br>');
-return str_replace($search,$replace,$mfree);
+return str_replace($search,$replace,$str);
 }
 
 			
@@ -73,8 +73,8 @@ return str_replace($search,$replace,$mfree);
 			}
 			
 			echo '</select></p>';
-			$str = h($mfree);
-			$str = tag_kyoka($mfree);
+			$mfree = h($mfree);
+			$mfree = tag_kyoka($mfree);
 			echo $str;
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$str.'</textarea>';
 			

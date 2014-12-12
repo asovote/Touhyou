@@ -1,8 +1,8 @@
-﻿<html>
-<title>
-ジャンル選択
-</title>
+﻿<!DOCTYPE html>
+<html lang="ja">
 <head>
+  <title>ジャンル選択</title>
+  <meta charset="utf-8">
 </head>
 <body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">

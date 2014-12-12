@@ -25,6 +25,20 @@
 		                echo "メンバーが入っていません。";
 	           	 } else {
 	           	 
+function h($str){
+	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
+}
+
+function tag_kyoka($str){
+ $search = array('&lt;br&gt;');
+ $replace = array('<br>');
+return str_replace($search,$replace,$str);
+}
+
+$mfree = h($mfree);
+$mfree = tag_kyoka($mfree);
+echo $mfree;
+
 			
 	           	            	 
 			//SESSIONのメンバーからデータを取得
@@ -36,6 +50,7 @@
 			 $mfree =$member['mfree'];
 			}
 		
+
 			echo '<form action="profile_delete.php" method="POST">';
 			echo '<p>氏名：<input type="hidden" name="name" value='.$mname.'/>'.$mname.'</p>';
 			echo '<p>学校：<input type="hidden" name="school" value='.$mschool.'/>'.$mschool.'</p>';

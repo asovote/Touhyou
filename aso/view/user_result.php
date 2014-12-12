@@ -52,6 +52,17 @@
 	
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
+
+function ignore($str){
+	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
+}
+
+function tag_kyoka($str){
+ $search = array('&lt;br&gt;');
+ $replace = array('<br>');
+return str_replace($search,$replace,$str);
+}
+
 	
 	printf($k);printf($k);printf($k);
 	
@@ -117,6 +128,9 @@
 		
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
+$free = ignore($free);
+$free = tag_kyoka($free);
+
 			printf($bun3,$free);
 			printf($k);
 			

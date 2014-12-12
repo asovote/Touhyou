@@ -61,6 +61,11 @@
                     $query = "DELETE from member WHERE m_id = '$mid';";
                     //SQL文実行
                     $result = $dbc -> query($query);
+                    
+                    $query = "DELETE from mj_list WHERE m_id = '$mid';";
+                    //SQL文実行
+                    $result = $dbc -> query($query);
+
 
                     //自分自身を検索
 			$query = "select * from member where m_id = '$mid'";
@@ -92,7 +97,8 @@
                         echo '<p>データの削除に失敗しました。しばらくお待ちの上再度お試し下さい。</p>';
 		
 		}else{
-                        echo '<p>データを削除しました。</p>';
+			header('location: janru_top.php?del=2');
+			exit();
 		}
 	}
 	

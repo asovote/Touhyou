@@ -28,10 +28,6 @@ $con = mysql_connect(db_host,db_user,db_pass);
  
 	   if ($_POST['ad_id'] == "" || $_POST['pw'] == "") {
 		
-		echo "ID、パスワードを入力してください。";
-
-	
-
 		}else if (mysql_num_rows($result) == 1){
 			
 	    		$row = mysql_fetch_assoc($result);
@@ -44,12 +40,11 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		} else if (mysql_num_rows($result) == 0) {
 
 		      echo "ID、またはパスワードが間違っています。";
-		      
-	    
+		      echo "";
 
 		}
 
-
+		
 
   $con = mysql_close($con);
   if (!$con) {
@@ -62,10 +57,45 @@ $con = mysql_connect(db_host,db_user,db_pass);
 <head>
 <title>投票システム</title>
 
+
+<script type="text/javascript"> 
+<!--
+ 
+function check() {
+
+	var flag = 0;
+
+	if (document.ad_login.ad_id.value.match(/[^0-9]+/)) {
+
+		flag = 1;
+
+	}
+	else if (document.ad_login.pw.value.match(/[^0-9]+/)) {
+
+		flag = 1;
+
+	}
+
+	if (flag) {
+
+		window.alert('IDまたはパスワードに数字以外が入力されています。');
+
+		return false;
+
+	}
+	else {
+		
+		return true;
+
+	}
+}
+
+-->
+</script>
 </head>
 <body>
 
-<form method="POST" action="ad_login.php" name="ad_login">
+<form method="POST" action="ad_login.php" name="ad_login" onSubmit="return check()">
 
 <meta http-equic="Content-Type" content="text/html; charset=utf-8" />
 
@@ -74,15 +104,19 @@ $con = mysql_connect(db_host,db_user,db_pass);
 		
 		 <table border="1" align="center">
 		 
+		 
+		 
 		 <tr>
 		    <td>管理者ID</td>
-		　　<td><input type="text" maxlenght="4" name="ad_id" style="ime-mode:disabled"></td>
+		　　<td><input type = "text" maxlenght="4" name="ad_id"></td>
 		 </tr>
-		 
+
+
 		 <tr>
 		    <td>管理者パスワード</td>
 		    <td><input type="password" maxlenght="4" name="pw" style="ime-mode:disabled"></td>
 		 </tr>
+
 		 </table>
 		    
 		 <div align="center">

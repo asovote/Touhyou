@@ -77,14 +77,6 @@ header('Location: /ad_login.php');
 		$m_id = $mj_list_row['m_id'];
 		
 		
-		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
-		$result = $dbc -> query($query);
-		
-		if(!$result){
-			printf('query failed.' . $dbc -> error);
-			$dbc -> close();
-			exit();
-		}
 		$k = "<br/>";
 		
 		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
@@ -130,8 +122,20 @@ header('Location: /ad_login.php');
 			}
 			
 			
+			$pquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+			$presult = $dbc -> query($pquery);
+			while($vote_row = $presult -> fetch_assoc()) {
+			
+				$total = $vote_row['votes'];
+				printf("<br />"."得票数: %d \n", $total);
+					
+			}
+
+			
+			
+			
 			$vm1 = "<p><form method=\"post\" action=\"vote_edit_new.php\"></p>";
-			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 投票数変更 </button></p>";
+			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 得票数変更 </button></p>";
 			printf($vm1);
 			printf($vm2,$img_m_id);
 			printf('</form>');

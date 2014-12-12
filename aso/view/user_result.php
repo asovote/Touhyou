@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>全件表示</title>
+<title>ランキング</title>
 </head>
 <body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
@@ -45,6 +45,11 @@
 	
 	require_once('include_path.php');
 	require_once('db.php');
+	header('Expires:-1');
+	header('Cache-Control:');
+	header('Pragma:');
+
+	
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 	
@@ -52,8 +57,8 @@
 	
 	printf($k);printf($k);
 	
-	
-	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id; // . "order by m_id"
+	$sum = 0;
+	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc limit 3"; // . "order by m_id"
 //	選択されたジャンルに参加する人のm_idを取得する
 	
 	$mj_list_result = $dbc -> query($mj_list_query);
@@ -76,16 +81,20 @@
 		}
 		$k = "<br/>";
 		
-		$query = "select * from member,mj_list,janru where member.m_id =".$m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes desc"; //とってきたジャンルで選択されたmemberを一人ずつ表示
+		$query = "select * from member,mj_list,janru where member.m_id =".$m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes "; //とってきたジャンルで選択されたmemberを一人ずつ表示
 		$result = $dbc -> query($query);
-					
+		
+		
+		
 		while($row = $result -> fetch_assoc()) {
 			
+			//順位の表示
+			$sum += 1;
 			
-			$bun1 = "参加者ID:%d "; // ""内はHTML
-			$img_m_id = $row['m_id'];
-			printf($bun1,$img_m_id);
-			printf($k);
+			echo '第'.$sum.'位';
+			
+			printf($k);printf($k);
+			//参加者情報
 			
 			$bun2 = "参加者名:%s ";
 			$m_name = $row['name'];
@@ -112,7 +121,7 @@
 			printf($k);
 			
 			
-			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+	/*		$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);
 			while($vote_row = $vresult -> fetch_assoc()) {
 			
@@ -120,7 +129,7 @@
 				printf("<br />"."得票数: %d \n", $total);
 					
 			}
-			
+	*/		
 			
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 			printf("----------------------------------------------------------------------------------------------");

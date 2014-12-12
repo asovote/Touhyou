@@ -92,6 +92,8 @@
 		$up=$_GET['up'];
 		}else if(isset($_GET['del'])){
 		$del=$_GET['del'];
+		}else if(isset($_GET['in'])){
+		$in=$_GET['in'];
 		}
 		
 		
@@ -175,9 +177,19 @@
 			
 		}
 	}else if(isset($up)){
-	require_once('profile_update.php');
+		require_once('profile_update.php');
 	}else if(isset($del)){
-	require_once('profile_delete.php');
+		if($del == 1){
+		require_once('profile_delete.php');
+		}else if($del ==2){
+		echo '<Div Align="center">';
+		echo '<p>データを削除しました。</p>';
+		echo '</Div>';
+		}
+	}else if(isset($in)){
+		echo '<Div Align="center">';
+		echo '<p>データを追加しました。</p>';
+		echo '</Div>';
 	}
 ?>
 </div>

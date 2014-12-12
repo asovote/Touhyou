@@ -49,6 +49,18 @@ header('Location: /ad_login.php');
 			 $mimg=$member['mimg'];
 			}
 		
+	
+function h($mfree){
+	return htmlspecialchars($mfree,ENT_QUOTES,"UTF-8");
+}
+
+function tag_kyoka($mfree){
+ $search = array('&lt;br&gt;');
+ $replace = array('<br>');
+return str_replace($search,$replace,$mfree);
+}
+
+			
 			echo '<form action="janru_top.php?up=1" method="POST" enctype="multipart/form-data">';
 			echo '<p>氏名：<input type="text" name="name" value="'.$mname.'"/></p>';
 			echo '<p>学校：<input type="text" name="school" value="'.$mschool.'"/></p>';
@@ -61,8 +73,10 @@ header('Location: /ad_login.php');
 			}
 			
 			echo '</select></p>';
-		
-			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
+			$str = h($mfree);
+			$str = tag_kyoka($mfree);
+			echo $str;
+			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$str.'</textarea>';
 			
 			echo '<p>写真：<input type="file" name="upfile" size="30"/></p>';
 			
@@ -105,12 +119,6 @@ header('Location: /ad_login.php');
                     				free = '$free',m_img ='".$_FILES["upfile"]["name"]."'  WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
-                    
-                    
-                    $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
-                    //SQL文実行
-                    $result = mysqli_query($dbc, $query);
-
 
                     //自分自身を検索
                    //	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

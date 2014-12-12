@@ -51,7 +51,7 @@ header('Location: /ad_login.php');
 		
 	
 function h($mfree){
-	return htmlspecialchars($mfree,ENT_QUOTES,"SJIS");
+	return htmlspecialchars($mfree,ENT_QUOTES,"UTF-8");
 }
 
 function tag_kyoka($mfree){
@@ -75,6 +75,7 @@ return str_replace($search,$replace,$str);
 			echo '</select></p>';
 			$str = h($mfree);
 			$str = tag_kyoka($mfree);
+			echo $str;
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$str.'</textarea>';
 			
 			echo '<p>写真：<input type="file" name="upfile" size="30"/></p>';

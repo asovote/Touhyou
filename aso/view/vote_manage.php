@@ -130,6 +130,18 @@ header('Location: /ad_login.php');
 			}
 			
 			
+			$pquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
+			$presult = $dbc -> query($pquery);
+			while($vote_row = $presult -> fetch_assoc()) {
+			
+				$total = $vote_row['votes'];
+				printf("<br />"."得票数: %d \n", $total);
+					
+			}
+
+			
+			
+			
 			$vm1 = "<p><form method=\"post\" action=\"vote_edit_new.php\"></p>";
 			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 得票数変更 </button></p>";
 			printf($vm1);

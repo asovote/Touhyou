@@ -57,7 +57,7 @@ function h($mfree){
 function tag_kyoka($mfree){
  $search = array('&lt;br&gt;');
  $replace = array('<br>');
-return str_replace($search,$replace,$str);
+return str_replace($search,$replace,$mfree);
 }
 
 			

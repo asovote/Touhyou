@@ -150,10 +150,10 @@ echo "更新中です。林";
 			while($vote_row = $presult -> fetch_assoc()) {
 			
 				$sum = $vote_row['sum(votes)'];
-				$per = $total/sum;
-				printf("<br />"."得票率: %d \n", $sum);
 					
 			}
+				$per = $total/sum;
+				printf("<br />"."得票率: %d \n", $sum);
 
 			
 			

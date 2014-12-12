@@ -1,10 +1,16 @@
-﻿<html>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>全件表示</title>
+<link type="text/css" rel="stylesheet" href="./main.css">
+
 </head>
 <body>
 
+<div id ="tag">
 <table>
 <tr><th>
 <form method ="POST" action = "select_janru_manage.php">
@@ -25,6 +31,7 @@
 </tr>
 </table>
 </form>
+</div>
 
 <?php
 
@@ -130,9 +137,9 @@ return str_replace($search,$replace,$str);
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
 
-
 $free = ignore($free);
 $free = tag_kyoka($free);
+
 			printf($bun3,$free);
 			printf($k);
 

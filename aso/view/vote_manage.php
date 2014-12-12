@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id ="tag">
+<div id="tag">
 <table>
 <tr><th>
 <form method ="POST" action = "select_janru_manage.php">

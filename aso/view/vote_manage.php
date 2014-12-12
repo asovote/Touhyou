@@ -113,8 +113,10 @@ header('Location: /ad_login.php');
 //			→直接表示すると文字化けする。
 
 
-			require('imgget.php');		
-		
+			require('imgget.php');
+
+			$bun3 = "参加者紹介文:%s";
+			$free = $row['free'];
 
 function h($str){
 	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
@@ -126,10 +128,6 @@ function tag_kyoka($str){
 return str_replace($search,$replace,$str);
 }
 
-
-
-			$bun3 = "参加者紹介文:%s";
-			$free = $row['free'];
 $free = h($free);
 $free = tag_kyoka($free);
 			printf($bun3,$free);

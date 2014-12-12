@@ -145,12 +145,13 @@ echo "更新中です。林";
 			}
 			
 			
-			$pquery = "select * from mj_list where  j_id = " . $_SESSION['select_j'];
+			$pquery = "select sum(votes) from mj_list where j_id = " . $_SESSION['select_j'];
 			$presult = $dbc -> query($pquery);
 			while($vote_row = $presult -> fetch_assoc()) {
 			
-				$total = $vote_row['votes'];
-				printf("<br />"."得票数: %d \n", $total);
+				$sum = $vote_row['votes'];
+				$per = $total/sum;
+				printf("<br />"."得票率: %d \n", $sum);
 					
 			}
 

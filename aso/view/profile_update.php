@@ -75,6 +75,7 @@ return str_replace($search,$replace,$str);
 			echo '</select></p>';
 			$mfree = h($mfree);
 			$mfree = tag_kyoka($mfree);
+			echo $mfree;
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
 			
 			echo '<p>写真：<input type="file" name="upfile" size="30"/></p>';

@@ -133,7 +133,7 @@ $free = tag_kyoka($free);
 			printf($bun3,$free);
 			printf($k);
 
-
+echo "更新中です。林";
 			
 			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);

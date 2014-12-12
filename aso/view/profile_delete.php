@@ -35,8 +35,6 @@ function tag_kyoka($str){
 return str_replace($search,$replace,$str);
 }
 
-$mfree = h($mfree);
-$mfree = tag_kyoka($mfree);
 
 			
 	           	            	 
@@ -48,7 +46,9 @@ $mfree = tag_kyoka($mfree);
 			 $jname =$member['jname'];
 			 $mfree =$member['mfree'];
 			}
-		
+
+$mfree = h($mfree);
+$mfree = tag_kyoka($mfree);
 
 			echo '<form action="profile_delete.php" method="POST">';
 			echo '<p>氏名：<input type="hidden" name="name" value='.$mname.'/>'.$mname.'</p>';

@@ -18,15 +18,63 @@
 
 </head>
 
+<<<<<<< HEAD
 <body>
 <body style="background-image:url(img/123.jpg);background-attachment:fixed;">
 <?php
+=======
+<body style="background-image":url(背景2.png);background-attachment:fixed; class="img">
+	<?php
+
+	?>
+
+	<?php
+>>>>>>> 80997cb2daffeb5fb99576caeb9067ee98064286
 		//データベースに接続
 	//	ini_set('include_path', '/xampp/htdocs/aso/classes/');
 		$classDir = __DIR__ . "/../class/";
 		//require_once('include_path.php');
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
+<<<<<<< HEAD
+=======
+		header('Expires:-1');
+		header('Cache-Control:');
+		header('Pragma:');
+
+		unset($_SESSION['jid']);
+		
+		
+		
+		
+		
+		// Cookieが無効の場合
+		if(!isset($_COOKIE['use_cookie'])){
+			setcookie("use_cookie",'true',time()+60*60*24*1);
+			//$_SESSIONの値がない場合
+			if(!isset($_SESSION['cookie_ch'])){
+				//$_GETの値がない場合
+				if(!isset($_GET['ch'])){
+		   			header('Location: /usertop.php?ch=1');
+		   			exit;
+				}else{
+				$_SESSION['cookie_ch']=1;
+				echo 'Cookieを有効にしてください。';
+				}
+			}else{
+			unset($_SESSION['cookie_ch']);
+   			header('Location: /usertop.php?ch=1');
+		   	exit;
+			}
+		//Cookieが有効の場合
+		}else if(isset($_COOKIE['use_cookie'])){
+		
+		echo '<div class="heading07"><p1>投票ページ</p1></div>';
+		
+		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+		$query = "select * from janru where jtime ='0';";
+		$result = mysqli_query($dbc, $query);
+>>>>>>> 80997cb2daffeb5fb99576caeb9067ee98064286
 		
 		echo '<p class="head"><img src="img/2222.png"alt=""/></p>';
 		echo '<p class="rr"><img src="img/rr.png"alt=""/></p>';
@@ -64,6 +112,12 @@
        
 			
 		
+<<<<<<< HEAD
+=======
+		}else{
+			 echo 'Cookieを有効にしてください。';
+		}
+>>>>>>> 80997cb2daffeb5fb99576caeb9067ee98064286
 	?>
 
 

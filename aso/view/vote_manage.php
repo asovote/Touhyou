@@ -115,10 +115,28 @@ header('Location: /ad_login.php');
 
 			require('imgget.php');		
 		
+
+function h($str){
+	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
+}
+
+function tag_kyoka($str){
+ $search = array('&lt;br&gt;');
+ $replace = array('<br>');
+return str_replace($search,$replace,$str);
+}
+
+$free = h($free);
+$free = tag_kyoka($free);
+
+
+
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
 			printf($bun3,$free);
 			printf($k);
+
+
 			
 			$vquery = "select * from mj_list where m_id =". $m_id . " and j_id = " . $_SESSION['select_j'];
 			$vresult = $dbc -> query($vquery);

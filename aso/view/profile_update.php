@@ -51,7 +51,7 @@ header('Location: /ad_login.php');
 		
 	
 function h($mfree){
-	return htmlspecialchars($mfree,ENT_QUOTES,"UTF-8");
+	return htmlspecialchars($mfree,ENT_QUOTES,"SJIS");
 }
 
 function tag_kyoka($mfree){

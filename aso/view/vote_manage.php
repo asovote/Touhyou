@@ -126,13 +126,12 @@ function tag_kyoka($str){
 return str_replace($search,$replace,$str);
 }
 
-$free = h($free);
-$free = tag_kyoka($free);
-
 
 
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
+$free = h($free);
+$free = tag_kyoka($free);
 			printf($bun3,$free);
 			printf($k);
 

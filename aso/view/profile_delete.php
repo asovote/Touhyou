@@ -37,7 +37,6 @@ return str_replace($search,$replace,$str);
 
 $mfree = h($mfree);
 $mfree = tag_kyoka($mfree);
-echo $mfree;
 
 			
 	           	            	 

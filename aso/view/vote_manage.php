@@ -154,7 +154,8 @@ echo "更新中です。林";
 			}
 			$per = 0;
 			
-				$per = $total/$sum;
+				$per = $total*100/$sum;
+				
 				printf("<br />"."得票率: %d \n", $per);
 
 			

@@ -54,7 +54,7 @@ $mfree = tag_kyoka($mfree);
 			echo '<p>氏名：<input type="hidden" name="name" value='.$mname.'/>'.$mname.'</p>';
 			echo '<p>学校：<input type="hidden" name="school" value='.$mschool.'/>'.$mschool.'</p>';
 			echo '<p>ジャンル：<input type="hidden" name="janru" value='.$jname.'/>'.$jname.'</p>';
-			echo '<p>フリー：<input type="hidden" name="free" value='.$mfree.'/>'.$mfree.'</p>';
+			echo '<p>フリー：<input type="hidden" name="free" value='.$mfree.'/></p>';
 			
 			echo '<input type="submit" value="削除" name="fase1" />';
 			

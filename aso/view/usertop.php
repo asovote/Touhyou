@@ -73,7 +73,7 @@
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
 		echo '<a>'.$j_name.'</a>';
-		echo '<right><img src="img/noun_63654_cc.png" width="20" height="20"  alt="data.php"/></right>';
+		echo '<right><input type="image" src="img/noun_63654_cc.png" width="20" height="20"  alt=""/></right>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';

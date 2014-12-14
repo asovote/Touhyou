@@ -36,7 +36,7 @@ public $m_img;
 }*/
 ?>
 <div class="container">
-<h1 align=center>出演者一覧</h1>
+echo '<p class="head"><img src="img/2222.png"alt=""/></p>';
 <input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"></br>
 <?php	
 		require_once('include_path.php');

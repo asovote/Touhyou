@@ -1,6 +1,44 @@
 @charset "utf-8";
 
 
+p.head img{
+	text-align:center;
+	width:100%;
+	margin:0;
+	/*padding-bottom:15px;	*/
+	}
+p.rr img{
+	width:110px;
+	height:50px;
+	margin:0;
+	padding-left:30px;
+	}
+
+#btb	{
+	margin:0px 10px 10px 10px;
+	border-bottom:solid 1px;
+	border-width:100%;
+	}
+#btb2	{
+	margin:10px 10px 10px 10px;
+	border-bottom:solid 1px;
+	border-width:100%;
+	}
+
+p.bt	{    /* 上右下左 */
+	margin:10px 10px 10px 10px;
+	padding:0px 0px 10px 0px;
+	border-bottom:solid 1px;
+	border-width:100%;
+	}
+p.bt a	{
+	padding-left:40px;
+	font-size:32px;
+	}
+p.bt img	{
+	text-align:right;
+	padding:0px 0px 0px 150px;
+
 #kara	{
 	margin:20px 20px 10px 20px;
 	border: medium solid #ff00ff;

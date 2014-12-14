@@ -16,7 +16,7 @@ try{
 </head>
 <?php
 if(isset($_POST['genre1'])){
-$sql = 'SELECT mj_list.m_id,member.name,mj_list.j_id,janru.j_name as genre FROM touhyou.mj_list,touhyou.member,touhyou.janru where mj_list.m_id = member.m_id
+$sql = 'SELECT mj_list.m_id,member.name,mj_list.j_id,janru.j_name as genre mj_list.votes FROM touhyou.mj_list,touhyou.member,touhyou.janru where mj_list.m_id = member.m_id
 and mj_list.j_id = janru.j_id and mj_list.j_id in (?,?) order by votes desc';
 $stmt = $dbh->prepare($sql);
 //$stmt -> execute(array(15,15));
@@ -28,6 +28,7 @@ $stmt -> execute(array($genre,$genre2));
         print($result['name']);
 		print($result['j_id']);
 		print($result['genre']);
+		print($result['votes']);
 		print('<BR>');
     }  
 }

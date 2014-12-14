@@ -3,6 +3,7 @@
 	
 	require_once('include_path.php');
 	require_once('db.php');
+	$flag = 0;
 $dsn = 'mysql:dbname='.db_name.';host='.db_host.'';
 
 try{

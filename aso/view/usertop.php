@@ -31,7 +31,6 @@
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
 		
-	        echo '<p class="head"><img src="img/2222.png"alt=""/></p>';
 		echo '<div id="btb2" align="center"></div>';
 		header('Expires:-1');
 		header('Cache-Control:');

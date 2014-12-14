@@ -73,7 +73,7 @@
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
 		echo '<a>'.$j_name.'</a>';
-		echo '<right><img src="img/noun_63654_cc.png" width="20" height="20"  alt="user_result.php"/></right>';
+		echo '<right><img src="img/noun_63654_cc.png" width="20" height="20"  alt=""/></right>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
@@ -99,11 +99,8 @@
 					$janru_id = $row['j_id'];
 					$j_name = $row['j_name'];
 			echo '<value='.$janru_id.'>';
-			echo '<form action="user_result.php" method="POST">';	
-　　　　　　　　　　　　echo '<p class="bt">';
-			echo '<a>'.$j_name.'</a>';
-			echo '<right><img src="img/noun_63654_cc.png" width="20" height="20"  alt="user_result.php"/></right>';
-		　　　　echo '</p>';
+			echo '<form action="user_result.php" method="POST">';
+			echo '<div align="center"><input id="subbtn" type="submit" name="jname" value="'.$j_name.'"></div>';
 			echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 			echo '</div></div></div>';
 			echo '</form>';

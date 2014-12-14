@@ -29,9 +29,9 @@ p.bt a	{
 	padding-left:40px;
 	font-size:32px;
 	}
-p.bt input	{
-	padding-top:10px;
-        padding-right:10px;
+p.bt input{
+	margin-top:10px;
+        padding-left:10px;
 	
 	}
 #kara	{

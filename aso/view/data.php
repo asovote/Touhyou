@@ -27,8 +27,7 @@
 	</head>  
 <body style="background-image:url(img/123.png);background-attachment:fixed;">
 <?php
-        echo $_POST['jname'];
-
+	
 ?>
 <div class="container">
 <p class="head"><img src="img/asofes.png"alt=""/></p>
@@ -40,6 +39,8 @@
 		header('Expires:-1');
 		header('Cache-Control:');
 		header('Pragma:');
+		$jname = $_POST['jname'];
+		echo $jname;
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
 $_SESSION['jid']=$jid;

@@ -101,9 +101,9 @@
 			echo '<value='.$janru_id.'>';
 			echo '<form action="user_result.php" method="POST">';
 			echo '<p class="bt">';
-			echo '<a>'.$j_name.'</a>';
+			echo '<a　title="Image 1" href="un_profile_select.php?jid=' .$janru_id.'">'.$j_name;
 			echo '<right><img src="img/noun_63654_cc.png" width="20" height="20"  alt="data.php"/></right>';
-			echo '</p>';
+			echo '</a></p>';
 			echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 			echo '</div></div></div>';
 			echo '</form>';

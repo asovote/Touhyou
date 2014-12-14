@@ -73,6 +73,7 @@
 		echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
+		echo '<input id="subbtn" type="hidden" name="jname" value="'.$j_name.'">';
 		echo '</div></div></div>';
 		echo '</form>';
 		}
@@ -101,6 +102,7 @@
 			echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 			echo '</p>';
 			echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
+			echo '<input id="subbtn" type="hidden" name="jname" value="'.$j_name.'">';
 			echo '</div></div></div>';
 			echo '</form>';
 			}

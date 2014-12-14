@@ -45,7 +45,7 @@ public $m_img;
 		header('Expires:-1');
 		header('Cache-Control:');
 		header('Pragma:');
-
+		$jname = $_POST['jname'];
 
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
@@ -55,7 +55,6 @@ $jid=$_SESSION['jid'];
 }else{
 echo '値が入っていません';
 }
-
 if(isset($_COOKIE[$jid])){ 
 		//データベースにつなぐ
 		if(isset($_POST['jid'])){
@@ -70,6 +69,8 @@ if(isset($_COOKIE[$jid])){
 		
 	        //SimpleClassのリストを宣言　sList
 	       
+		echo'<p><b>'.$jname.'</b></p>';
+	       	echo '<div id="btb2" align="center"></div>';
 		while($row = mysqli_fetch_array($result)){
 		
 /*		     //SimpleClass を　new する　変数名：sc
@@ -113,7 +114,6 @@ if(isset($_COOKIE[$jid])){
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
-	        $jname = $row['j_name'];
 	        echo'<p><b>'.$jname.'</b></p>';
 	       	echo '<div id="btb2" align="center"></div>';
 		while($row = mysqli_fetch_array($result)){

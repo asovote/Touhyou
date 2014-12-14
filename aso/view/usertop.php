@@ -18,7 +18,7 @@
 
 </head>
 
-<body style="background-image":url(123.jpg);background-attachment:fixed; class="img">
+<body style="background-image":url(123.png);background-attachment:fixed; class="img">
 	<?php
 
 	?>

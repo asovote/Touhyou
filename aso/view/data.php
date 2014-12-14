@@ -91,7 +91,8 @@ if(isset($_COOKIE[$jid])){
          	  echo'<div class="row">';
 		  echo'<h4><b>'.$mname.'</b></h4>';
 		  echo '<form action="update.php" method="POST">';
-      		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="un_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"width="600" height="350" ></a></div><!--SQLで撮ってきた画像に差し替え-->';
+      		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">';//<a title="Image 1" href="un_profile_select.php?mid=' .$mid.'">
+		  echo'<img class="thumbnail img-responsive" src="img/'.$mimg.'"width="600" height="350" ></a></div><!--SQLで撮ってきた画像に差し替え-->';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
 		  echo'<div align="center" valign="bottom">';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';

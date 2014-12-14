@@ -26,4 +26,6 @@ p.head img{
 	border-bottom:solid 1px;
 	border-width:100%;
 	}
-
+ #voteimg input{
+	padding:15px;
+	}

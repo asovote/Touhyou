@@ -22,7 +22,8 @@ and mj_list.j_id = janru.j_id and janru.j_id = ? or mj_list.j_id = janru.j_id an
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <title>無題ドキュメント</title>
 </head>
 

@@ -40,7 +40,7 @@
 		header('Cache-Control:');
 		header('Pragma:');
 		$jname = $_POST['jname'];
-		echo $jname;
+		echo'<div id="sub"><b>'.$jname.'</b></div>';
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
 $_SESSION['jid']=$jid;

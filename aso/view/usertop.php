@@ -31,6 +31,7 @@
 		require_once($classDir . 'db.php');
 		require_once($classDir . 'session_start.php');
 		
+	        echo '<p class="head"><img src="img/2222.png"alt=""/></p>';
 		echo '<div id="btb2" align="center"></div>';
 		header('Expires:-1');
 		header('Cache-Control:');
@@ -61,7 +62,6 @@
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru where jtime ='0';";
 		$result = mysqli_query($dbc, $query);
-		echo '<p class="rr"><img src="img/rr.png"alt=""/></p>';
 		while($row = mysqli_fetch_array($result)) {
 		echo '<div class= "menu4">';
 			

@@ -63,8 +63,7 @@
 		$query = "select * from janru where jtime ='0';";
 		$result = mysqli_query($dbc, $query);
 		while($row = mysqli_fetch_array($result)) {
-		echo '<div class= "menu4">';
-			
+		echo '<div class= "menu4">';	
 			echo '<name="janru">';	
 				$janru_id = $row['j_id'];
 				$j_name = $row['j_name'];
@@ -72,7 +71,7 @@
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
 		echo '<a>'.$j_name.'</a>';
-		echo '<right><input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/></right>';
+		echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
@@ -88,12 +87,11 @@
 		if(mysqli_fetch_row($result) != 0){
 		
 			 echo '<p class="head"><img src="img/rank.png"alt=""/></p>';
-			
+			 echo '<div id="btb2" align="center"></div>';
 			mysqli_data_seek($result,0);
 			
 			while($row = mysqli_fetch_array($result)) {
-			echo '<div class= "menu4">';
-				
+			echo '<div class= "menu4">';	
 				echo '<name="janru">';	
 					$janru_id = $row['j_id'];
 					$j_name = $row['j_name'];

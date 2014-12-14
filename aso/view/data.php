@@ -45,6 +45,7 @@ public $m_img;
 		header('Expires:-1');
 		header('Cache-Control:');
 		header('Pragma:');
+		$j_name = $_POST['jname'];
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
 $_SESSION['jid']=$jid;

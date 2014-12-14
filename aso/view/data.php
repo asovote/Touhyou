@@ -30,8 +30,8 @@
 	
 ?>
 <div class="container">
-<p class="head"><img src="img/asofes.png"alt=""/></p>
-<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"></br>
+<p class="head"><img src="img/asofes.png"alt=""/>
+<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"></p>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');

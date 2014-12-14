@@ -17,6 +17,17 @@ and mj_list.j_id = janru.j_id and janru.j_id = ? or mj_list.j_id = janru.j_id an
 
 //$genre = 15;
 //$genre2 = 15;
+?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+</head>
+
+<body>
+<?php
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array(15,15));
   if($result = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -26,19 +37,7 @@ $stmt -> execute(array(15,15));
 		print($result['genre']);
     }  
 
-}catch (PDOException $e){
-    print('Error:'.$e->getMessage());
-    die();
-}
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>無題ドキュメント</title>
-</head>
-
-<body>
 
 <form method="post" action="#">
 
@@ -61,3 +60,9 @@ echo "<option value=\"\">サンプル1</option>";
 
 </form>
 </html>
+<?php
+}catch (PDOException $e){
+    print('Error:'.$e->getMessage());
+    die();
+}
+?>

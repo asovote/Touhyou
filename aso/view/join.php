@@ -11,8 +11,7 @@ try{
 	//$dbh->query('SET NAMES utf8');
 
     $sql = 'SELECT mj_list.m_id,member.name,mj_list.j_id,janru.j_name as genre FROM touhyou.mj_list,touhyou.member,touhyou.janru where mj_list.m_id = member.m_id
-and mj_list.j_id = janru.j_id and janru.j_id = ? or mj_list.j_id = janru.j_id and janru.j_id = ? ';
-
+and mj_list.j_id = janru.j_id';
 //$genre = 15;
 //$genre2 = 15;
 ?>
@@ -28,8 +27,9 @@ and mj_list.j_id = janru.j_id and janru.j_id = ? or mj_list.j_id = janru.j_id an
 <body>
 <?php
 $stmt = $dbh->prepare($sql);
-$stmt -> execute(array(15,15));
-  if($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+//$stmt -> execute(array(15,15));
+$stmt -> execute();
+  while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
         print($result['m_id']);
         print($result['name']);
 		print($result['j_id']);

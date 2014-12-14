@@ -52,7 +52,7 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 }
 ?>
 </select>
-
+<input type="submit">
 </form>
 <?php
 if($flag == 1){

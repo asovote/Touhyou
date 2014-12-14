@@ -34,6 +34,7 @@ public $name;
 public $j_id;
 public $m_img;
 }*/
+$j_name = $_POST['jname'];
 ?>
 <div class="container">
 <p class="head"><img src="img/asofes.png"alt=""/></p>
@@ -45,8 +46,6 @@ public $m_img;
 		header('Expires:-1');
 		header('Cache-Control:');
 		header('Pragma:');
-		$jname = $_POST['jname'];
-
 if(isset($_POST['jid'])){
 $jid = $_POST['jid']; //スレッドID
 $_SESSION['jid']=$jid;
@@ -69,7 +68,7 @@ if(isset($_COOKIE[$jid])){
 		
 	        //SimpleClassのリストを宣言　sList
 	       
-		echo'<p><b>'.$jname.'</b></p>';
+		echo'<p><b>'.$j_name.'</b></p>';
 	       	echo '<div id="btb2" align="center"></div>';
 		while($row = mysqli_fetch_array($result)){
 		
@@ -114,7 +113,7 @@ if(isset($_COOKIE[$jid])){
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
-	        echo'<p><b>'.$jname.'</b></p>';
+	        echo'<p><b>'.$j_name.'</b></p>';
 	       	echo '<div id="btb2" align="center"></div>';
 		while($row = mysqli_fetch_array($result)){
 			

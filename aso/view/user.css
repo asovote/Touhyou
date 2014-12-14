@@ -26,7 +26,8 @@ p.bt	{    /* 上右下左 */
 	border-width:100%;
 	}
 p.bt a	{
-	padding-left:40px;
+        font-family: "メイリオ", sans-serif;
+	padding-left:35px;
 	font-size:32px;
 	}
 p.bt input{

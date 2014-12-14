@@ -1,7 +1,8 @@
 <?php
 
-	require_once('file:///C|/xampp/htdocs/aso2/view/include_path.php');
-	require_once('file:///C|/xampp/htdocs/aso2/view/db.php');
+	
+	require_once('include_path.php');
+	require_once('db.php');
 $dsn = 'mysql:dbname='.db_name.';host='.db_host.'';
 $user = 'root';
 $password = 'lovelive';

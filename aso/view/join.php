@@ -20,7 +20,7 @@ try{
 <body>
 
 
-<form method="post" action="#">
+<form method="post" action="/join_post.php">
 
 <select name="genre1" size="3" multiple>
 <?php

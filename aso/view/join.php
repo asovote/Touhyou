@@ -50,6 +50,7 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 
 </form>
 <?php
+if(flag == 1){
 $sql = 'SELECT mj_list.m_id,member.name,mj_list.j_id,janru.j_name as genre FROM touhyou.mj_list,touhyou.member,touhyou.janru where mj_list.m_id = member.m_id
 and mj_list.j_id = janru.j_id and mj_list.j_id in (?,?) order by votes desc';
 $stmt = $dbh->prepare($sql);
@@ -64,6 +65,7 @@ $stmt -> execute(array($genre,$genre2));
 		print($result['genre']);
 		print('<BR>');
     }  
+}
 
 ?>
 </html>

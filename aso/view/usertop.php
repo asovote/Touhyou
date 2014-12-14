@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>無題ドキュメント</title>
 <link type="text/css" rel="stylesheet" href="./user.css">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="">
 <meta name="keywords" content="">

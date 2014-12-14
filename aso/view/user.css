@@ -5,16 +5,9 @@ p.head img{
 	text-align:center;
 	width:100%;
 	margin:0;
-	padding-top:0px
+	padding-top:0px;
 	/*padding-bottom:15px;	*/
 	}
-p.rr img{
-	width:110px;
-	height:50px;
-	margin:0;
-	padding-left:30px;
-	}
-
 #btb	{
 	margin:0px 10px 10px 10px;
 	border-bottom:solid 1px;
@@ -36,7 +29,7 @@ p.bt a	{
 	padding-left:40px;
 	font-size:32px;
 	}
-p.bt img	{
+p.bt input	{
 	text-align:right;
 	padding:0px 0px 0px 150px;
 		}

@@ -36,7 +36,7 @@ public $m_img;
 }*/
 ?>
 <div class="container">
-<p class="head"><img src="img/2222.png"alt=""/></p>
+<p class="head"><img src="img/asofes.png"alt=""/></p>
 <input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"></br>
 <?php	
 		require_once('include_path.php');
@@ -127,9 +127,9 @@ if(isset($_COOKIE[$jid])){
          	  echo'<div class="row">';
 		  echo'<h3><b>'.$mname.'</b></h3>';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'"><img class="thumbnail img-responsive" src="img/'.$mimg.'"width="600" height="350" ></a></div><!--SQLで撮ってきた画像に差し替え-->';
-		  echo '<form action="update.php" method="POST" onClick="return submitChk();">';
+		  echo '<form action="update.php" method="POST" onClick="return imageChk();">';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
-		  echo'<div align="center" valign="bottom"><input type="submit"value="投票" "><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
+		  echo'<div align="center" valign="bottom"><input type="image" src="img/vote.png"><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div>';
 		}	 

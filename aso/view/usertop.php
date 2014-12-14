@@ -72,7 +72,7 @@
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
 		echo '<a>'.$j_name.'</a>';
-		echo '<right><input type="image" src="img/noun_63654_cc.png" width="25" height="25"  alt=""/></right>';
+		echo '<right><input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/></right>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '</div></div></div>';
@@ -101,7 +101,7 @@
 			echo '<form action="user_result.php" method="POST">';
 			echo '<p class="bt">';
 			echo '<a>'.$j_name.'</a>';
-			echo '<input type="image" src="img/noun_63654_cc.png" width="25" height="25"  alt=""/>';
+			echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 			echo '</p>';
 			echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 			echo '</div></div></div>';

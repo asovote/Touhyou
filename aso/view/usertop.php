@@ -87,7 +87,7 @@
 		
 		if(mysqli_fetch_row($result) != 0){
 		
-			echo '<div class="heading07"><p1>投票結果</p1></div>';
+			 echo '<p class="head"><img src="img/rank.png"alt=""/></p>';
 			
 			mysqli_data_seek($result,0);
 			

@@ -32,17 +32,12 @@
 		require_once($classDir . 'session_start.php');
 		
 	        echo '<p class="head"><img src="img/2222.png"alt=""/></p>';
-		echo '<p class="rr"><img src="img/rr.png"alt=""/></p>';
 		echo '<div id="btb2" align="center"></div>';
 		header('Expires:-1');
 		header('Cache-Control:');
 		header('Pragma:');
 
 		unset($_SESSION['jid']);
-		
-		
-		
-		
 		
 		// Cookieが無効の場合
 		if(!isset($_COOKIE['use_cookie'])){
@@ -64,13 +59,10 @@
 			}
 		//Cookieが有効の場合
 		}else if(isset($_COOKIE['use_cookie'])){
-		
-		echo '<div class="heading07"><p1>投票ページ</p1></div>';
-		
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru where jtime ='0';";
 		$result = mysqli_query($dbc, $query);
-		
+		echo '<p class="rr"><img src="img/rr.png"alt=""/></p>';
 		while($row = mysqli_fetch_array($result)) {
 		echo '<div class= "menu4">';
 			

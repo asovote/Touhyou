@@ -42,13 +42,17 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 </select>
 <select name="genre2" size="3" multiple>
 <?php
-
-
-
+$sql = 'select * from janru';
+$stmt = $dbh->prepare($sql);
+$stmt -> execute();
+while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 ?>
-
+<option value="<?php echo $result['j_id'] ?>"><?php echo $result['j_name']?></option>
+<?php
+}
+?>
 </select>
-
+<input type="submit">
 </form>
 <?php
 if($flag == 1){

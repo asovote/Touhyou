@@ -34,6 +34,7 @@ $stmt -> execute();
         print($result['name']);
 		print($result['j_id']);
 		print($result['genre']);
+		print('<BR>');
     }  
 
 ?>

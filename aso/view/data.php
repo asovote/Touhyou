@@ -34,7 +34,6 @@ public $name;
 public $j_id;
 public $m_img;
 }*/
-$j_name = $_POST['jname'];
 ?>
 <div class="container">
 <p class="head"><img src="img/asofes.png"alt=""/></p>

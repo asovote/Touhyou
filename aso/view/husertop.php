@@ -62,8 +62,8 @@
 				$janru_id = $row['j_id'];
 				$j_name = $row['j_name'];
 		echo '<value='.$janru_id.'>';
-		echo '<a href="" onclick="document.govotepage.submit();return false;" style="text-decoration:none;><b>'.$j_name.'</b></a>';
-		echo '<form name="govotepage" action="data.php" method="POST">';
+		echo '<a><b>'.$j_name.'</b></a>';
+		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
 		echo '<input type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '<input type="hidden" name="jname" value="'.$j_name.'">';

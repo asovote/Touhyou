@@ -22,7 +22,7 @@ try{
 
 <form method="post" action="/join_post.php">
 
-<select name="genre1" size="3" multiple>
+<select name="genre1" size="3">
 <?php
 $sql = 'select * from janru';
 $stmt = $dbh->prepare($sql);
@@ -35,7 +35,7 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 ?>
 
 </select>
-<select name="genre2" size="3" multiple>
+<select name="genre2" size="3">
 <?php
 $sql = 'select * from janru';
 $stmt = $dbh->prepare($sql);

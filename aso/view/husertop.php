@@ -1,16 +1,3 @@
-<meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<link media="only screen and (max-device-width:480px)"href="smart.css" type="text/css" rel="stylesheet" />
-<link media="screen and (min-device-width:481px)" href="design.css"type="text/css" rel="stylesheet" />
-<!--[if IE]>
-<link href="design.css" type="text/css" rel="stylesheet" />
-<![endif]-->
-
-
-
-
-
-
 <!doctype html>
 <html>
 <head>
@@ -29,9 +16,6 @@
 </head>
 
 <body style="background-image:url(img/123.png);background-attachment:fixed;">
-	<?php
-
-	?>
 
 	<?php
 		//データベースに接続
@@ -80,12 +64,12 @@
 		echo '<value='.$janru_id.'>';
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
-		echo '<a href="data.php" style="text-decoration:none; link="#000000" alink="#ff0000"><b>'.$j_name.'</b></a>';
+		echo '<a><b>'.$j_name.'</b></a>';
 		echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
 		echo '<input id="subbtn" type="hidden" name="jname" value="'.$j_name.'">';
-		echo '</div></div></div>';
+		echo '</div>';
 		echo '</form>';
 		}
 		
@@ -102,7 +86,7 @@
 			mysqli_data_seek($result,0);
 			
 			while($row = mysqli_fetch_array($result)) {
-			echo '<div class= "menu4">';	
+			echo '<div class= "menu4">';
 				echo '<name="janru">';
 					$janru_id = $row['j_id'];
 					$j_name = $row['j_name'];

@@ -22,7 +22,7 @@ try{
 
 <form method="post" action="/join_post.php">
 
-<select name="genre1" size="3" multiple>
+<select name="genre1" size="3">
 <?php
 $sql = 'select * from janru';
 $stmt = $dbh->prepare($sql);

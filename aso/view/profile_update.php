@@ -107,12 +107,13 @@ return str_replace($search,$replace,$str);
 			} else {
 			echo '<br>';
 			echo "ファイルが選択されていません。";
+			$flg = 1;
 			}
 
 
 			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
-		    if(isset($_FILES["upfile"]["name"])){
+		    if($flg != 1){
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',

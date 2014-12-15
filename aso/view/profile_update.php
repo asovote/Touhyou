@@ -114,7 +114,7 @@ return str_replace($search,$replace,$str);
 			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
 		    if($flg != 1){
-		    	if($name ==""){
+		    	if($name !=""){
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
@@ -128,7 +128,7 @@ return str_replace($search,$replace,$str);
                 }else{exit;}
 			}else{
 			//SQL文格納（UPDATE）
-				if($name == ""){
+				if($name != ""){
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
                     				free = '$free' WHERE m_id = '$mid'";

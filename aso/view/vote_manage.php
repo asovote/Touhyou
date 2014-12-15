@@ -162,7 +162,7 @@ $free = tag_kyoka($free);
 					
 			}
 			$per = 0;
-			if($sum != "")
+			if($sum != ""){
 				$per = $total*100/$sum;
 				floor($per);
 				$p='%';

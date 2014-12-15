@@ -6,8 +6,8 @@
 <link type="text/css" rel="stylesheet" href="./user.css">
 <meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="format-detection" content="telephone=no">
-<link media="only screen and (max-device-width:480px)"href="vote_phone.css" type="text/css" rel="stylesheet" />
-<link media="screen and (min-device-width:481px)" href="vote_pc.css"type="text/css" rel="stylesheet" />
+<link media="only screen and (max-device-width:480px)"href="css/vote_phone.css" type="text/css" rel="stylesheet" />
+<link media="screen and (min-device-width:481px)" href="css/vote_pc.css"type="text/css" rel="stylesheet" />
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -15,7 +15,7 @@
 
 </head>
 
-<body style="background-image:url(img/123.png);background-attachment:fixed;">
+<body>
 
 	<?php
 		//データベースに接続

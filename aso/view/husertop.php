@@ -80,7 +80,7 @@
 		echo '<value='.$janru_id.'>';
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
-		echo '<a><b>'.$j_name.'</b></a>';
+		echo '<b>'.$j_name.'</b>';
 		echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
@@ -103,7 +103,7 @@
 			
 			while($row = mysqli_fetch_array($result)) {
 			echo '<div class= "menu4">';	
-				echo '<name="janru">';	
+				echo '<name="janru">';
 					$janru_id = $row['j_id'];
 					$j_name = $row['j_name'];
 			echo '<value='.$janru_id.'>';

@@ -112,7 +112,7 @@ return str_replace($search,$replace,$str);
 
 			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
-//		    if(isset($_FILES["upfile"]["tmp_name"])){
+		    if(isset($_FILES["upfile"]["name"])){
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',

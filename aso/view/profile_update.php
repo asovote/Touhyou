@@ -64,7 +64,7 @@ return str_replace($search,$replace,$str);
 			echo '<form action="janru_top.php?up=1" method="POST" enctype="multipart/form-data">';
 			echo '<p>氏名：<input type="text" name="name" value="'.$mname.'"/></p>';
 			echo '<p>学校：<input type="text" name="school" value="'.$mschool.'"/></p>';
-			echo '<p>ジャンル：<select name="janru" value="'.$jname.'">';
+			echo '<p>ジャンル：<select name="janru" value="'.$jname.$mimg'">';
 		
 			while($row = mysqli_fetch_array($result)) {
 				$janru_id = $row['j_id'];
@@ -77,7 +77,7 @@ return str_replace($search,$replace,$str);
 			$mfree = tag_kyoka($mfree);
 			echo '<p>フリー： ※300文字以内</p><textarea name="free" cols="30" rows="5">'.$mfree.'</textarea>';
 			
-			echo '<p>写真：<input type="file" name="upfile" size="30" value="'.$mimg."".$_FILES["upfile"]["tmp_name"].'"/></p>';
+			echo '<p>写真：<input type="file" name="upfile" size="30" value="'.$_FILES["upfile"]["tmp_name"].'"/></p>';
 			
 			echo '<input type="submit" value="登録" name="fase1" />';
 			echo '<input type="reset" value="リセット" />';

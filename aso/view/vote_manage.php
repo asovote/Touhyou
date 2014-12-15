@@ -162,12 +162,18 @@ $free = tag_kyoka($free);
 					
 			}
 			$per = 0;
-			
+			if($sum == 0){
 				$per = $total*100/$sum;
 				floor($per);
 				$p='%';
-				
 				printf("<br />"."得票率: %d %s\n", $per,$p);
+			}else{
+				$per = 0;
+				floor($per);
+				$p='%';
+				printf("<br />"."得票率: %d %s\n", $per,$p);
+			}
+				
 
 			
 			

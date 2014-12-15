@@ -80,7 +80,7 @@
 		echo '<value='.$janru_id.'>';
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
-		echo '<a href=""><b>'.$j_name.'</b></a>';
+		echo '<a href="data.php" style="text-decoration:none; link="#000000" alink="#ff0000"><b>'.$j_name.'</b></a>';
 		echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 		echo '</p>';
 		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';

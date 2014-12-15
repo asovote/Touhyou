@@ -125,7 +125,10 @@ return str_replace($search,$replace,$str);
                     $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
-                }else{exit;}
+                }else{
+                echo '名前は必ず入れてください。';
+                exit;
+                }
 			}else{
 			//SQL文格納（UPDATE）
 				if($name != ""){
@@ -138,7 +141,10 @@ return str_replace($search,$replace,$str);
                     $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
-                }else{exit;}
+                }else{
+                echo '名前は必ず入れてください。';
+                exit;
+                }
 			}
                     //自分自身を検索
                    //	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

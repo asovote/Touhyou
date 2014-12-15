@@ -116,14 +116,14 @@ return str_replace($search,$replace,$str);
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
-                    				free = '$free',m_img ='".$_FILES["upfile"]["name"]."'  WHERE m_id = '$mid'";
+                    				free = '$free',m_img ='".$_FILES["upfile"]["name"]."' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
                     
                     $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
-			}/*else{
+			}else{
 			/SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
@@ -135,7 +135,7 @@ return str_replace($search,$replace,$str);
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
 			}
- */                   //自分自身を検索
+                    //自分自身を検索
                    //	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 			$query = "select * from member,janru,mj_list
 				where member.m_id = '$mid' and mj_list.m_id = member.m_id and mj_list.j_id =janru.j_id ";

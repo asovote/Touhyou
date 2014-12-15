@@ -123,7 +123,7 @@ return str_replace($search,$replace,$str);
                     $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
-/*			}else{
+			}/*else{
 			/SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',

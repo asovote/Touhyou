@@ -112,7 +112,7 @@ return str_replace($search,$replace,$str);
 
 			$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		    //通常時の処理
-		    if(isset($_FILES["upfile"]["name"])){
+/*		    if(isset($_FILES["upfile"]["name"])){
                     //SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',
@@ -123,7 +123,7 @@ return str_replace($search,$replace,$str);
                     $query = "UPDATE mj_list SET j_id = '$j_id' WHERE m_id = '$mid'";
                     //SQL文実行
                     $result = mysqli_query($dbc, $query);
-			}else{
+			}*/else{
 			/SQL文格納（UPDATE）
                     $query = "UPDATE member SET name = '$name',
                     				school = '$school',

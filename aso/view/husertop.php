@@ -62,16 +62,15 @@
 				$janru_id = $row['j_id'];
 				$j_name = $row['j_name'];
 		echo '<value='.$janru_id.'>';
-		echo '<a><b>'.$j_name.'</b></a>';
 		echo '<form action="data.php" method="POST">';
 		echo '<p class="bt">';
-		echo '<input type="hidden" name="jid" value="'.$janru_id.'">';
-		echo '<input type="hidden" name="jname" value="'.$j_name.'">';
+		echo '<a><b>'.$j_name.'</b></a>';
 		echo '<input type="image" src="img/noun_63654_cc.png" width="20" height="30"  alt=""/>';
 		echo '</p>';
-		echo '</div>';
-		echo '</form>';
-		}
+		echo '<input id="subbtn" type="hidden" name="jid" value="'.$janru_id.'">';
+		echo '<input id="subbtn" type="hidden" name="jname" value="'.$j_name.'">';
+		echo '</div></div></div>';
+		echo '</form>';		}
 		
 		
 		

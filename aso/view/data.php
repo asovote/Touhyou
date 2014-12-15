@@ -63,8 +63,6 @@ if(isset($_COOKIE[$jid])){
 		$result = mysqli_query($dbc, $query);
 		
 	        //SimpleClassのリストを宣言　sList
-	       
-		echo'<p><b>'.$j_name.'</b></p>';
 	       	echo '<div id="btb2" align="center"></div>';
 		while($row = mysqli_fetch_array($result)){
 		

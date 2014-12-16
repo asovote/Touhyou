@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ジャンルの編集</title>
-<link type="text/css" rel="stylesheet" href="./main.css">
+<link type="text/css" rel="stylesheet" href="">
 </head>
 
 <body>
@@ -17,36 +17,13 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-	$k = "<br/>";
-	
-	
-	require_once('include_path.php');
-	require_once('db.php');
-	
-	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-
-
-	function ignore($str){
-		return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
-	}
-
-	function tag_kyoka($str){
-	 $search = array('&lt;br&gt;');
-	 $replace = array('<br>');
-	return str_replace($search,$replace,$str);
-	}
-
-
-
-
-
-
 ?>
 
-<input type="button" name="janru_insert" value="ジャンルの追加">
-<input type="button" name="janru_update" value="ジャンルの変更">
-<input type="button" name="janru_delete" value="ジャンルの削除">
-
+<form action="./janru_insert.php">
+<input type="button" name="janru_insert" value="ジャンルの追加" ><br>
+<input type="button" name="janru_update" value="ジャンルの変更" onclick="location.href='janru_udpate.php'"><br>
+<input type="button" name="janru_delete" value="ジャンルの削除" onclick="location.href='janru_delete.php'">
+<form>
 
 </body>
 </html>

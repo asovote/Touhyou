@@ -4,8 +4,8 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>全件表示</title>
-<link type="text/css" rel="stylesheet" href="./main.css">
+<title>繧ｸ繝｣繝ｳ繝ｫ縺ｮ邱ｨ髮�</title>
+<link type="text/css" rel="stylesheet" href="">
 </head>
 
 <body>
@@ -13,40 +13,15 @@
 
 session_start();
 
-if($_SESSION['ad_id'] == null){			//ログインチェック
+if($_SESSION['ad_id'] == null){	
 header('Location: /ad_login.php');
 }
 
-	$k = "<br/>";				//改行用こぴぺ
-	
-	
-	require_once('include_path.php');
-	require_once('db.php');
-	
-	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-
-
-	function ignore($str){			//html~~~~~呼び出し変数
-		return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
-	}
-
-	function tag_kyoka($str){		//<br>のみ許可
-	 $search = array('&lt;br&gt;');
-	 $replace = array('<br>');
-	return str_replace($search,$replace,$str);
-	}
-
-
-
-
-
-
 ?>
 
-<input type="button" name="janru_insert" value="ジャンルを追加する">
-<input type="button" name="janru_update" value="ジャンルを変更する">
-<input type="button" name="janru_delete" value="ジャンルを削除する">
-
+<input type="button" name="janru_insert" value="繧ｸ繝｣繝ｳ繝ｫ縺ｮ霑ｽ蜉" onclick="location.href='janru_isnert.php'"><br>
+<input type="button" name="janru_update" value="繧ｸ繝｣繝ｳ繝ｫ縺ｮ螟画峩" onclick="location.href='janru_udpate.php'"><br>
+<input type="button" name="janru_delete" value="繧ｸ繝｣繝ｳ繝ｫ縺ｮ蜑企勁" onclick="location.href='janru_delete.php'">
 
 </body>
 </html>

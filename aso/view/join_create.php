@@ -40,7 +40,7 @@ $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
 $lastsql = "select j_id from janru order by j_id DESC";
-$stmt = $dbh->prepare($sql);
+$stmt = $dbh->prepare($lastsql);
 $stmt -> execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 $genreid = $result['j_id'];

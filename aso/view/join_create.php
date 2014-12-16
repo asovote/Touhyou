@@ -38,15 +38,20 @@ if($result['gc'] > 0){
 $sql = "insert into janru(j_name) values(?)";
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
-$last = $stmt -> lastInsertId();
-print($last);
-/*
+
+$lastsql = "select j_id from janru order by j_id DESC";
+$stmt = $dbh->prepare($sql);
+$stmt -> execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$genreid = $result['j_id'];
+
+
 
 $sql = null;
 $sql = "insert into mj_list(m_id,j_id,votes) select member.m_id,?,mj_list.votes from member,mj_list where member.m_id = mj_list.m_id and mj_list.j_id in (?,?)";
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($genreid,$genre,$genre2));
-*/
+
 
 }
  

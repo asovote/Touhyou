@@ -29,7 +29,7 @@ $resnum = count($res);
 if($resnum == 0){
 	print("重複なしです。");
 }else{
-	print("重複しています。");
+	print("重複しています。$resnum");
 }
 
 

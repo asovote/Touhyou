@@ -22,13 +22,14 @@ $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 
 $sql ="select count(j_name) as genru from genru where genru = ?";
 //重複していないかチェックのため。
+$stmt = $dbh->query($sql);
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
-//$res = $stmt->rowCount();
+$res = $stmt->rowCount();
 //$resnum = count($res);
-if($result = $stmt->fetch(PDO::FETCH_ASSOC) == 0){
-	print("重複なしです。$result");
+if(true){
+	print("重複なしです。$res");
 }else{
 	print("重複しています。$res");
 }

@@ -21,6 +21,7 @@
 <img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
 </td>
 <td>
+</br></br>
 <img src="img/asofes.png" width="100%" >
 </td>
 </tr>
@@ -163,7 +164,7 @@ $free = tag_kyoka($free);
 	*/		
 			
 			printf($k);printf($k);
-			echo '<hr style="border-top: 2px dotted #ff9d9d;width: 100%;">'; 
+			echo '<hr style="border-top: 4px dotted #696969; width: 100%;">'; 
 		//	printf("----------------------------------------------------------------------------------------------");
 			printf($k);printf($k);
 		}

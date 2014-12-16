@@ -17,6 +17,8 @@ try{
 </head>
 <?php
 $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
+$genre = $_POST['genre1'];
+$genre2 = $_POST['genre2'];
 //postデータをキャッチ。
 
 
@@ -28,9 +30,24 @@ $stmt -> execute(array($gname));
 
  $result = $stmt->fetch(PDO::FETCH_ASSOC);
 if($result['gc'] > 0){
+	//うぉーにん！重複しているときは、進めませんよ。
+	print("重複しています。ジャンル名を変えてください。");
 	
-	print("重複しています。");
-	
+}else{
+	//正常なときの処理がはじまりますよ！
+$sql = "insert into janru(j_name) values(?)";
+$stmt = $dbh->prepare($sql);
+$stmt -> execute(array($gname));
+$last = $stmt -> lastInsertId();
+print($last);
+/*
+
+$sql = null;
+$sql = "insert into mj_list(m_id,j_id,votes) select member.m_id,?,mj_list.votes from member,mj_list where member.m_id = mj_list.m_id and mj_list.j_id in (?,?)";
+$stmt = $dbh->prepare($sql);
+$stmt -> execute(array($genreid,$genre,$genre2));
+*/
+
 }
  
 

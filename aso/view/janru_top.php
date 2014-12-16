@@ -6,7 +6,6 @@
 <title>プロフィール編集画面</title>
 <link type="text/css" rel="stylesheet" href="./main.css">
 </head>
-	
 <body>
 
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
@@ -21,25 +20,23 @@
 
 		error_reporting(0);
 
-  
 		//データベースに接続
 		require_once('include_path.php');
 		require_once('db.php');
 
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-
 		
 		echo '<div id="tag">';
 		echo '<p><a href="kanri_top.php">トップへ戻る</a>';
 
 		echo '<a href="profile_insert.php?id=1" >/プロフィールの追加</a>';
-		echo '<a href="profile_insert.php?id=2" >/ジャンルの追加</a>';
-		echo '</div>';	
+		echo '<a href="janru_menu.php" >/ジャンルの編集</a>';
+		echo '</div>';
 		
 		echo '<div id="top">';
 		
 		echo '<h2><p>参加者一覧画面</p></h2>';
-		echo '</div>';	
+		echo '</div>';
 			//トップ画面へのリンク
 		
 	
@@ -49,7 +46,7 @@
 		$result = mysqli_query($dbc, $query);
 		
 		$chang='on';
-	
+
 		// 取得したデータを一覧表示
 		while($row = mysqli_fetch_array($result)){
 			
@@ -62,7 +59,7 @@
 			<li class="'.$chang.'"><a href="janru_top.php?jid=' .$jid.'" >'.$jname.'</a></li>
 			</ul>
 			</div1>';
-				
+
 			if($chang='on'){
 					$chang='off';
 			}else{
@@ -147,8 +144,7 @@
 			
 			require('imgget.php');
 			}
-			
-			
+
 function h($str){
 	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
 }
@@ -172,7 +168,7 @@ $mfree = tag_kyoka($mfree);
 			echo '<h1><span><p2>フリーワード</p2></span></h1><p3>'.$mfree.'</p3><br>';
 			echo '</div>';		
 			echo '<div id="space">&nbsp;</div>';
-					
+
 		echo '<div id="tag2">';
 		echo '<a href="janru_top.php?up=1">プロフィールの変更</a>';
 		echo '</div>';

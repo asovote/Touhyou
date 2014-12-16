@@ -27,7 +27,7 @@ $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
   while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-  	print($result[0]);
+  	print($result['j_name']);
   }
 
 

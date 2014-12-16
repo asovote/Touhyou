@@ -16,8 +16,8 @@
 	<body>
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
     <div class="container">  
-    <h1 align="center">出演者詳細</h1>
-
+<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
+<img src="img/prof.png"alt=""/>
 <?php
     //データベースに接続
 		require_once('include_path.php');
@@ -58,7 +58,7 @@
       echo'<form action="update.php" method="POST">';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
-      echo'<div align="center" valign="bottom"><input type="button" value="戻る" onclick="history.back()">';
+      echo'<div align="center" valign="bottom">';
       echo'</div></div>';
       echo'</div><div class="row">';
       echo'</div></div>';

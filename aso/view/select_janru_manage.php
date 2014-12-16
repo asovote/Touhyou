@@ -3,6 +3,8 @@
 <head>
   <title>ジャンル選択</title>
   <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="./select_janru.css">
+
 </head>
 <body>
 <body style="background-image:url(背景2.png);background-attachment:fixed;">
@@ -28,15 +30,22 @@
 	
 	$k = "<br/>";
 	
+	echo '<div class="nav">';
+	echo '<ul class="nl">';
 	while($row = $janru_list -> fetch_assoc()) {
 		$j_id = $row['j_id'];
 		$j_name = $row['j_name'];
 //		printf($j_id);
 		$bun1 = "<p><form method=\"post\" action=\"vote_manage.php\"></p>";
 		$bun2 = "<p><button type =\"submit\" value =%d name =\"select_j\"> %s </button></p>";
+	echo '<li>';
 		printf($bun1);
 		printf($bun2,$j_id,$j_name);
+	echo '</li>';
 	}
+	echo '</ul>';
+	echo '</div>';
+
 
 
 ?>

@@ -25,7 +25,7 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 
 if($_POST["jname"] == null) {
-	header('Location: /janru_inasert.php?chk=1');				//ジャンル名未入力時
+	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
 }else{
 	$jname = $_POST["jname"];						//ジャンル名入力時
 	echo $jname;

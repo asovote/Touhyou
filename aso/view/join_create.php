@@ -52,13 +52,13 @@ $sql = "insert into mj_list(m_id,j_id,votes) select member.m_id,?,mj_list.votes 
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($genreid,$genre,$genre2));
 
+echo "処理が正常に終了しました。トップから確認してください";
+
 
 }
- 
-
 
 ?>
-
+<a href="/janru_top.php">ジャンルトップへ</a>
 <body>
 </body>
 </html>

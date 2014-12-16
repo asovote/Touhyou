@@ -15,7 +15,20 @@ try{
 <meta charset="utf-8">
 </head>
 <?php
-if(isset($_POST['genre1'])){
+if(!isset($_POST['genre1'])){
+		header("Location: /join.php");
+}else{
+?>
+<body>
+<div id="content">
+<div id="obj">
+<form method="post" action="join_create.php">
+<input type="text" name="gname">
+<input type="submit">
+
+</form>
+</div>
+<?php
 $sql = 'SELECT mj_list.m_id,member.name,mj_list.j_id,janru.j_name as genre,mj_list.votes FROM touhyou.mj_list,touhyou.member,touhyou.janru where mj_list.m_id = member.m_id
 and mj_list.j_id = janru.j_id and mj_list.j_id in (?,?) order by votes desc';
 $stmt = $dbh->prepare($sql);
@@ -24,11 +37,11 @@ $genre = $_POST['genre1'];
 $genre2 = $_POST['genre2'];
 $stmt -> execute(array($genre,$genre2));
   while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-        print($result['m_id']);
-        print($result['name']);
-		print($result['j_id']);
-		print($result['genre']);
-		print($result['votes']);
+        print("id:".$result['m_id']);
+        print("name:".$result['name']);
+		print("genreid:".$result['j_id']);
+		print("genrename:".$result['genre']);
+		print("votes:".$result['votes']);
 		print('<BR>');
     }  
 }
@@ -36,7 +49,9 @@ $stmt -> execute(array($genre,$genre2));
 ?>
 
 
-<body>
+
+
+
 </body>
 </html>
 <?php

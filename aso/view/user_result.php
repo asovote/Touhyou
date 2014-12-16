@@ -17,12 +17,6 @@
 <p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
 <img src="img/prof.png"alt=""/></p>
 
-
-
-<form method ="POST" action = "usertop.php">
-<input type ="submit" value="戻る">
-</form>
-
 <?php
 	
 	session_start();

@@ -149,9 +149,9 @@ $free = tag_kyoka($free);
 			}
 	*/		
 			
-			printf($k);printf($k);printf($k);printf($k);printf($k);
+			printf($k);printf($k);
 			printf("----------------------------------------------------------------------------------------------");
-			printf($k);printf($k);printf($k);printf($k);printf($k);
+			printf($k);printf($k);
 		}
 	}
 	//	unset($_SESSION['img_id']);

@@ -19,6 +19,7 @@ try{
 $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 //postデータをキャッチ。
 
+$dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
 $sql ="select j_name as genru from genru where genru = ?";
 //重複していないかチェックのため。
 $stmt = $dbh->prepare($sql);

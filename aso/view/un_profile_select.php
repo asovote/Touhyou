@@ -52,14 +52,14 @@
 			$mfree = $row['free'];
 			$mimg = $row['m_img'];
 			$_SESSION['jid'] = $row['j_id'];
-      echo'<div class="row">';        
+      echo'<div class="row">';
+      echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname; echo'</div>';
       echo'<form action="update.php" method="POST">';
-      echo'<div class="col-lg-3 col-sm-4 col-xs-6">'; echo $mname;
       echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';
       echo'<div align="center" valign="bottom">';
       echo'</div></div>';
       echo'</div><div class="row">';
-      echo'</div></div>';
+      echo'</div>';
       echo'<div class="container">';
       echo'<p>学校:'.$mschool.'</p>';
       echo'<p>'.$mfree.'</p>';

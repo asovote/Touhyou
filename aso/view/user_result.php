@@ -172,7 +172,7 @@ $free = tag_kyoka($free);
 	//	unset($_SESSION['img_id']);
 
 ?>
-
+</div>
 <html>
 </body>
 </html>

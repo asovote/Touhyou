@@ -23,13 +23,11 @@
 <td>
 <img src="img/asofes.png" width="100%" >
 </td>
-<td>
-<img src="img/rank.png"alt=""/>
-</td>
-
 </tr>
 </tbody>
 </table>
+<p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()">
+</p>
 
 
 <?php

@@ -25,17 +25,17 @@
 	    }
 	</script>
 	</head>  
-    <body topmargin="0" bottommargin="0" leftmargin="20" rightmargin="20" marginheight="0" marginwidth="20" style="background-image:url(img/123.png);background-attachment:fixed;">
+    <body topmargin="10px" bottommargin="0" leftmargin="20" rightmargin="20" marginheight="0" marginwidth="20" style="background-image:url(img/123.png);background-attachment:fixed;">
     
 
 
-<table cellpaddong="0" cellspacing="0"><tbody>
+<table width="100%"><tbody>
 <tr>
 <td>
 <img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
 </td>
 <td>
-<img src="img/asofes.png" width="427" >
+<img src="img/asofes.png" width="100%" >
 </td>
 </tr>
 </tbody>

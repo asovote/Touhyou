@@ -1,0 +1,34 @@
+﻿/* --- ナビゲーションバー --- */
+div.nav {
+width: 220px; /* ナビゲーションの幅 */
+font-size: 80%;
+}
+
+/* --- メニューエリア --- */
+div.nav ul.nl {
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-align: left;
+}
+
+/* --- メニュー項目 --- */
+div.nav ul.nl li {
+margin-bottom: 2px; /* 項目の下マージン */
+border-bottom: 1px #8ca654 dotted; /* 項目の下境界線 */
+}
+
+/* --- リンク --- */
+div.nav ul.nl li a {
+display: block;
+position: relative; /* IE6用 */
+padding: 12px 10px; /* リンクエリアのパディング（上下、左右） */
+background-color: #FF9900 repeat-y right; /* リンクエリアの背景 */
+color: #404040; /* 文字色 */
+text-decoration: none; /* テキストの下線（なし） */
+}
+/* --- ポイント時の設定 --- */
+div.nav ul.nl li a:hover {
+background-color: #FF9933 repeat-y right; /* ポイント時の背景 */
+text-decoration: underline; /* テキストの下線（あり） */
+}

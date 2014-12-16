@@ -42,16 +42,11 @@ header('Location: /ad_login.php');
 }
 
 	$k = "<br/>";
-//	$get_janru = $_POST['select_j'];  //POSTで送られたjanruID取得
-//	printf('<form method="POST" action = "../e_m_e_search">');
-//	printf('<input type="submit" value="投票数変更" onClick="form.action=\'vote_edit.php\';return true"/>');
 	
-	
-	
-	if(!isset($_POST['select_j'])) {
+	if(!isset($_GET['select_j'])) {
 	$select_j_id = $_SESSION['select_j'];
 	}else{
-	$select_j_id = $_POST['select_j'];
+	$select_j_id = $_GET['select_j'];
 	$_SESSION['select_j'] =$select_j_id;
 	}
 	
@@ -61,22 +56,15 @@ header('Location: /ad_login.php');
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	
 
-function ignore($str){
-	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
-}
+	function ignore($str){
+		return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
+	}
 
-function tag_kyoka($str){
- $search = array('&lt;br&gt;');
- $replace = array('<br>');
-return str_replace($search,$replace,$str);
-}
-
-
-//	$userid = $mysqli -> real_escape_string($_post["xxx"]);  使わない。
-	
-	
-//	$select_j_id = $_POST['select_j'];  //POSTで送られたjanruID取得
-//	$is_j_id = (int)$select_j_id;
+	function tag_kyoka($str){
+	 $search = array('&lt;br&gt;');
+	 $replace = array('<br>');
+	return str_replace($search,$replace,$str);
+	}
 	
 	printf($k);printf($k);printf($k);
 	
@@ -121,24 +109,13 @@ return str_replace($search,$replace,$str);
 			printf($bun2,$m_name);
 			printf($k);
 
-
-
-//			$img_query = "SELECT IMG FROM member WHERE m_id = " . $m_id ;
-//			$img_result = $mysqli -> query($img_query);
-//			$img_row = $img_result -> fetch_row();
-//			echo "<img src=" . $img_row[0] . ">";
-//			printf($img);
-//			printf($k);
-//			→直接表示すると文字化けする。
-
-
 			require('imgget.php');
 
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
 
-$free = ignore($free);
-$free = tag_kyoka($free);
+			$free = ignore($free);
+			$free = tag_kyoka($free);
 
 			printf($bun3,$free);
 			printf($k);
@@ -173,10 +150,6 @@ $free = tag_kyoka($free);
 				$p='%';
 				printf("<br />"."得票率: %d %s\n", $per,$p);
 			}
-				
-
-			
-			
 			
 			$vm1 = "<p><form method=\"post\" action=\"vote_edit_new.php\"></p>";
 			$vm2 = "<p><button type =\"submit\" value =%d name =\"m_id\"> 得票数変更 </button></p>";
@@ -184,28 +157,15 @@ $free = tag_kyoka($free);
 			printf($vm2,$img_m_id);
 			printf('</form>');
 			
-			
-			
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 			printf("----------------------------------------------------------------------------------------------");
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 		}
 	}
 	
-	
-	
 	printf($k);printf($k);printf($k);
 	printf($k);printf($k);printf($k);
 	
-	
-
-
-	
-		
-		
-	
-//	unset($_SESSION['img_id']);
-
 ?>
 <html>
 </body>

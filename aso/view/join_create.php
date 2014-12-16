@@ -31,9 +31,9 @@ $stmt -> execute(array($gname));
   }
 
 if(true){
-	print("重複なしです。$res");
+	print("重複なしです。$result");
 }else{
-	print("重複しています。$res");
+	print("重複しています。$result");
 }
 
 

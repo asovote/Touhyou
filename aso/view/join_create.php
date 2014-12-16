@@ -25,11 +25,11 @@ $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 //$result = $stmt->fetch(PDO::FETCH_ASSOC);
 $res = $stmt->rowCount();
-$resnum = count($res);
-if($resnum == 0){
+//$resnum = count($res);
+if($res == 0){
 	print("重複なしです。");
 }else{
-	print("重複しています。$resnum");
+	print("重複しています。$res");
 }
 
 

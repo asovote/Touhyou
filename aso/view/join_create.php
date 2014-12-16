@@ -30,7 +30,7 @@ $res = $stmt->fetchAll();
 if($res == 0){
 	print("重複なしです。");
 }else{
-	print("重複しています。$res");
+	print("重複しています。$res[0]");
 }
 
 

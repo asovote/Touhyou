@@ -29,7 +29,7 @@
     
 
 
-<table cellpaddong="0" cellspacing="0" width="100%"><tbody>
+<table width="100%"><tbody>
 <tr>
 <td>
 <img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />

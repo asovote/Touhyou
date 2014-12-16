@@ -15,7 +15,7 @@
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
     <div class="container">  
 <p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
-<img src="img/prof.png"alt=""/></p>
+<img src="img/rank.png"alt=""/></p>
 
 <?php
 	
@@ -71,9 +71,6 @@ return str_replace($search,$replace,$str);
 }
 
 	
-	printf($k);printf($k);printf($k);
-	
-	printf($k);printf($k);
 	
 	$sum = 0;
 	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc limit 3"; // . "order by m_id"
@@ -157,20 +154,7 @@ $free = tag_kyoka($free);
 			printf($k);printf($k);printf($k);printf($k);printf($k);
 		}
 	}
-	
-	
-	
-	printf($k);printf($k);printf($k);
-	printf($k);printf($k);printf($k);
-	
-	
-	
-
-	
-		
-		
-	
-//	unset($_SESSION['img_id']);
+	//	unset($_SESSION['img_id']);
 
 ?>
 

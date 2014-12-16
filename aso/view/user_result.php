@@ -13,13 +13,17 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
+    <div class="container">  
+<p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
+<img src="img/rank.png"alt=""/></p>
+
 <table width="100%"><tbody>
 <tr>
 <td>
 <img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
 </td>
 <td>
-<img src="img/rank.png" width="100%" >
+<img src="img/asofes.png" width="100%" >
 </td>
 </tr>
 </tbody>

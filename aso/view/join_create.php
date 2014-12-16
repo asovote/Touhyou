@@ -26,10 +26,13 @@ $sql ="select count(j_name) as gc from janru where j_name = ?";
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
-  while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-  	print($result['gc']);
-  }
-
+ $result = $stmt->fetch(PDO::FETCH_ASSOC);
+if($result['gc'] > 0){
+	
+	print("重複しています。");
+	
+}
+ 
 
 
 ?>

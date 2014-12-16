@@ -20,18 +20,19 @@ $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 //postデータをキャッチ。
 
 
-$sql ="select count(j_name) as genru from genru where genru = $gname";
+$sql ="select j_name as genru from genru where genru = $gname";
 //重複していないかチェックのため。
-//$stmt = $dbh->query($sql);
+$stmt = $dbh->query($sql);
 //$stmt = $dbh->prepare($sql);
-$count = $dbh->exec($sql);
+//$stmt -> execute(array($gname));
 
-//$res = $stmt->fetchColumn();
+
+$res = $stmt->fetchColumn();
 //$resnum = count($res);
 if(true){
-	print("重複なしです。$count");
+	print("重複なしです。$res");
 }else{
-	print("重複しています。$count");
+	print("重複しています。$res");
 }
 
 

@@ -13,17 +13,20 @@
 
 session_start();
 
-if($_SESSION['ad_id'] == null){	
+if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
+require_once('include_path.php');
+require_once('db.php');
+$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+
+
+	$allj = "select * from janru;";
+	$result = $dbc -> query($allj);
+	while($janru = $vresult -> fetch_assoc()) {
+	$jid = $janru['j_name'];
+}
 ?>
-
-<form name="jadd" action="janru_add.php" method="POST">
-<p>ジャンル名：<input type="text" name="jname" maxlength="6"/></p>
-<input type="submit" value="登録" name="add" />
-<input type="reset" value="リセット" />
-</form>
-
 </body>
 </html>

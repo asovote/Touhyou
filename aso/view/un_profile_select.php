@@ -12,12 +12,10 @@
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
-    
-	<body>
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
     <div class="container">  
-<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
-<img src="img/prof.png"alt=""/>
+<p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
+<img src="img/prof.png"alt=""/></p>
 <?php
     //データベースに接続
 		require_once('include_path.php');

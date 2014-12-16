@@ -26,8 +26,10 @@ $sql ="select count(j_name) as genru from janru where genru = ?";
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
-$res = $stmt->fetchColumn();
-//$resnum = count($res);
+  while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+  	print($result);
+  }
+
 if(true){
 	print("重複なしです。$res");
 }else{

@@ -27,9 +27,20 @@
     
 	<body>
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
-    <div class="container">  
-	<p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
-	<img src="img/prof.png"alt=""/></p>
+    <div class="container">
+    <table width="100%"><tbody>
+	<tr>
+	<td>
+	<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()">
+	</td>
+	<td>
+	<img src="img/asofes.png"alt=""/>
+	</td>
+	</tr>
+	</tbody>
+    </table>
+    <p class="head"><img src="img/prof.png"alt=""/></p>
+
 <?php
     //データベースに接続
 		require_once('include_path.php');

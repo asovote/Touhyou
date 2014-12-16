@@ -23,6 +23,10 @@
 <td>
 <img src="img/asofes.png" width="100%" ><img src="img/rank.png"alt=""/>
 </td>
+<td>
+<img src="img/rank.png"alt=""/>
+</td>
+
 </tr>
 </tbody>
 </table>

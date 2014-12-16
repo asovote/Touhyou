@@ -17,14 +17,20 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
+require_once('include_path.php');
+require_once('db.php');
+$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 
-$jname = $_POST["jname"];
-echo $jname;
-$query = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
 
 
-
+if($_POST["jname"] == null) {
+	header('Location: /janru_inasert.php?chk=1');				//ジャンル名未入力時
+}else{
+	$jname = $_POST["jname"];						//ジャンル名入力時
+	echo $jname;
+	$jadd = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
+}
 
 ?>
 </body>

@@ -1,10 +1,23 @@
-﻿<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ランキング</title>
-</head>
-<body>
-<body style="background-image:url(背景2.png);background-attachment:fixed;">
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>ランキング</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+  <body style="background-image:url(img/123.png);background-attachment:fixed;">
+    <div class="container">  
+<p class="head"><input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
+<img src="img/prof.png"alt=""/></p>
+
+
 
 <form method ="POST" action = "usertop.php">
 <input type ="submit" value="戻る">

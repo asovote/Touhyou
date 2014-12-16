@@ -20,14 +20,14 @@ $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 //postデータをキャッチ。
 
 
-$sql ="select count(j_name) from janru where j_name = ?";
+$sql ="select count(j_name) as gc from janru where j_name = ?";
 //重複していないかチェックのため。
 //$stmt = $dbh->query($sql);
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
   while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-  	print($result['j_name']);
+  	print($result['gc']);
   }
 
 

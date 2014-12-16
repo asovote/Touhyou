@@ -20,17 +20,16 @@ $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 //postデータをキャッチ。
 
 
-$sql ="select j_name as genru from genru where genru = $gname";
-//重複していないかチェックのため。
-$stmt = $dbh->query($sql);
-//$stmt = $dbh->prepare($sql);
-//$stmt -> execute(array($gname));
+$sql ="select j_name as genru from genru where genru = ?";
+$stmt = $dbh->prepare($sql);
+$stmt -> execute(array($gname));
 
-
-$res = $stmt->rowCount();
-//$resnum = count($res);
+if($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+	print("重複なしです。$result");
+  }
+  
 if(true){
-	print("重複なしです。$res");
+	
 }else{
 	print("重複しています。$res");
 }

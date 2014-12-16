@@ -25,7 +25,7 @@ if(!isset($_POST['genre1'])){
 <form method="post" action="join_create.php">
 <input type="text" name="gname">
 <input type="hidden" name="genre1" value="<?php echo $_POST['genre1'] ?>">
-<input type="hidden" name="genre2" value="<?php echo $_POST['geren2'] ?> ">
+<input type="hidden" name="genre2" value="<?php echo $_POST['genre2'] ?> ">
 <input type="submit">
 
 </form>

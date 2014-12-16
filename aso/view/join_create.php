@@ -27,7 +27,7 @@ $stmt = $dbh->query($sql);
 //$stmt -> execute(array($gname));
 
 
-$res = $stmt->fetchColumn();
+$res = $stmt->fetchAll();
 //$resnum = count($res);
 if(true){
 	print("重複なしです。$res");

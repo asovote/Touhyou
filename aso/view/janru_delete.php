@@ -24,7 +24,7 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 	$allj = "select * from janru;";
 	$result = $dbc -> query($allj);
-	while($janru = $vresult -> fetch_assoc()) {
+	while($janru = $result -> fetch_assoc()) {
 	$jid = $janru['j_name'];
 }
 ?>

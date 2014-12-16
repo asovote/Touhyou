@@ -36,8 +36,9 @@ p.head img{
 	font-size:32px;
 	}
 back	{
-	float:left;
+	float:left; 
+	padding-top:20px;
 	}
-container	{
-	/*float:left;*/
+rogo	{
+	float:left;
 	}

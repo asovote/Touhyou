@@ -26,7 +26,7 @@ $sql ="select count(j_name) as genru from genru where genru = ?";
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
-$res = $stmt->rowCount();
+$res = $stmt->fetchColumn();
 //$resnum = count($res);
 if(true){
 	print("重複なしです。$res");

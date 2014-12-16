@@ -30,6 +30,7 @@ if($_POST["jname"] == null) {
 	$jname = $_POST["jname"];						//ジャンル名入力時
 	echo $jname;
 	$jadd = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
+	$result = $dbc -> query($jadd);					
 }
 
 ?>

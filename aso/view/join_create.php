@@ -28,7 +28,7 @@ $stmt -> execute(array($gname));
 //$res = $stmt->rowCount();
 //$resnum = count($res);
 if($result = $stmt->fetch(PDO::FETCH_ASSOC) == 0){
-	print("重複なしです。");
+	print("重複なしです。$result");
 }else{
 	print("重複しています。$res");
 }

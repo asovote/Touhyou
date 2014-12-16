@@ -29,10 +29,13 @@
 <?php
 	
 ?>
-<div class="container">
-<p class="head">
-<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()"><img src="img/asofes.png"alt=""/>
-</p>
+<div style="float:left; padding-top:20px">
+<img src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()">
+</div>
+<div style="float:left;">
+<img src="img/asofes.png" width="260px" >
+</div>
+<br clear="both"/>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');

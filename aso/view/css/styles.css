@@ -35,5 +35,9 @@ p.head img{
 	font-family: "ƒƒCƒŠƒI", sans-serif;
 	font-size:32px;
 	}
-
-
+back	{
+	float:left;
+	}
+container	{
+	/*float:left;*/
+	}

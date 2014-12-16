@@ -20,7 +20,7 @@ $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 //postデータをキャッチ。
 
 
-$sql ="select j_name as genru from janru where genru = ?";
+$sql ="select j_name from janru where j_name = ?";
 //重複していないかチェックのため。
 //$stmt = $dbh->query($sql);
 $stmt = $dbh->prepare($sql);

@@ -33,7 +33,7 @@
 <td>
 <img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
 </td>
-<td>
+<td></br></br>
 <img src="img/asofes.png" width="100%" >
 </td>
 </tr>

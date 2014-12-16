@@ -152,7 +152,7 @@ return str_replace($search,$replace,$str);
 			printf($k);
 			
 								
-			}
+			
 			
 			
 			printf($k);printf($k);

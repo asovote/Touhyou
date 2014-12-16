@@ -36,18 +36,18 @@
 		$j_id = $row['j_id'];
 		$j_name = $row['j_name'];
 //		printf($j_id);
-//		$bun1 = "<p><form method=\"post\" action=\"vote_manage.php\"></p>";
+		$bun1 = "<p><form method=\"post\" action=\"vote_manage.php\"></p>";
 	//	$bun2 = "<a href=vote_manage.php?select_j=".$j_id." ><p>".$j_name."</p></a>";
-//		$bun2 = "<p><button type =\"submit\" value =%d name =\"select_j\"> %s </button></p></form>";
-	echo '<li>';
+		$bun2 = "<p><button type =\"submit\" value =%d name =\"select_j\"> %s </button></p></form>";
+/*	echo '<li>';
 	echo '<FORM NAME="select_j" METHOD="POST" ACTION="vote_manage.php">';
 	echo '<A HREF="vote_manage.php">'.$j_name.'</A>';
 	echo '<input type="hidden" name="select_j" value="'.$j_id.'">';
 	echo '</FORM>';
-/*		printf($bun1);
-		printf($bun2);
-*/	//	printf($bun2,$j_id,$j_name);
-	echo '</li>';
+*/		printf($bun1);
+	//	printf($bun2);
+		printf($bun2,$j_id,$j_name);
+//	echo '</li>';
 	}
 	echo '</ul>';
 	echo '</div>';

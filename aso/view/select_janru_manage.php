@@ -37,10 +37,12 @@
 		$j_name = $row['j_name'];
 //		printf($j_id);
 		$bun1 = "<p><form method=\"post\" action=\"vote_manage.php\"></p>";
-		$bun2 = "<p><button type =\"submit\" value =%d name =\"select_j\"> %s </button></p>";
+		$bun2 = "<a href="vote_manage.php?select_j=' .$j_id.'" ><p>'.$j_name.'</p></a>";
+	//	$bun2 = "<p><button type =\"submit\" value =%d name =\"select_j\"> %s </button></p>";
 	echo '<li>';
 		printf($bun1);
-		printf($bun2,$j_id,$j_name);
+		printf($bun2);
+	//	printf($bun2,$j_id,$j_name);
 	echo '</li>';
 	}
 	echo '</ul>';

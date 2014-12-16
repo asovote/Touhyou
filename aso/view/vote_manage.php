@@ -43,10 +43,10 @@ header('Location: /ad_login.php');
 
 	$k = "<br/>";
 	
-	if(!isset($_POST['select_j'])) {
+	if(!isset($_GET['select_j'])) {
 	$select_j_id = $_SESSION['select_j'];
 	}else{
-	$select_j_id = $_POST['select_j'];
+	$select_j_id = $_GET['select_j'];
 	$_SESSION['select_j'] =$select_j_id;
 	}
 	

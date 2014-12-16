@@ -30,11 +30,6 @@ $stmt -> execute(array($gname));
   	print($result);
   }
 
-if(true){
-	print("重複なしです。$result");
-}else{
-	print("重複しています。$result");
-}
 
 
 ?>

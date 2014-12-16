@@ -35,7 +35,7 @@
 <img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
 </td>
 <td>
-<img src="img/asofes.png" width="427" >
+<img src="img/asofes.png" width="100%" >
 </td>
 </tr>
 </tbody>

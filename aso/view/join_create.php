@@ -22,7 +22,7 @@ $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 
 $sql ="select count(j_name) as genru from genru where genru = ?";
 //重複していないかチェックのため。
-$stmt = $dbh->query($sql);
+//$stmt = $dbh->query($sql);
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 

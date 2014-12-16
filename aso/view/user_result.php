@@ -165,6 +165,6 @@ return str_replace($search,$replace,$str);
 
 ?>
 
-<html>
+
 </body>
 </html>

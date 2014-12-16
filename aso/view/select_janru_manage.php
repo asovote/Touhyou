@@ -40,8 +40,8 @@
 	//	$bun2 = "<a href=vote_manage.php?select_j=".$j_id." ><p>".$j_name."</p></a>";
 //		$bun2 = "<p><button type =\"submit\" value =%d name =\"select_j\"> %s </button></p></form>";
 	echo '<li>';
-	echo '<FORM NAME="form" METHOD="POST" ACTION="vote_manage.php">';
-	echo '<A HREF="javascript:document.form.submit()">'.$j_name.'</A>';
+	echo '<FORM NAME="select_j" METHOD="POST" ACTION="vote_manage.php">';
+	echo '<A HREF="vote_manage.php">'.$j_name.'</A>';
 	echo '<input type="hidden" name="select_j" value="'.$j_id.'">';
 	echo '</FORM>';
 /*		printf($bun1);

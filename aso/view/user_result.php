@@ -13,25 +13,32 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
-    	<div class="container">  
+    <div class="container">  
 
-	<table width="100%"><tbody>
-	<tr>
-	<td>
-	<img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
-	</td>
-	<td></br></br>
-	<img src="img/asofes.png" width="100%" >
-	</td>
-	</tr>
-	</tbody>
-	</table>
-	<p class="head"><img src="img/rank.png"alt=""/></p>
+<table width="100%"><tbody>
+<tr>
+<td>
+<img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
+</td>
+<td></br></br>
+<img src="img/asofes.png" width="100%" >
+</td>
+</tr>
+</tbody>
+</table>
+<p class="head"><img src="img/rank.png"alt=""/>
+</p>
+
 
 <?php
 	
 	session_start();
 	$k = "<br/>";
+//	$get_janru = $_POST['select_j'];  //POSTで送られたjanruID取得
+//	printf('<form method="POST" action = "../e_m_e_search">');
+//	printf('<input type="submit" value="投票数変更" onClick="form.action=\'vote_edit.php\';return true"/>');
+	
+	
 	
 	if(isset($_POST['jid'])){
 	$select_j_id = $_POST['jid']; //スレッドID
@@ -41,6 +48,20 @@
 	}else{
 	echo '値が入っていません';
 	}
+
+	
+	
+/*	
+	if(!isset($_POST['select_j'])) {
+	$select_j_id = $_SESSION['select_j'];
+	}else{
+	$select_j_id = $_POST['select_j'];
+	$_SESSION['select_j'] =$select_j_id;
+	}
+	
+*/	
+
+
 	
 	require_once('include_path.php');
 	require_once('db.php');
@@ -52,16 +73,17 @@
 	$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 
-	function ignore($str){
-		return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
-	}
+function ignore($str){
+	return htmlspecialchars($str,ENT_QUOTES,"UTF-8");
+}
 
-	function tag_kyoka($str){
-	 $search = array('&lt;br&gt;');
-	 $replace = array('<br>');
-	return str_replace($search,$replace,$str);
-	}
+function tag_kyoka($str){
+ $search = array('&lt;br&gt;');
+ $replace = array('<br>');
+return str_replace($search,$replace,$str);
+}
 
+	
 	
 	$sum = 0;
 	$mj_list_query = "select * from mj_list where j_id = " . $select_j_id . " order by votes desc limit 3"; // . "order by m_id"
@@ -76,6 +98,7 @@
 //		$bun1 = "参加者ID:%d "; // ""内はHTML
 		$m_id = $mj_list_row['m_id'];
 		
+		
 		$query = "select * from member where m_id =" . $m_id; //とってきたジャンルで選択されたmemberを一人ずつ表示
 		$result = $dbc -> query($query);
 		
@@ -88,6 +111,8 @@
 		
 		$query = "select * from member,mj_list,janru where member.m_id =".$m_id." and mj_list.m_id = member.m_id and mj_list.j_id = janru.j_id order by mj_list.votes "; //とってきたジャンルで選択されたmemberを一人ずつ表示
 		$result = $dbc -> query($query);
+		
+		
 		
 		while($row = $result -> fetch_assoc()) {
 			
@@ -104,7 +129,19 @@
 			printf($bun2,$m_name);
 			printf($k);
 
+
+
+//			$img_query = "SELECT IMG FROM member WHERE m_id = " . $m_id ;
+//			$img_result = $mysqli -> query($img_query);
+//			$img_row = $img_result -> fetch_row();
+//			echo "<img src=" . $img_row[0] . ">";
+//			printf($img);
+//			printf($k);
+//			→直接表示すると文字化けする。
+
+
 			require('imgget.php');		
+		
 		
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
@@ -114,7 +151,9 @@
 			printf($bun3,$free);
 			printf($k);
 			
+								
 			}
+			
 			
 			printf($k);printf($k);
 			echo '<hr style="border-top: 4px dotted #696969; width: 100%;">'; 
@@ -122,9 +161,10 @@
 			printf($k);printf($k);
 		}
 	}
-	
+	//	unset($_SESSION['img_id']);
 
 ?>
 
-  </body>
+<html>
+</body>
 </html>

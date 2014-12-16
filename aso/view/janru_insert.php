@@ -17,10 +17,9 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-
 ?>
 
-<form action="janru_add.php" method="POST">
+<form name="jadd" action="janru_add.php" method="POST">
 <p>ジャンル名：<input type="text" name="jname" /></p>
 <input type="submit" value="登録" name="add" />
 <input type="reset" value="リセット" />

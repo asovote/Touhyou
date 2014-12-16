@@ -19,11 +19,9 @@ header('Location: /ad_login.php');
 
 ?>
 
-<form action="./janru_insert.php">
-<input type="button" name="janru_insert" value="ジャンルの追加" ><br>
+<input type="button" name="janru_insert" value="ジャンルの追加" onclick="location.href='janru_isnert.php'"><br>
 <input type="button" name="janru_update" value="ジャンルの変更" onclick="location.href='janru_udpate.php'"><br>
 <input type="button" name="janru_delete" value="ジャンルの削除" onclick="location.href='janru_delete.php'">
-<form>
 
 </body>
 </html>

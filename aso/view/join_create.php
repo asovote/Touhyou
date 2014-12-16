@@ -29,7 +29,7 @@ $stmt -> execute(array($gname));
  $result = $stmt->fetch(PDO::FETCH_ASSOC);
 if($result['gc'] > 0){
 	
-	print("重複しています。");
+	print("重複しています。ジャンル名を変えてください。");
 	
 }
  

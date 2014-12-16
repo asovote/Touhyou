@@ -20,11 +20,11 @@ header('Location: /ad_login.php');
 
 ?>
 
-<form action="janru_add.php" method="POST">;
-<p>ジャンル名：<input type="text" name="jname" /></p>;
-<input type="submit" value="登録" name="add" />;
-<input type="reset" value="リセット" />;
-</form>;
+<form action="janru_add.php" method="POST">
+<p>ジャンル名：<input type="text" name="jname" /></p>
+<input type="submit" value="登録" name="add" />
+<input type="reset" value="リセット" />
+</form>
 
 </body>
 </html>

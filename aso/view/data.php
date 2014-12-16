@@ -25,17 +25,21 @@
 	    }
 	</script>
 	</head>  
-<body style="background-image:url(img/123.png);background-attachment:fixed;">
-<?php
-	
-?>
-<div style="float:left; padding-top:20px">
-<img src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()">
-</div>
-<div style="float:left;">
-<img src="img/asofes.png" width="260px" >
-</div>
-<br clear="both"/>
+    <body topmargin="0" bottommargin="0" leftmargin="20" rightmargin="20" marginheight="0" marginwidth="20" style="background-image:url(img/123.png);background-attachment:fixed;">
+    
+
+
+<table cellpaddong="0" cellspacing="0"><tbody>
+<tr>
+<td>
+<img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
+</td>
+<td>
+<img src="img/asofes.png" width="427" >
+</td>
+</tr>
+</tbody>
+</table>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');

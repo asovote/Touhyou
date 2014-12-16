@@ -24,7 +24,7 @@ $sql ="select j_name as genru from genru where genru = ?";
 $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
-if($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
 	print("重複なしです。$result");
   }
   

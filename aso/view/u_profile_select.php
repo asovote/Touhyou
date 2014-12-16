@@ -31,7 +31,7 @@
     <table width="100%"><tbody>
 	<tr>
 	<td>
-	<input type="image" src="img/noun_63651_cc.png" width="20" height="30" onclick="history.back()">
+	<input type="image" src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()">
 	</td>
 	<td>
 	<img src="img/asofes.png"alt=""/>

@@ -30,8 +30,8 @@
 	
 	$k = "<br/>";
 	
-	echo '<div class="nav">';
-	echo '<ul class="nl">';
+//	echo '<div class="nav">';
+	//echo '<ul class="nl">';
 	while($row = $janru_list -> fetch_assoc()) {
 		$j_id = $row['j_id'];
 		$j_name = $row['j_name'];
@@ -49,7 +49,7 @@
 		printf($bun2,$j_id,$j_name);
 //	echo '</li>';
 	}
-	echo '</ul>';
+//	echo '</ul>';
 	echo '</div>';
 
 

@@ -21,16 +21,13 @@ require_once('include_path.php');
 require_once('db.php');
 $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
+$jname = $_POST["jname"];
 
-
-
-if($_POST["jname"] == null) {
+if($jname == null) {
 	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
 }
 
-$jname = $_POST["jname"];
-$chkj = "select j_id from janru where j_name = $jname";
-if($chkresult = $dbc -> query($chkj)){						//入力されたジャンル名の行を検索
+if($chkresult = $dbc -> query("select j_id from janru where j_name = $jname;")){						//入力されたジャンル名の行を検索
 	$j_num = $chkresult -> num_rows;
 	echo $j_num;
 }

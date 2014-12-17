@@ -17,8 +17,8 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-$err = null;
-
+$err = 2;
+//正常値の時は、2を設定しています。
 require_once('include_path.php');
 require_once('db.php');
 $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
@@ -46,7 +46,7 @@ if($err == 0){
 	print($_POST['jname']);
 	foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
 	*/
-	//header('Location: /janru_insert.php?err=0');			//ジャンル名未入力時
+	header('Location: /janru_insert.php?err=0');			//ジャンル名未入力時
 }else if($err == 1){
 	header('Location: /janru_insert.php?err=1');		//重複
 }else{

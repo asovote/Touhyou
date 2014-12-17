@@ -17,14 +17,22 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
+require_once('include_path.php');
+require_once('db.php');
+$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
+
+
+
+
+if($_POST["jname"] == null) {
+	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
+}else{
+	$jname = $_POST["jname"];						//ジャンル名入力時
+	echo $jname;
+	$jadd = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
+	$result = $dbc -> query($jadd);					
+}
 
 ?>
-
-<form action="janru_add.php" method="POST">
-<p>ジャンル名：<input type="text" name="jname" /></p>
-<input type="submit" value="登録" name="add" />
-<input type="reset" value="リセット" />
-</form>
-
 </body>
 </html>

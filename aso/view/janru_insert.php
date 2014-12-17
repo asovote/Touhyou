@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 
@@ -19,9 +19,11 @@ header('Location: /ad_login.php');
 
 ?>
 
-<input type="button" name="janru_insert" value="ジャンルの追加" onclick="location.href='janru_insert.php'"><br>
-<input type="button" name="janru_update" value="ジャンルの変更" onclick="location.href='janru_udpate.php'"><br>
-<input type="button" name="janru_delete" value="ジャンルの削除" onclick="location.href='janru_delete.php'">
+<form name="jadd" action="janru_add.php" method="POST">
+<p>ジャンル名：<input type="text" name="jname" maxlength="6"/></p>
+<input type="submit" value="登録" name="add" />
+<input type="reset" value="リセット" />
+</form>
 
 </body>
 </html>

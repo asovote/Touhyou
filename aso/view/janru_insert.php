@@ -33,11 +33,13 @@ $chk = $_GET['chk'];
 
 <?php
 
-if(isset($_GET['chk'])){
+if(isset($chk)){
 if($chk == 1){
 	echo "ジャンル名を入力してください。";
+	unset($jname);
 }else if($chk == 2){
 	echo "既に存在するジャンル名です。";
+	unset($jname);
 	}
 }
 

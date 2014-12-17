@@ -41,6 +41,8 @@
 </tr>
 </tbody>
 </table>
+<span style="padding-left:20px">
+
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');
@@ -88,7 +90,6 @@ if(isset($_COOKIE[$jid])){
 		 
 		 //｝
 */
-echo '<span style="margin-left:20px">';
 			
 			//表示処理
 			$mid = $row['m_id'];

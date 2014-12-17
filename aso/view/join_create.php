@@ -58,7 +58,7 @@ echo "処理が正常に終了しました。トップから確認してくだ�
 }
 
 ?>
-<a href="/janru_top.php">ジャンルトップへ</a>
+<a href="/janru_top.php">ジャンルトップへ</a><ul></ul>
 <body>
 </body>
 </html>

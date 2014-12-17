@@ -14,7 +14,11 @@ try{
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<link rel="stylesheet" type="text/css" href="css/jquery.minimalect.min.css" media="screen" />
+<script type="text/javascript" src="js/jquery.minimalect.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+</script>
+<script src='js/customSelect.jquery.js'></script>
 </head>
 
 <body>
@@ -22,7 +26,8 @@ try{
 
 <form method="post" action="/join_post.php">
 
-<select name="genre1" size="3">
+<select style="-webkit-appearance: menulist-button; width: 420px; position: absolute; opacity: 0; height: 50px; font-size: 17px;" name="genre1">
+            
 <?php
 $sql = 'select * from janru';
 $stmt = $dbh->prepare($sql);

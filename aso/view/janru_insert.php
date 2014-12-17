@@ -19,16 +19,6 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-function empty_j(){
-header('Location: /janru_insert.php?err=0');
-}
-function already_j(){
-header('Location: /janru_insert.php?err=1');
-}
-
-if(isset($_GET['chk'])){
-$chk = $_GET['chk'];
-}
 if(isset($_GET['err'])){
 $err = $_GET['err'];
 }
@@ -44,13 +34,6 @@ $err = $_GET['err'];
 
 <?php
 
-if(isset($chk)){
-if($chk == 1){				//$chk = 1 値が空
-	empty_j();
-}else if($chk == 2){
-	already_j();
-	}
-}
 
 if(isset($err)){
 if($err == 1){

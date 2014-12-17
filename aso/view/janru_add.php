@@ -31,7 +31,7 @@ $chkresult = $dbc -> query("select j_name from janru");
 while($chk_row = $chkresult -> fetch_array()){
 	$chk_jname = $chk_row['j_name'];
 	if($chk_jname == $jname){
-	header('Location: /janru_insert.php?chk=2');
+		header('Location: /janru_insert.php?chk=2');
 	}
 }
 

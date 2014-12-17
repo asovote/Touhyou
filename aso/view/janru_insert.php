@@ -10,11 +10,6 @@
 
 <body>
 
-<form name="jadd" action="janru_add.php" method="POST">
-<p>ジャンル名：<input type="text" name="jname" maxlength="6"/></p>
-<input type="submit" value="登録" name="add" />
-<input type="reset" value="リセット" />
-</form>
 
 <?php
 
@@ -26,6 +21,17 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
+
+?>
+
+<form name="jadd" action="janru_add.php" method="POST">
+<p>ジャンル名：<input type="text" name="jname" maxlength="6"/></p>
+<input type="submit" value="登録" name="add" />
+<input type="reset" value="リセット" />
+</form>
+
+<?php
+
 if($chk == 1){
 	echo "ジャンル名を入力してください。";
 }else if($chk == 2){
@@ -35,7 +41,5 @@ if($chk == 1){
 }
 
 ?>
-
-
 </body>
 </html>

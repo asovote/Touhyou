@@ -27,10 +27,17 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 if($_POST["jname"] == null) {
 	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
 }else{
+	$jname = $_POST["jname"];						//ジャンル名が既にあるとき
+	$chkj = "select * from janru where j_name = $jname";
+	$chkresult = $dbc -> query($chkj);
+	$num = mysqli_num_rows($chkresult);
+}else if($num = 0){
 	$jname = $_POST["jname"];						//ジャンル名入力時
 	echo $jname;
 	$jadd = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
 	$result = $dbc -> query($jadd);					
+}else{
+	header('Location: /janru_insert.php?chk=2');				//ジャンル名未入力時
 }
 
 ?>

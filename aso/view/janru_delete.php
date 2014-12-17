@@ -27,7 +27,13 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 	while($janru = $result -> fetch_assoc()) {
 	$jid = $janru['j_name'];
 	echo $jid;
+	$chkbox = "<input type=\"checkbox\" name=\"janru[]\" value=" .$jid. ">";
+	printf $chkbox;
+	
+	
 }
 ?>
+
+
 </body>
 </html>

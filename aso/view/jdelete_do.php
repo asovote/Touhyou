@@ -24,8 +24,7 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 $k = "<br/>";
 
 $delete_jid = $_POST["janru"];
-//echo $delete_jid[0];
-foreach($delete_jid as $key => $jid){
+foreach($delete_jid as $key => $jid){			//$key = pointer
 
 	$delete_query = "delete from janru where j_id = $jid";
 	$delete = $dbc -> query($delete_query);

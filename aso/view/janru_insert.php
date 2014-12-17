@@ -20,7 +20,7 @@ header('Location: /ad_login.php');
 }
 
 if(isset($_GET['err'])){
-$err = $_GET['err'];
+	$err = $_GET['err'];
 }
 
 

@@ -29,6 +29,10 @@ header('Location: /janru_insert.php?err=1');
 if(isset($_GET['chk'])){
 $chk = $_GET['chk'];
 }
+if(isset($_GET['err'])){
+$err = $_GET['err'];
+}
+
 
 ?>
 
@@ -49,9 +53,9 @@ if($chk == 1){
 }
 
 if(isset($err)){
-if($chk == 1){
+if($err == 1){
 	echo "ジャンル名を入力してください。";
-}else if($chk == 0){
+}else if($err == 0){
 	echo "既に存在するジャンル名です。";
 	}
 }

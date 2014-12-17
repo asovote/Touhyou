@@ -17,6 +17,8 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
+$err = "noset";
+
 require_once('include_path.php');
 require_once('db.php');
 $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

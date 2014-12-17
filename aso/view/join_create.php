@@ -16,7 +16,7 @@ try{
 <meta charset="utf-8">
 </head>
 <?php
-if(isset($_POST['gname'])){
+if(!isset($_POST['gname'])){
 	header("Location: join_post.php");
 }
 $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);

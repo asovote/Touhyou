@@ -24,7 +24,7 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-if($_GET['chk']=1){
+if(isset($_GET['chk'])){
 	echo "ジャンル名を入力してください。";
 }
 

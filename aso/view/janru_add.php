@@ -26,9 +26,9 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 $jname = $_POST['jname'];
 
 if($jname == null) {
-	print($jname);							//ジャンル名未入力時
+								//ジャンル名未入力時
 	$err = 0;
-	print($err);
+	
 }
 
 $chkresult = $dbc -> query("select j_name from janru");			//重複
@@ -39,10 +39,13 @@ while($chk_row = $chkresult -> fetch_array()){
 	}
 }
 
+print($err);
 if($err == 0){
+	/*
 	print($jname."<BR>");
 	print($_POST['jname']);
 	foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
+	*/
 	//header('Location: /janru_insert.php?err=0');			//ジャンル名未入力時
 }else if($err == 1){
 	header('Location: /janru_insert.php?err=1');		//重複

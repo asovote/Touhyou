@@ -25,15 +25,9 @@ $jname = $_POST["jname"];
 
 if($jname == null) {
 	header('Location: /janru_insert.php?chk=1');			//ジャンル名未入力時
+}else{
+	$result= $dbc -> query("insert into janru(j_id, j_name) VALUES (null,'$jname')");
 }
-
-if($chkresult = $dbc -> query("select * from janru where j_name = カラオケ")){			//入力されたジャンル名の行を検索
-	$j_num = $chkresult -> num_rows;
-	echo $j_num;
-}
-
-
-
 
 
 ?>

@@ -21,16 +21,17 @@ require_once('include_path.php');
 require_once('db.php');
 $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
+$k = "<br/>";
 
 	$allj = "select * from janru;";
 	$result = $dbc -> query($allj);
 	while($janru = $result -> fetch_assoc()) {
 	$jid = $janru['j_name'];
 	echo $jid;
-	$chkbox = "<input type=\"checkbox\" name=\"janru[]\" value=" .$jid. ">";
-	printf $chkbox;
-	
-	
+	$chkbox = "<input type=\"checkbox\" name=\"janru[]\" value=\"%d\">";
+	printf($chkbox,$jid);
+	printf($k);
+
 }
 ?>
 

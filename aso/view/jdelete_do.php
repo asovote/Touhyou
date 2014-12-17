@@ -36,7 +36,7 @@ echo $delete_jid[0];
 
 	printf($k);
 
-}
+//}
 ?>
 
 </form>

@@ -16,6 +16,9 @@ try{
 <meta charset="utf-8">
 </head>
 <?php
+if(isset($_POST['gname'])){
+	header("Location: join_post.php");
+}
 $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 $genre = $_POST['genre1'];
 $genre2 = $_POST['genre2'];

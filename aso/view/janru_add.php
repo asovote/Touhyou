@@ -30,10 +30,10 @@ if($_POST["jname"] == null) {
 	$jname = $_POST["jname"];						//入力されたジャンル名の行を検索
 	$chkj = "select * from janru where j_name = $jname";
 	$chkresult = $dbc -> query($chkj);
-	$num = mysqli_num_rows($chkresult);
+	$j_num = $chkresult -> num_rows;
 }
 
-if($num == 0){
+if($j_num == 0){
 	$jadd = "INSERT INTO janru(j_id, j_name) VALUES (null,'$jname');";
 	$result = $dbc -> query($jadd);					
 }else{

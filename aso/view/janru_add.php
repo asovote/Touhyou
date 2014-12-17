@@ -17,7 +17,7 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-$err = 3;
+//$err = 3;
 
 require_once('include_path.php');
 require_once('db.php');
@@ -39,7 +39,6 @@ while($chk_row = $chkresult -> fetch_array()){
 	}
 }
 
-print($err."<br>");
 if($err == 0){
 	print($err);
 	/*

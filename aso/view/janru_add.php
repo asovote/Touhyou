@@ -25,7 +25,8 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 $jname = $_POST['jname'];
 
-if($jname == null) {							//ジャンル名未入力時
+if($jname == null) {
+	print($jname);							//ジャンル名未入力時
 	$err = 0;
 }
 

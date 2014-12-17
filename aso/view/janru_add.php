@@ -25,9 +25,18 @@ $jname = $_POST["jname"];
 
 if($jname == null) {
 	header('Location: /janru_insert.php?chk=1');			//ジャンル名未入力時
-}else{
-	$result= $dbc -> query("insert into janru(j_id, j_name) VALUES (null,'$jname')");
 }
+
+$chkresult = $dbc -> query("select j_name from janru");
+while($chk_row = $chkresult -> fetch_array()){
+	$chk_jname = $chk_row['j_name'];
+	if($chk_jname == $jname){
+	header('Location: /janru_insert.php?chk=2');
+	}
+}
+
+$result= $dbc -> query("insert into janru(j_id, j_name) VALUES (null,'$jname')");
+
 
 
 ?>

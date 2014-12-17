@@ -38,6 +38,7 @@ while($chk_row = $chkresult -> fetch_array()){
 }
 
 if($err == 0){
+	print($jname."<BR>");
 	print($_POST['jname']);
 	foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
 	//header('Location: /janru_insert.php?err=0');			//ジャンル名未入力時

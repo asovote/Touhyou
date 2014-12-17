@@ -15,12 +15,13 @@
 
 session_start();
 
-$chk = $_GET['chk'];
-
 if($_SESSION['ad_id'] == null){	
 header('Location: /ad_login.php');
 }
 
+if(isset($_GET['chk'])){
+$chk = $_GET['chk'];
+}
 
 ?>
 

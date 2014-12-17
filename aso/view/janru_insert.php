@@ -6,9 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ジャンルの編集</title>
 <link type="text/css" rel="stylesheet" href="">
-function reload(){
-header('Location: /janru_insert.php');
-}
 </head>
 
 <body>
@@ -20,6 +17,10 @@ session_start();
 
 if($_SESSION['ad_id'] == null){	
 header('Location: /ad_login.php');
+}
+
+function reload(){
+header('Location: /janru_insert.php');
 }
 
 if(isset($_GET['chk'])){

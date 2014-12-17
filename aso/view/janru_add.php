@@ -23,21 +23,26 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 $jname = $_POST["jname"];
 
-if($jname == "") {
-	header('Location: /janru_insert.php?chk=1');			//ジャンル名未入力時
+if($jname == null) {							//ジャンル名未入力時
+	$err=0;
 }
 
-$chkresult = $dbc -> query("select j_name from janru");
+$chkresult = $dbc -> query("select j_name from janru");			//重複
 while($chk_row = $chkresult -> fetch_array()){
 	$chk_jname = $chk_row['j_name'];
 	if($chk_jname == $jname){
-		unset($jname);
-		header('Location: /janru_insert.php?chk=2');
+		$err = 1;
 	}
 }
 
-$result= $dbc -> query("insert into janru(j_id, j_name) VALUES (null,'$jname')");
 
+if($err == 0){
+	header('Location: /janru_insert.php?err=0');			//ジャンル名未入力時
+}else if($err == 1){
+	header('Location: /janru_insert.php?err=1');			//重複
+}else{
+	$result= $dbc -> query("insert into janru(j_id, j_name) VALUES (null,'$jname')");	//追加
+}
 
 
 ?>

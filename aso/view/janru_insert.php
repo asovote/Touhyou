@@ -19,10 +19,6 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-if(isset($_GET['err'])){
-	$err = $_GET['err'];
-}
-
 
 ?>
 
@@ -35,12 +31,10 @@ if(isset($_GET['err'])){
 <?php
 
 
-if(isset($err)){
-if($err == 1){
+if($_GET['err'] == 1){
 	echo "既に存在するジャンル名です。";
-}else if($err == 0){
+}else if($_GET['err'] == 0){
 	echo "ジャンル名を入力してください。";
-	}
 }
 
 ?>

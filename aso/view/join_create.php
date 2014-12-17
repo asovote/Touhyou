@@ -16,9 +16,7 @@ try{
 <meta charset="utf-8">
 </head>
 <?php
-if(!isset($_POST['gname'])){
-	header("Location: join_post.php");
-}
+
 $gname = htmlspecialchars($_POST['gname'], ENT_QUOTES);
 $genre = $_POST['genre1'];
 $genre2 = $_POST['genre2'];
@@ -32,10 +30,13 @@ $stmt = $dbh->prepare($sql);
 $stmt -> execute(array($gname));
 
  $result = $stmt->fetch(PDO::FETCH_ASSOC);
-if($result['gc'] > 0){
+if($result['gc'] > 0 || $gname == ""){
 	//うぉーにん！重複しているときは、進めませんよ。
+	if($gname == ""){
+		print("空白ですね、お戻りください。");
+	}else{
 	print("重複しています。ジャンル名を変えてください。");
-	
+	}
 }else{
 	//正常なときの処理がはじまりますよ！
 $sql = "insert into janru(j_name) values(?)";

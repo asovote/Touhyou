@@ -20,7 +20,7 @@ header('Location: /ad_login.php');
 }
 
 function reload(){
-header('Location: /janru_insert.php');
+header('Location: /janru_insert.php?chk=1');
 }
 
 if(isset($_GET['chk'])){

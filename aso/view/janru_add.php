@@ -24,10 +24,10 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 $jname = $_POST["jname"];
 
 if($jname == null) {
-	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
+	header('Location: /janru_insert.php?chk=1');			//ジャンル名未入力時
 }
 
-if($chkresult = $dbc -> query("select * from janru")){			//入力されたジャンル名の行を検索
+if($chkresult = $dbc -> query("select * from janru where j_name = $jname")){			//入力されたジャンル名の行を検索
 	$j_num = $chkresult -> num_rows;
 	echo $j_num;
 }

@@ -9,7 +9,6 @@
 </head>
 
 <body>
-<form name="delete" action="jdelete_do.php" method="post">
 <?php
 
 session_start();
@@ -39,8 +38,6 @@ while($delete_jid = $_POST['janru']){
 }
 ?>
 
-<input type="submit" value="削除">
-<input type="reset" value="取消">
 </form>
 </body>
 </html>

@@ -31,8 +31,9 @@ foreach($delete_jid as $key => $value){
 //	$delete = $dbc -> query($delete_query);
 	
 	print $key.'=>'.$value;
-}
 	printf($k);
+}
+	
 
 
 ?>

@@ -26,7 +26,7 @@ try{
 
 <form method="post" action="/join_post.php">
 
-<select style="-webkit-appearance: menulist-button; width: 420px; position: absolute; opacity: 0; height: 50px; font-size: 17px;" name="genre1">
+<select name="genre1" size="3">
             
 <?php
 $sql = 'select * from janru';
@@ -40,7 +40,7 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 ?>
 
 </select>
-<span class="customSelect customSelectChanged" style="display: inline-block;"><span class="customSelectInner" style="width: 392px; display: <p>これは、レイアウト P タグのコンテンツです</p>inline-block;">You're Lookin' at it</span></span>
+
 <select name="genre2" size="3">
 <?php
 $sql = 'select * from janru';

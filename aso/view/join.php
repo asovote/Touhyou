@@ -40,6 +40,7 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 ?>
 
 </select>
+<span class="customSelect customSelectChanged" style="display: inline-block;"><span class="customSelectInner" style="width: 392px; display: <p>これは、レイアウト P タグのコンテンツです</p>inline-block;">You're Lookin' at it</span></span>
 <select name="genre2" size="3">
 <?php
 $sql = 'select * from janru';

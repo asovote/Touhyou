@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ジャンルの編集</title>
 <link type="text/css" rel="stylesheet" href="">
+function reload(){
+header('Location: /janru_insert.php');
+}
 </head>
 
 <body>
@@ -36,10 +39,10 @@ $chk = $_GET['chk'];
 if(isset($chk)){
 if($chk == 1){
 	echo "ジャンル名を入力してください。";
-	unset($chk);
+	function reload();
 }else if($chk == 2){
 	echo "既に存在するジャンル名です。";
-	unset($chk);
+	function reload();
 	}
 }
 

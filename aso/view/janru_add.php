@@ -17,7 +17,7 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-//$err = 3;
+$err = null;
 
 require_once('include_path.php');
 require_once('db.php');

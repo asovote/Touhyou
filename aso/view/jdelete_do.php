@@ -9,7 +9,6 @@
 </head>
 
 <body>
-<form name="delete" action="jdelete_do.php" method="post">
 <?php
 
 session_start();
@@ -24,21 +23,21 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 $k = "<br/>";
 
-	$allj = "select * from janru;";
-	$result = $dbc -> query($allj);
-	while($janru = $result -> fetch_assoc()) {
-	$jid = $janru['j_id'];
-	$jname = $janru['j_name'];
-	echo $jname;
-	$chkbox = "<input type=\"checkbox\" name=\"janru[]\" value=\"%d\">";
-	printf($chkbox,$jid);
-	printf($k);
+$delete_jid = $_POST["janru"];
+//echo $delete_jid[0];
+foreach($delete_jid as $key => $jid){
 
+	$delete_query = "delete j_id from janru";
+//	$delete = $dbc -> query($delete_query);
+	
+	print $jid;
+	printf($k);
 }
+	
+
+
 ?>
 
-<input type="submit" value="削除">
-<input type="reset" value="取消">
 </form>
 </body>
 </html>

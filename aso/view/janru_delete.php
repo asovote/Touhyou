@@ -26,8 +26,9 @@ $k = "<br/>";
 	$allj = "select * from janru;";
 	$result = $dbc -> query($allj);
 	while($janru = $result -> fetch_assoc()) {
-	$jid = $janru['j_name'];
-	echo $jid;
+	$jid = $janru['j_id'];
+	$jname = $janru['j_name'];
+	echo $jname;
 	$chkbox = "<input type=\"checkbox\" name=\"janru[]\" value=\"%d\">";
 	printf($chkbox,$jid);
 	printf($k);

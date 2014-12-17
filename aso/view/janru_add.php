@@ -28,6 +28,7 @@ $jname = $_POST['jname'];
 if($jname == null) {
 	print($jname);							//ジャンル名未入力時
 	$err = 0;
+	print($err);
 }
 
 $chkresult = $dbc -> query("select j_name from janru");			//重複

@@ -53,6 +53,15 @@ while($result = $stmt -> fetch(PDO::FETCH_ASSOC)){
 }
 ?>
 </select>
+
+<select id="example3" style="display: none;">
+    <option value="cake">Cake</option>
+    <option value="icecream" selected="selected">Ice cream</option>
+    <option value="cookies">Cookies</option>
+    <option value="muffins">Muffins</option>
+  </select>
+  <div class="minict_wrapper bubble"><input type="text" value="Ice cream" placeholder="Ice cream"><ul style="display: none;"><li data-value="cake" class="minict_first">Cake</li><li data-value="icecream" class="selected">Ice cream</li><li data-value="cookies">Cookies</li><li data-value="muffins" class="minict_last">Muffins</li><li class="minict_empty" style="display: none;">No results match your keyword.</li></ul></div>
+  
 <input type="submit">
 </form>
 </html>

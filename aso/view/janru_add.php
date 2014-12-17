@@ -34,6 +34,7 @@ while($chk_row = $chkresult -> fetch_array()){
 	$chk_jname = $chk_row['j_name'];
 	if($chk_jname == $jname){
 		$err = 1;
+		}
 	}
 }
 

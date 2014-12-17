@@ -36,7 +36,7 @@ if($chk == 1){
 	echo "ジャンル名を入力してください。";
 }else if($chk == 2){
 	echo "既に存在するジャンル名です。";
-}else{
+}else if($chk == null){
 	echo "";
 }
 

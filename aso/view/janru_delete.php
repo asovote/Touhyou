@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<form name="delete" action="jdelete_do.php" method="post">
 <?php
 
 session_start();
@@ -36,6 +37,8 @@ $k = "<br/>";
 }
 ?>
 
-
+<input type="submit" value="削除">
+<input type="reset" value="取消">
+</form>
 </body>
 </html>

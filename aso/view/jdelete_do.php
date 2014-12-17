@@ -23,7 +23,7 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 
 $k = "<br/>";
 
-$delete_jid = $_POST['janru']
+$delete_jid = $_POST["janru"];
 echo $delete_jid[0];
 //while($delete_jid = $_POST['janru']){
 

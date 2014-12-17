@@ -28,7 +28,7 @@ if($_POST["jname"] == null) {
 	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
 }else{
 	$jname = $_POST["jname"];						//入力されたジャンル名の行を検索
-	$chkj = "select * from janru where j_name = $jname";
+	$chkj = "select j_id from janru where j_name = $jname";
 	$chkresult = $dbc -> query($chkj);
 	$j_num = $chkresult -> num_rows;
 }

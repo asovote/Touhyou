@@ -30,13 +30,15 @@ header('Location: /ad_login.php');
 
 <?php
 
-
+if(isset($_GET['err'])){
 if($_GET['err'] == 1){
 	echo "既に存在するジャンル名です。";
 }else if($_GET['err'] == 0){
 	echo "ジャンル名を入力してください。";
+}else{
+	echo "";
 }
-
+}
 ?>
 </body>
 </html>

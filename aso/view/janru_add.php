@@ -24,8 +24,10 @@ $dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 $jname = $_POST["jname"];
 
 if($jname == null) {							//ジャンル名未入力時
+
 	$err=0;
-}
+
+}else{
 
 $chkresult = $dbc -> query("select j_name from janru");			//重複
 while($chk_row = $chkresult -> fetch_array()){

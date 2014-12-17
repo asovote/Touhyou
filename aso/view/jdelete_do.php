@@ -25,16 +25,14 @@ $k = "<br/>";
 
 $delete_jid = $_POST["janru"];
 //echo $delete_jid[0];
-foreach($delete_jid as $key => $value){
+foreach($delete_jid as $key => $jid){
 
-	$delete_query = "";
-//	$delete = $dbc -> query($delete_query);
+	$delete_query = "delete from janru where j_id = $jid";
+	$delete = $dbc -> query($delete_query);
 	
-	print $key.'=>'.$value;
+	print $jid;
 	printf($k);
 }
-	
-
 
 ?>
 

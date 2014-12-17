@@ -27,7 +27,7 @@ if($jname == null) {
 	header('Location: /janru_insert.php?chk=1');				//ジャンル名未入力時
 }
 
-if($chkresult = $dbc -> query("select j_id from janru where j_name = $jname;")){						//入力されたジャンル名の行を検索
+if($chkresult = $dbc -> query("select * from janru")){			//入力されたジャンル名の行を検索
 	$j_num = $chkresult -> num_rows;
 	echo $j_num;
 }

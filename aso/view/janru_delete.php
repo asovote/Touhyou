@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form name="delete" action="jdelete_do.php" method="post">
+<form name="delete" action="janru_delete_do.php" method="post">
 <?php
 
 session_start();

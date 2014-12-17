@@ -19,8 +19,11 @@ if($_SESSION['ad_id'] == null){
 header('Location: /ad_login.php');
 }
 
-function reload(){
-header('Location: /janru_insert.php?chk=1');
+function already_j(){
+header('Location: /janru_insert.php?err=0');
+}
+function empty_j(){
+header('Location: /janru_insert.php?err=1');
 }
 
 if(isset($_GET['chk'])){
@@ -39,11 +42,17 @@ $chk = $_GET['chk'];
 
 if(isset($chk)){
 if($chk == 1){
-	echo "ジャンル名を入力してください。";
-	reload();
+	empty_j();
 }else if($chk == 2){
+	already_j();
+	}
+}
+
+if(isset($err)){
+if($chk == 1){
+	echo "ジャンル名を入力してください。";
+}else if($chk == 0){
 	echo "既に存在するジャンル名です。";
-	reload();
 	}
 }
 

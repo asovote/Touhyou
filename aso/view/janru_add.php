@@ -39,8 +39,9 @@ while($chk_row = $chkresult -> fetch_array()){
 	}
 }
 
-print($err);
+print($err."<br>");
 if($err == 0){
+	print($err);
 	/*
 	print($jname."<BR>");
 	print($_POST['jname']);

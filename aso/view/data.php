@@ -29,13 +29,18 @@
     
 
 
+<table width="100%" cellpadding-left="3"><tbody>
+<tr>
+<td>
+<img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
+</td>
+</tr>
+</tbody>
+</table>
+<br>
 <table width="100%"><tbody>
 <tr>
 <td>
-<img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" padding-left:"5px" />
-</td>
-<td>
-</br>
 <img src="img/asofes.png" width="100%" >
 </td>
 </tr>
@@ -65,6 +70,9 @@ if(isset($_COOKIE[$jid])){
 		$janru = $_POST['jid'];
 		}else{
 		header("Location: usertop.php");
+		header('Expires:-1');
+		header('Cache-Control:');
+		header('Pragma:');
 		}
 		//SQL文の格納
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

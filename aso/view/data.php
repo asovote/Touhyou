@@ -29,7 +29,7 @@
     
 
 
-<table width="100%" cellpadding="3" border="0" align="left"><tbody>
+<table cellpadding="3" border="0" align="left"><tbody>
 <tr>
 <td>
 <img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
@@ -38,7 +38,7 @@
 </tbody>
 </table>
 <br>
-<table width="100%" border="0"><tbody>
+<table border="0"><tbody>
 <tr>
 <td>
 <img src="img/asofes.png" width="100%" >

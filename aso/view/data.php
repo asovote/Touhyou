@@ -40,7 +40,7 @@
 </td>
 </tr>
 <span style="padding-left:20px">
-<tr>
+<td>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');
@@ -138,7 +138,7 @@ if(isset($_COOKIE[$jid])){
 		  echo '<div id="btb2" align="center"></div>';
 		}	 
 }
-?>   </div></tr></tbody>
+?>   </div></td></tbody>
 </table>
 </span> </body>
     

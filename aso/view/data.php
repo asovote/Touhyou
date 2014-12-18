@@ -32,7 +32,7 @@
 <table width="100%"><tbody>
 <tr>
 <td>
-<img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
+<img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" padding-left:"5px" />
 </td>
 <td>
 </br>
@@ -41,7 +41,6 @@
 </tr>
 </tbody>
 </table>
-<span style="padding-left:20px">
 
 <?php	
 		require_once('include_path.php');
@@ -90,7 +89,6 @@ if(isset($_COOKIE[$jid])){
 		 
 		 //｝
 */
-			echo '<div id="eria">';
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
@@ -105,7 +103,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
 		  echo'<div align="center" valign="bottom">';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
-		  echo'</div></div>';
+		  echo'</div>';
 		}
 }else{
 		//データベースにつなぐ
@@ -123,7 +121,6 @@ if(isset($_COOKIE[$jid])){
 		while($row = mysqli_fetch_array($result)){
 			
 			
-			echo '<div id="eria">';
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
@@ -139,9 +136,9 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div id="voteimg" align="center" valign="bottom"><input type="image" src="img/vote.png"width="150" height="150" ><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div>';
-		  echo '<div id="btb2" align="center"></div></div>';
+		  echo '<div id="btb2" align="center"></div>';
 		}	 
 }
-?>   </div></span> </body>
+?>   </div> </body>
     
 </html>

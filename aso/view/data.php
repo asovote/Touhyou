@@ -32,17 +32,15 @@
 <table width="100%"><tbody>
 <tr>
 <td>
-<img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
+<img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
 </td>
 <td>
 </br>
 <img src="img/asofes.png" width="100%" >
 </td>
 </tr>
-</tbody>
-</table>
 <span style="padding-left:20px">
-
+<tr>
 <?php	
 		require_once('include_path.php');
 		require_once('db.php');
@@ -140,6 +138,8 @@ if(isset($_COOKIE[$jid])){
 		  echo '<div id="btb2" align="center"></div>';
 		}	 
 }
-?>   </div></span> </body>
+?>   </div></tr></tbody>
+</table>
+</span> </body>
     
 </html>

@@ -30,14 +30,11 @@
 
 
 <table width="100%" border="0" align="center"><tbody>
-<tr align="right">
-<td>
+<tr>
+<td align="right">
 <img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
 </td>
-</tr>
-<br>
-<tr align="center">
-<td>
+<td align="center">
 <img src="img/asofes.png" width="100%" >
 </td>
 </tr>

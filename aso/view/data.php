@@ -29,17 +29,14 @@
     
 
 
-<table cellpadding="3" border="0" align="left"><tbody>
-<tr>
+<table width="100%" border="0" align="center"><tbody>
+<tr align="right">
 <td>
 <img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
 </td>
 </tr>
-</tbody>
-</table>
 <br>
-<table border="0"><tbody>
-<tr>
+<tr align="center">
 <td>
 <img src="img/asofes.png" width="100%" >
 </td>

@@ -10,11 +10,13 @@
 h4 {
  padding:20px;
  font-family: "メイリオ", sans-serif;
+ font-size:28px;
 }
 
 h3 {
  padding:20px;
  font-family: "メイリオ", sans-serif;
+font-size:28px;
 }
 p.head img{
 	text-align:center;
@@ -33,7 +35,7 @@ p.head img{
  #sub  {
 	text-align:center;
 	font-family: "メイリオ", sans-serif;
-	font-size:32px;
+	font-size:38px;
 	}
 back	{
 	float:left; 

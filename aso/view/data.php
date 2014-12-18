@@ -31,7 +31,7 @@
 
 <table width="100%" border="0" align="center"><tbody>
 <tr>
-<td align="right">
+<td align="right" cellspacing="10">
 <img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
 </td>
 <td align="center">

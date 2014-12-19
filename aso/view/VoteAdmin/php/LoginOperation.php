@@ -16,7 +16,7 @@ if (empty($result))
   header('Location: ../loginerror.php');
 else {
   $_SESSION['ad_id'] = $result['ad_id'];
-  header('Location: ../genre.php?genre=1');
+  header('Location: ../genre.php?genre=15');
 
 }
 // htmlspecialcharsを簡略化する。

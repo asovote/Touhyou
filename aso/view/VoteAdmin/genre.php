@@ -64,7 +64,7 @@ $memberStmt->execute(array($_GET['genre']));
           foreach ($tabStmt as $row) {
 
             // 投票中のコンテンツがあれば、を通知する。
-            if ($row['jtime'] == 1)
+            if ($row['jtime'] == 0)
               array_push($voting, $row['j_name']);
             if ($row['j_id'] == $_GET['genre']) {
         ?>

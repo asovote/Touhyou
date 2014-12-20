@@ -70,7 +70,7 @@
 				echo '<p>該当する人物が見つかりませんでした。</p>';
 		} else {
 			// 取得したデータを一覧表示
-			while($row = mysqli_fetch_array($result)){
+			while($row = mysqli_fetch_assoc($result)){
 				
 				//表示処理
 				$mid = $row['m_id'];

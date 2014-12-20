@@ -58,7 +58,6 @@
 		$mid = $_GET['mid'];
 		}
 		
-		echo $mid;
 		
 	if(isset($mid)){
 	

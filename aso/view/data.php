@@ -25,7 +25,7 @@
 	    }
 	</script>
 	</head>  
-    <body topmargin="10px" bottommargin="0" leftmargin="20" rightmargin="20" marginheight="0" marginwidth="20" style="background-image:url(img/123.png);background-attachment:fixed;">
+    <body style="background-image:url(img/123.png);background-attachment:fixed;">
     
 
 

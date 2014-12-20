@@ -80,7 +80,7 @@
 	      echo'<div class="row">';
 	      echo'<h4><b>'.$mname.'</b></h4>';
 	      echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';
-	      echo'<div align="center" valign="bottom"><form action="update.php" method="POST" onClick="return submitChk();"><br>';        
+	      echo'<div align="center" valign="bottom"><form action="update.php" method="POST" onClick="return submitChk();"><br>';       
 	      //echo'<form action="update.php" method="POST" onClick="return submitChk();">';
 	      echo'<div id="voteimg" align="center" valign="bottom"><input type="image" src="img/vote.png"width="150" height="150" ><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$j_id.'"></form><br>';
 	      echo'</div>';

@@ -59,7 +59,7 @@ $jid=$_SESSION['jid'];
 echo '値が入っていません';
 }
 
-echo $jid;
+echo $_SESSION['jid'];
 
 if(isset($_COOKIE[$jid])){ 
 		//データベースにつなぐ

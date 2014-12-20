@@ -82,7 +82,6 @@ if(isset($_COOKIE[$jid])){
 		     //・・
 		     //sListにscを追加
 		 //}
-		 
 		 //ｓListにシャッフルをする
 		 
 		 //for　0番目から、配列の件数までループ
@@ -129,7 +128,8 @@ if(isset($_COOKIE[$jid])){
 			$mname = $row['name'];
 			$jid = $row['j_id'];
  			$mimg = $row['m_img'];
-			$_SESSION['jid'] = $jid;
+ 			echo $jid;
+//			$_SESSION['jid'] = $jid;
          	  echo'<div class="row">';
 		  echo'<h3><b>'.$mname.'</b></h3>';
       		  echo'<div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="u_profile_select.php?mid=' .$mid.'">';

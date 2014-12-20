@@ -58,6 +58,9 @@ $jid=$_SESSION['jid'];
 }else{
 echo '値が入っていません';
 }
+
+echo $jid;
+
 if(isset($_COOKIE[$jid])){ 
 		//データベースにつなぐ
 		if(isset($_POST['jid'])){
@@ -126,9 +129,7 @@ if(isset($_COOKIE[$jid])){
 			//表示処理
 			$mid = $row['m_id'];
 			$mname = $row['name'];
-			$jid = $row['j_id'];
  			$mimg = $row['m_img'];
- 			echo $jid;
 //			$_SESSION['jid'] = $jid;
          	  echo'<div class="row">';
 		  echo'<h3><b>'.$mname.'</b></h3>';

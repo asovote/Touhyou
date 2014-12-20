@@ -53,7 +53,8 @@
 
 		if(isset($_SESSION['jid'])){
 		$j_id = $_SESSION['jid'];
-		}else if(isset($_GET['mid'])){
+		}
+		if(isset($_GET['mid'])){
 		$mid = $_GET['mid'];
 		}
 		

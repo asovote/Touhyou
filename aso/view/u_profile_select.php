@@ -56,6 +56,9 @@
 		}else if(isset($_GET['mid'])){
 		$mid = $_GET['mid'];
 		}
+		
+		echo $j_id;
+		
 	if(isset($mid)){
 	
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);

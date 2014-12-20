@@ -138,7 +138,6 @@ if(isset($_COOKIE[$jid])){
 		  echo '<form action="update.php" method="POST" onClick="return submitChk();">';
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
 		  echo'<div id="voteimg" align="center" valign="bottom"><input type="image" src="img/vote.png"width="150" height="150" ><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
-		  echo $jid;
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずです--></div>';
 		  echo'</div>';
 		  echo '<div id="btb2" align="center"></div></div>';

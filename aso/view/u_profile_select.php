@@ -59,7 +59,7 @@
 	if(isset($mid)){
 	
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and member.m_id=".$mid.";";
+		$query = "select * from member where m_id = " . $mid;
 		$result = mysqli_query($dbc, $query);
 		
 		if(mysqli_num_rows($result) == 0) {
@@ -73,16 +73,16 @@
 				$mid = $row['m_id'];
 				$mname = $row['name'];
 				$mschool = $row['school'];
-				$jid = $row['j_id'];
+//				$jid = $row['j_id'];
 				$mfree = $row['free'];
 				$mimg = $row['m_img'];
-				$_SESSION['jid'] = $row['j_id'];
+				$_SESSION['jid'] = $j_id;
 	      echo'<div class="row">';
 	      echo'<h4><b>'.$mname.'</b></h4>';
 	      echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';
 	      echo'<div align="center" valign="bottom"><form action="update.php" method="POST" onClick="return submitChk();"><br>';        
 	      //echo'<form action="update.php" method="POST" onClick="return submitChk();">';
-	      echo'<div id="voteimg" align="center" valign="bottom"><input type="image" src="img/vote.png"width="150" height="150" ><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$jid.'"></form><br>';
+	      echo'<div id="voteimg" align="center" valign="bottom"><input type="image" src="img/vote.png"width="150" height="150" ><input type="hidden" name="mid" value="'.$mid.'"><input type="hidden" name="jid" value="'.$j_id.'"></form><br>';
 	      echo'</div>';
 	      echo'</div><div class="row">';
 	      echo'</div></div>';

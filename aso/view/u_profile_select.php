@@ -51,8 +51,8 @@
 		header('Cache-Control:');
 		header('Pragma:');
 
-		if(isset($_GET['jid'])){
-		$j_id = $_GET['jid'];
+		if(isset($_SESSION['jid'])){
+		$j_id = $_SESSION['jid'];
 		}else if(isset($_GET['mid'])){
 		$mid = $_GET['mid'];
 		}
@@ -76,7 +76,6 @@
 //				$jid = $row['j_id'];
 				$mfree = $row['free'];
 				$mimg = $row['m_img'];
-				$_SESSION['jid'] = $j_id;
 	      echo'<div class="row">';
 	      echo'<h4><b>'.$mname.'</b></h4>';
 	      echo'<div class="col-lg-3 col-sm-4 col-xs-6"><img class="thumbnail img-responsive" src="img/'.$mimg.'" width="600" height="350"></div><!--SQLで撮ってきた画像に差し替え-->';

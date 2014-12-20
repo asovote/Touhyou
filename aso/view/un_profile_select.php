@@ -36,17 +36,18 @@
 		header('Expires:-1');
 		header('Cache-Control:');
 		header('Pragma:');
-
 	
-		if(isset($_GET['jid'])){
-		$j_id = $_GET['jid'];
-		}else if(isset($_GET['mid'])){
+		if(isset($_SESSION['jid'])){
+		$j_id = $_SESSION['jid'];
+		}
+		if(isset($_GET['mid'])){
 		$mid = $_GET['mid'];
 		}
+		
 	if(isset($mid)){
 	
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
-		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and member.m_id=".$mid.";";
+		$query = "select * from member where m_id = " . $mid;
 		$result = mysqli_query($dbc, $query);
 		
 	if(mysqli_num_rows($result) == 0) {
@@ -57,13 +58,13 @@
 		while($row = mysqli_fetch_array($result)){
 			
 			//表示処理
-			$mid = $row['m_id'];
+//			$mid = $row['m_id'];
 			$mname = $row['name'];
 			$mschool = $row['school'];
-			$jid = $row['j_id'];
+//			$jid = $row['j_id'];
 			$mfree = $row['free'];
 			$mimg = $row['m_img'];
-			$_SESSION['jid'] = $row['j_id'];
+//			$_SESSION['jid'] = $row['j_id'];
       echo'<div class="row">';
       echo '<h4><b>'.$mname.'</b></h4>';
       echo'<form action="update.php" method="POST">';

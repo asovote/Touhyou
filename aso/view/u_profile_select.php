@@ -73,7 +73,7 @@
 			while($row = mysqli_fetch_assoc($result)){
 				
 				//表示処理
-				$mid = $row['m_id'];
+//				$mid = $row['m_id'];
 				$mname = $row['name'];
 				$mschool = $row['school'];
 //				$jid = $row['j_id'];

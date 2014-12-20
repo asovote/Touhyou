@@ -57,7 +57,7 @@
 		$mid = $_GET['mid'];
 		}
 		
-		echo $j_id;
+		echo $mid;
 		
 	if(isset($mid)){
 	

@@ -124,8 +124,8 @@ if(isset($_COOKIE[$jid])){
 		$dbc = mysqli_connect(db_host, db_user, db_pass, db_name);
 		$query = "select * from janru,mj_list,member where member.m_id = mj_list.m_id and mj_list.j_id = janru.j_id and janru.j_id=".$janru.";";
 		$result = mysqli_query($dbc, $query);
+       	echo '<div id="btb2" align="center"></div>';
 		while($row = mysqli_fetch_array($result)){
-	       	echo '<div id="btb2" align="center"></div>';
 			
 			echo '<div id="eria">';
 			//表示処理

@@ -110,7 +110,7 @@ if(isset($_COOKIE[$jid])){
 		  echo'<div class="col-lg-3 col-sm-4 col-xs-6">';
 		  echo'<div align="center" valign="bottom">';
                   echo'</div>  <!--ここで戻るボタンと投票ボタンを置く形になるはずですね--></div>';
-		  echo'</div></div>';
+		  echo'</div><div id="btb2" align="center"></div></div>';
 		}
 }else{
 		//データベースにつなぐ

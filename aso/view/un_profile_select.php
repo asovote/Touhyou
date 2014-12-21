@@ -77,7 +77,7 @@
       echo'</div>';
       echo'<div class="container">';
       echo'<p>学校:'.$mschool.'</p>';
-      echo'<p>'.$mfree.'</p>';
+      echo'<p class="sam1">'.$mfree.'</p>';
       echo'</div>';
 			
 		}

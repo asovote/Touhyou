@@ -15,19 +15,22 @@
   <body style="background-image:url(img/123.png);background-attachment:fixed;">
     <div class="container">  
 
-<table width="100%"><tbody>
+
+<table width="100%" border="0" align="center"><tbody>
 <tr>
-<td>
-<img src="img/noun_63651_cc.png" width="38" height="42" onclick="history.back()" />
+<td align="right" cellspacing="10">
+<img src="img/noun_63651_cc.png" width="31" height="42" onclick="history.back()" />
 </td>
-<td></br></br>
+<td align="center">
 <img src="img/asofes.png" width="100%" >
 </td>
 </tr>
 </tbody>
 </table>
-<p class="head"><img src="img/rank.png"alt=""/>
-</p>
+
+<div id="probar" align="center"><img src="img/rank.png" alt="" width="100%" >
+</div>
+
 
 
 <?php
@@ -116,6 +119,9 @@ return str_replace($search,$replace,$str);
 		
 		while($row = $result -> fetch_assoc()) {
 			
+			echo '<div id="kekka" align="center">';
+			
+			
 			//順位の表示
 			$sum += 1;
 			
@@ -142,7 +148,7 @@ return str_replace($search,$replace,$str);
 
 			require('imgget.php');		
 		
-		
+		/*
 			$bun3 = "参加者紹介文:%s";
 			$free = $row['free'];
 			$free = ignore($free);
@@ -151,7 +157,7 @@ return str_replace($search,$replace,$str);
 			printf($bun3,$free);
 			printf($k);
 			
-								
+			*/					
 			
 			
 			
@@ -159,6 +165,7 @@ return str_replace($search,$replace,$str);
 			echo '<hr style="border-top: 4px dotted #696969; width: 100%;">'; 
 		//	printf("----------------------------------------------------------------------------------------------");
 			printf($k);printf($k);
+			echo '</div>';
 		}
 	}
 	//	unset($_SESSION['img_id']);

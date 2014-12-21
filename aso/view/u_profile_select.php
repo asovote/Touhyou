@@ -40,8 +40,8 @@
 </tbody>
 </table>
 
-<p class="head"><img src="img/prof.png"alt=""/>
-</p>
+<div id="probar" align="center"><img src="img/prof.png"alt=""/>
+</div>
 
 <?php
     //データベースに接続

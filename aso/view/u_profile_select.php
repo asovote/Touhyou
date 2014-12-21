@@ -96,8 +96,8 @@
 	      echo'</div><div class="row">';
 	      echo'</div></div>';
 	      echo'<div class="container">';
-	      echo'<p>学校:'.$mschool.'</p>';
-	      echo'<p class="sam1">'.$mfree.'</p>';
+	      echo'<p class="sam1">学校 :  '.$mschool.' ';
+	      echo' '.$mfree.'</p>';
 	      echo'</div>';
 				
 			}

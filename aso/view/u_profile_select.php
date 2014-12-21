@@ -96,7 +96,7 @@
 	      echo'</div><div class="row">';
 	      echo'</div></div>';
 	      echo'<div class="container">';
-	      echo'<p class="sam1">学校 :  '.$mschool.' ';
+	      echo'<p class="sam1">学校 :  '.$mschool.' <br>';
 	      echo' '.$mfree.'</p>';
 	      echo'</div>';
 				

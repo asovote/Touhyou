@@ -40,7 +40,7 @@
 </tbody>
 </table>
 
-<div id="probar" align="center"><img src="img/prof.png"alt=""/>
+<div id="probar" align="center"><img src="img/prof.png" alt="" width="100%" >
 </div>
 
 <?php

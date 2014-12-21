@@ -129,7 +129,7 @@ return str_replace($search,$replace,$str);
 			echo '第'.$sum.'位';
 			echo '</h6>';
 			
-			printf($k);printf($k);
+			printf($k);
 			//参加者情報
 			
 			echo '<h5>';

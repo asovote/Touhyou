@@ -99,11 +99,11 @@
 		
 				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {	
 				$filename = $_FILES["upfile"]["name"];
-				echo pathinfo($filename,PATHINFO_EXTENSION);
-
-	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".$_FILES["upfile"]["name"])) {
+				$ruru = pathinfo($filename,PATHINFO_EXTENSION);
+				$ruru = ".".$ruru;	
+	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".md5($_FILES["upfile"]["name"]).$ruru)) {
 	    			echo $_FILES["upfile"]["name"];
-				chmod("img/" . $_FILES["upfile"]["name"], 0644);
+				chmod("img/" . md5($_FILES["upfile"]["name"]).$ruru, 0644);
 			//	header("Location: janru_top.php");
 //	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
 				} else {

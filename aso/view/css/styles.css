@@ -60,5 +60,10 @@ p.sam1	{
 	}
 h5 {
  font-family: "メイリオ", sans-serif;
+ font-size:24px;
+}
+h6 {
+ font-family: "メイリオ", sans-serif;
  font-size:28px;
+ color:red;
 }

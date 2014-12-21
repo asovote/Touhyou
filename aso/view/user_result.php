@@ -125,7 +125,9 @@ return str_replace($search,$replace,$str);
 			//順位の表示
 			$sum += 1;
 			
+			echo '<h6>';
 			echo '第'.$sum.'位';
+			echo '</h6>';
 			
 			printf($k);printf($k);
 			//参加者情報

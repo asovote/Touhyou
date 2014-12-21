@@ -3,7 +3,6 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Title</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +23,9 @@
 	        return flag;
 	    }
 	</script>
+
 	</head>  
+
     <div id="container">
     <body style="background-image:url(img/123.png);background-attachment:fixed;">
     

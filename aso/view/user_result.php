@@ -130,11 +130,12 @@ return str_replace($search,$replace,$str);
 			printf($k);printf($k);
 			//参加者情報
 			
-			$bun2 = "参加者名:%s ";
+			echo '<h5>';
+			$bun2 = " %s ";
 			$m_name = $row['name'];
 			printf($bun2,$m_name);
 			printf($k);
-
+			echo '</h5>';
 
 
 //			$img_query = "SELECT IMG FROM member WHERE m_id = " . $m_id ;

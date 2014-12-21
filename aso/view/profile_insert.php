@@ -96,11 +96,12 @@
 				echo $err.'を入力してください。';
 				}
 			}else{
-				
+		
 				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
-	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".base64_encode($name)) {
-	    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
+	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". md5($_FILES["upfile"]["name"]))) {
+	    			chmod("img/" . md5($_FILES["upfile"]["name"]), 0644);
 				header("Location: janru_top.php");
+//	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
 				} else {
 				echo "ファイルをアップロードできません。";
 				}

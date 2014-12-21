@@ -97,9 +97,12 @@
 				}
 			}else{
 		
-				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {			
-	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". md5($_FILES["upfile"]["name"]))) {
-	    			chmod("img/" . md5($_FILES["upfile"]["name"]), 0644);
+				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+				$fileName = $_FILES["upfile"]["tmp_name"];
+				$fack =  pathinfo($fileName, PATHINFO_EXTENSION);
+			
+	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". md5($_FILES["upfile"]["name"]).$fack)) {
+	    			chmod("img/" . md5($_FILES["upfile"]["name"]).$fack, 0644);
 				header("Location: janru_top.php");
 //	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
 				} else {

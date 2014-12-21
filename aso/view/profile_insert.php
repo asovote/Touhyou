@@ -98,7 +98,8 @@
 			}else{
 		
 				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {	
-				echo pathinfo($_FILES["upfile"]["name"]);
+				echo $_FILES["upfile"]["tmp_name"];
+				echo pathinfo($_FILES["upfile"]["tmp_name"]);
 
 	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".$_FILES["upfile"]["name"])) {
 	    			chmod("img/" . $_FILES["upfile"]["name"], 0644);

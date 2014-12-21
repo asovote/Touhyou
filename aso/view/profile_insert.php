@@ -99,7 +99,7 @@
 		
 				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
 				$part = pathinfo($_FILES["upfile"]["name"]);
-				$ruruact = $part['filename'].".".$part['extension'];
+				$ruruact = md5($part['filename']).".".$part['extension'];
 				echo $ruruact;	
 	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".$ruruact)) {
 	  			chmod("img/" .$ruruact, 0644);

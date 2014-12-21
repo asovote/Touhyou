@@ -98,9 +98,10 @@
 			}else{
 		
 				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {	
+				
 	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".$_FILES["upfile"]["name"])) {
 	    			chmod("img/" . $_FILES["upfile"]["name"], 0644);
-				header("Location: janru_top.php");
+			//	header("Location: janru_top.php");
 //	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
 				} else {
 				echo "ファイルをアップロードできません。";
@@ -126,7 +127,7 @@
 				$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
 			//	$result = $dbc -> query($dbc, $query);
 				$result = mysqli_query($dbc, $query);
-				header("Location: janru_top.php?in=1");
+			//	header("Location: janru_top.php?in=1");
 			}
 		/*		echo "m_idの値：".$mid;
 		echo $_FILES["upfile"]["name"];

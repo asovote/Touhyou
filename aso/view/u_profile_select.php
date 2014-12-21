@@ -25,9 +25,7 @@
 
 	</head>
     
-	<body>
-  <body style="background-image:url(img/123.png);background-attachment:fixed;">
-    <div class="container"
+<body style="background-image:url(img/123.png);background-attachment:fixed;">
 
 <table width="100%" border="0" align="center"><tbody>
 <tr>

@@ -12,6 +12,7 @@
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
 	<script type="text/javascript">
+	
 	    /**
 	     * 確認ダイアログの返り値によりフォーム送信
 	    */

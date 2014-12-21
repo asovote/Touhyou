@@ -97,14 +97,13 @@
 				}
 			}else{
 		
-				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {	
-				echo $_FILES["upfile"]["tmp_name"];
-				echo pathinfo($_FILES["upfile"]["tmp_name"]);
-
-	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".$_FILES["upfile"]["name"])) {
-	    			echo $_FILES["upfile"]["name"];
-				chmod("img/" . $_FILES["upfile"]["name"], 0644);
-			//	header("Location: janru_top.php");
+				if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+				$part = pathinfo($_FILES["upfile"]["name"]);
+				$ruruact = md5($part['filename']).".".$part['extension'];
+				echo $ruruact;	
+	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/".$ruruact)) {
+	  			chmod("img/" .$ruruact, 0644);
+				header("Location: janru_top.php");
 //	  			if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "img/". $_FILES["upfile"]["name"])) {
 				} else {
 				echo "ファイルをアップロードできません。";
@@ -116,7 +115,8 @@
 				
 				//通常時の処理
 				//SQL文格納（INSERT）（※実装時はテーブル名の修正が必要）
-				$query = "insert into member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free','" .$_FILES["upfile"]["name"]. "','$school');";
+			//	$query = "insert into member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free','" .$_FILES["upfile"]["name"]. "','$school');";
+				$query = "insert into member(m_id,name,free,m_img,school) VALUES ('', '$name', '$free','" .$ruruact. "','$school');";
 				$result = mysqli_query($dbc, $query);
 
 				//mj_listに格納するm_idを取得
@@ -130,7 +130,7 @@
 				$query = "insert into mj_list(mj_id,m_id,j_id,votes) VALUES ('', '$mid', '$j_id','');";
 			//	$result = $dbc -> query($dbc, $query);
 				$result = mysqli_query($dbc, $query);
-			//	header("Location: janru_top.php?in=1");
+				header("Location: janru_top.php?in=1");
 			}
 		/*		echo "m_idの値：".$mid;
 		echo $_FILES["upfile"]["name"];
